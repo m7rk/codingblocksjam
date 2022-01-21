@@ -1,4 +1,4 @@
-extends KinematicBody2D
+extends Area2D
 onready var arrow_sprite = get_node("ArrowSprite")
 
 var SPEED = 300
@@ -13,16 +13,13 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _physics_process(delta):
 	arrow_sprite.position.y += zvel
 	zvel += zgrav * delta
 	if(arrow_sprite.position.y > 0):
 		queue_free()
-	move_and_slide(Vector2(SPEED,yvel))
-	if get_slide_count()==1:
-		get_slide_collision(0).get_collider().queue_free()
-		queue_free()
-		
+	position += delta * (Vector2(SPEED,yvel))
+
 func set_arrow_target(x,y):
 	# where should the arrow land, relative to the start position?
 	
@@ -33,3 +30,8 @@ func set_arrow_target(x,y):
 	zvel = (0.3 + -(0.5 * zgrav * airtime * airtime)) / airtime
 	yvel = (y / airtime)
 	
+
+
+func _on_Arrow_body_entered(body):
+	queue_free()
+	body.queue_free()

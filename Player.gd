@@ -28,7 +28,6 @@ func _physics_process(delta):
 func _input(event):
 	# Mouse in viewport coordinates.
 	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT and event.pressed:
-		print("Mouse Click/Unclick at: ", event.position)
 		var instance = arrow.instance()
 		get_parent().add_child(instance)
 		instance.global_position = global_position

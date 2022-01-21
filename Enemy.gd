@@ -8,6 +8,6 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _physics_process(delta):
 	var delt = global_position - (get_node("../../Player").global_position)
 	move_and_slide(-delt.normalized() * SPEED)
