@@ -1,5 +1,5 @@
 extends KinematicBody2D
-
+var arrow = preload("res://Arrow.tscn")
 
 # Declare member variables here. Examples:
 var SPEED = 100
@@ -24,3 +24,12 @@ func _physics_process(delta):
 		move_and_slide(Vector2(0,-SPEED))
 	if(Input.is_action_pressed("down")):
 		move_and_slide(Vector2(0,SPEED))
+
+func _input(event):
+	# Mouse in viewport coordinates.
+	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT and event.pressed:
+		print("Mouse Click/Unclick at: ", event.position)
+		var instance = arrow.instance()
+		get_parent().add_child(instance)
+		instance.global_position = global_position
+		
