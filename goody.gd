@@ -11,7 +11,7 @@ func _ready():
 func _process(delta):
 	if dragging:
 		var mousepos = get_viewport().get_mouse_position()
-		self.position = Vector2(mousepos.x, mousepos.y)
+		self.global_position = Vector2(mousepos.x, mousepos.y)
 
 		
 
