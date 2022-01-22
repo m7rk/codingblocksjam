@@ -11,7 +11,7 @@ func _ready():
 func _process(delta):
 	if dragging:
 		var mousepos = get_viewport().get_mouse_position()
-		self.position = Vector2(mousepos.x, mousepos.y)
+		self.global_position = Vector2(mousepos.x, mousepos.y)
 
 		
 
@@ -27,6 +27,6 @@ func _on_KinematicBody2D_input_event(viewport, event, shape_idx):
 			emit_signal("dragsignal")
 	elif event is InputEventScreenTouch:
 		if event.pressed and event.get_index() == 0:
-			self.position = event.get_position()
+			self.global_position = event.get_position()
 		
 
