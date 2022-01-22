@@ -2,36 +2,60 @@ extends KinematicBody2D
 var arrow = preload("res://Arrow.tscn")
 
 # Declare member variables here. Examples:
-var SPEED = 100
-# var b = "text"
+var SPEED = 150
 
+var AIM_SPEED = 50
+# var b = "text"
+var aimer_active = true
+var aim_time = 0
+var AIM_MAX = 2.5
+var AIM_LIMIT = 2.0
+var AIM_CURS_ROT_SPEED = 90
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
-
 func _physics_process(delta):
+	var raw_input = Vector2(0,0)
 	if(Input.is_action_pressed("right")):
-		move_and_slide(Vector2(SPEED,0))
+		raw_input = Vector2(1,0)
 	if(Input.is_action_pressed("left")):
-		move_and_slide(Vector2(-SPEED,0))
+		raw_input = Vector2(-1,0)
 	if(Input.is_action_pressed("up")):
-		move_and_slide(Vector2(0,-SPEED))
+		raw_input = Vector2(0,-1)
 	if(Input.is_action_pressed("down")):
-		move_and_slide(Vector2(0,SPEED))
-
+		raw_input = Vector2(0,1)
+	if(aimer_active):
+		move_and_slide(AIM_SPEED * raw_input)
+	else:
+		move_and_slide(SPEED * raw_input)
+	
+	var target = Vector2(0,10000)
+	if(aimer_active):
+		target = Vector2(-450 + get_node("../Camera").global_position.x + get_viewport().get_mouse_position().x, get_viewport().get_mouse_position().y)
+		aim_time += delta
+		if(aim_time > AIM_LIMIT):
+			aim_time = AIM_LIMIT
+		
+	else:
+		aim_time = 0
+		get_node("../Aimer").rotation_degrees = 0
+	get_node("../Aimer").global_position = target
+	var aimscale = pow((AIM_MAX - aim_time) / AIM_MAX,0.8)
+	get_node("../Aimer").global_scale = Vector2(aimscale,aimscale)
+	get_node("../Aimer").rotation_degrees += AIM_CURS_ROT_SPEED * delta
+	
 func _input(event):
 	# Mouse in viewport coordinates.
 	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT and event.pressed:
+		aimer_active = true
+	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT and !event.pressed:
 		var instance = arrow.instance()
 		get_parent().add_child(instance)
 		instance.global_position = global_position
 		var target_x = event.position.x + get_node("../Camera").global_position.x
 		var diff_x = target_x + -global_position.x + -450 # cam bias
 		instance.set_arrow_target(diff_x, event.position.y - global_position.y)
-		
+		aimer_active = false

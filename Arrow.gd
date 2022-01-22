@@ -27,7 +27,7 @@ func set_arrow_target(x,y):
 	var airtime = abs(Vector2(x,y).length() / SPEED)
 	# let's start by solving for y first.
 	# i do not know why i have to divide by ten here??
-	zvel = (0.3 + -(0.5 * zgrav * airtime * airtime)) / airtime
+	zvel = (0.5 + -(0.5 * zgrav * airtime * airtime)) / airtime
 	yvel = (y / airtime)
 	
 
