@@ -110,6 +110,7 @@ __meta__ = {
 }
 
 [node name="CharacterRig" type="Node2D" parent="Player"]
+position = Vector2( 8, -41 )
 scale = Vector2( 0.2, 0.2 )
 
 [node name="Pelvis" type="Sprite" parent="Player/CharacterRig"]
@@ -129,14 +130,12 @@ __meta__ = {
 }
 
 [node name="BoneUpperLeftArm" type="Node2D" parent="Player/CharacterRig/Pelvis/BoneTorso/Torso"]
-position = Vector2( 0.666504, -17.4443 )
+position = Vector2( -59.1113, -31.6666 )
 
 [node name="UpperLeftArm" type="Sprite" parent="Player/CharacterRig/Pelvis/BoneTorso/Torso/BoneUpperLeftArm"]
-position = Vector2( -92, 1 )
+position = Vector2( -35, 30 )
+z_index = 1
 texture = ExtResource( 10 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="LowerLeftArm" type="Sprite" parent="Player/CharacterRig/Pelvis/BoneTorso/Torso/BoneUpperLeftArm/UpperLeftArm"]
 position = Vector2( -69.1113, 115.667 )
@@ -154,7 +153,7 @@ __meta__ = {
 }
 
 [node name="LowerRightArm" type="Sprite" parent="Player/CharacterRig/Pelvis/BoneTorso/Torso/BoneUpperRightArm/UpperRightArm"]
-position = Vector2( 30.4653, 97.5265 )
+position = Vector2( 37.9097, 96.0822 )
 texture = ExtResource( 17 )
 
 [node name="Bow" type="Sprite" parent="Player/CharacterRig/Pelvis/BoneTorso/Torso/BoneUpperRightArm/UpperRightArm/LowerRightArm"]

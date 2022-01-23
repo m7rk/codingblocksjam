@@ -18,6 +18,7 @@ func _ready():
 
 
 func _physics_process(delta):
+	
 	var raw_input = Vector2(0,0)
 	if(Input.is_action_pressed("right")):
 		raw_input = Vector2(1,0)
@@ -37,12 +38,14 @@ func _physics_process(delta):
 	if(aimer_active):
 		target = Vector2(-450 + get_node("../Camera").global_position.x + get_viewport().get_mouse_position().x, get_viewport().get_mouse_position().y)
 		aim_time += delta
+		get_node("CharacterRig").scale.x = 0.2 * sign(get_viewport().get_mouse_position().x  - 450)
 		if(aim_time > AIM_LIMIT):
 			aim_time = AIM_LIMIT
 		rigAim(getAimerPosition())
 	else:
 		aim_time = 0
 		get_node("../Aimer").rotation_degrees = 0
+		
 		
 	get_node("../Aimer").global_position = target
 	var aimscale = pow((AIM_MAX - aim_time) / AIM_MAX,0.8)
@@ -55,6 +58,9 @@ func getAimerPosition():
 	var diff_y = get_viewport().get_mouse_position().y - global_position.y
 	return Vector2(diff_x,diff_y)
 
+func isReversed():
+	return sign(get_node("CharacterRig").scale.x) == -1
+	
 func _input(event):
 	# Mouse in viewport coordinates.
 	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT and event.pressed:
@@ -67,6 +73,10 @@ func _input(event):
 		aimer_active = false
 		
 func rigAim(vec):
-	# offset + rad to deg
-	get_node("CharacterRig/Pelvis/BoneTorso/Torso/BoneUpperRightArm").rotation_degrees = -50 + 57 * atan2(vec.y,vec.x)
-	get_node("CharacterRig/Pelvis/BoneTorso/Torso/BoneUpperLeftArm").rotation_degrees = -50 + 57 * atan2(vec.y,vec.x)
+	if(isReversed()):
+		# offset + rad to deg
+		get_node("CharacterRig/Pelvis/BoneTorso/Torso/BoneUpperRightArm").rotation_degrees = 180 + -50 + -57 * atan2(vec.y,vec.x)
+		get_node("CharacterRig/Pelvis/BoneTorso/Torso/BoneUpperLeftArm").rotation_degrees = 180 + -90 + -57 * atan2(vec.y,vec.x)
+	else:
+		get_node("CharacterRig/Pelvis/BoneTorso/Torso/BoneUpperRightArm").rotation_degrees = -50 + 57 * atan2(vec.y,vec.x)
+		get_node("CharacterRig/Pelvis/BoneTorso/Torso/BoneUpperLeftArm").rotation_degrees = -90 + 57 * atan2(vec.y,vec.x)
