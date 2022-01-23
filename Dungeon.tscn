@@ -1,6 +1,6 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=26 format=2]
 
-[ext_resource path="res://protag.png" type="Texture" id=1]
+[ext_resource path="res://Protagonist Parts/Protag Complete.png" type="Texture" id=1]
 [ext_resource path="res://Player.gd" type="Script" id=2]
 [ext_resource path="res://crate.png" type="Texture" id=3]
 [ext_resource path="res://griffon.png" type="Texture" id=4]
@@ -9,6 +9,19 @@
 [ext_resource path="res://blob.png" type="Texture" id=7]
 [ext_resource path="res://Enemy.gd" type="Script" id=8]
 [ext_resource path="res://aimer.png" type="Texture" id=9]
+[ext_resource path="res://Protagonist Parts/Left Arm Upper.png" type="Texture" id=10]
+[ext_resource path="res://Protagonist Parts/Pelvis.png" type="Texture" id=11]
+[ext_resource path="res://Protagonist Parts/Left Leg Upper.png" type="Texture" id=12]
+[ext_resource path="res://Protagonist Parts/Left Leg Lower.png" type="Texture" id=13]
+[ext_resource path="res://Protagonist Parts/Right Leg Upper.png" type="Texture" id=14]
+[ext_resource path="res://Protagonist Parts/Right leg Lower.png" type="Texture" id=15]
+[ext_resource path="res://Protagonist Parts/Bow.png" type="Texture" id=16]
+[ext_resource path="res://Protagonist Parts/Right Arm Lower.png" type="Texture" id=17]
+[ext_resource path="res://Protagonist Parts/Upper Right Arm.png" type="Texture" id=18]
+[ext_resource path="res://Protagonist Parts/Torso.png" type="Texture" id=19]
+[ext_resource path="res://Protagonist Parts/Neck.png" type="Texture" id=20]
+[ext_resource path="res://Protagonist Parts/Left Arm Lower.png" type="Texture" id=21]
+[ext_resource path="res://Protagonist Parts/Head.png" type="Texture" id=22]
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 10, 600 )
@@ -83,6 +96,7 @@ __meta__ = {
 
 [node name="Sprite" type="Sprite" parent="Player"]
 position = Vector2( 10, -27 )
+scale = Vector2( 0.17, 0.17 )
 texture = ExtResource( 1 )
 __meta__ = {
 "_edit_lock_": true
@@ -97,6 +111,7 @@ position = Vector2( 854, 379 )
 texture = ExtResource( 4 )
 
 [node name="EnemyCollection" type="Node2D" parent="."]
+visible = false
 
 [node name="Enemy" type="KinematicBody2D" parent="EnemyCollection"]
 position = Vector2( 1519, 308 )
@@ -157,6 +172,61 @@ position = Vector2( 1257, 258 )
 texture = ExtResource( 9 )
 
 [node name="Camera" type="Camera2D" parent="."]
+visible = false
 offset = Vector2( 0, 250 )
 current = true
 script = ExtResource( 6 )
+
+[node name="CharacterRig" type="Node2D" parent="."]
+
+[node name="Bow" type="Sprite" parent="CharacterRig"]
+position = Vector2( 121, 199 )
+texture = ExtResource( 16 )
+
+[node name="LowerRightArm" type="Sprite" parent="CharacterRig"]
+position = Vector2( 117, 179 )
+texture = ExtResource( 17 )
+
+[node name="UpperRightArm" type="Sprite" parent="CharacterRig"]
+position = Vector2( 82, 93 )
+texture = ExtResource( 18 )
+
+[node name="Neck" type="Sprite" parent="CharacterRig"]
+position = Vector2( 13, -5 )
+texture = ExtResource( 20 )
+
+[node name="Head" type="Sprite" parent="CharacterRig"]
+position = Vector2( -23, -88 )
+texture = ExtResource( 22 )
+
+[node name="LowerRightLeg" type="Sprite" parent="CharacterRig"]
+position = Vector2( -113, 376 )
+texture = ExtResource( 13 )
+
+[node name="UpperRightLeg" type="Sprite" parent="CharacterRig"]
+position = Vector2( -97, 250 )
+texture = ExtResource( 12 )
+
+[node name="LowerLeftLeg" type="Sprite" parent="CharacterRig"]
+position = Vector2( 64, 346 )
+texture = ExtResource( 15 )
+
+[node name="UpperLeftLeg" type="Sprite" parent="CharacterRig"]
+position = Vector2( 42, 250 )
+texture = ExtResource( 14 )
+
+[node name="Pelvis" type="Sprite" parent="CharacterRig"]
+position = Vector2( -32, 203 )
+texture = ExtResource( 11 )
+
+[node name="Torso" type="Sprite" parent="CharacterRig"]
+position = Vector2( -16, 76 )
+texture = ExtResource( 19 )
+
+[node name="LowerLeftArm" type="Sprite" parent="CharacterRig"]
+position = Vector2( -168, 164 )
+texture = ExtResource( 21 )
+
+[node name="UpperLeftArm" type="Sprite" parent="CharacterRig"]
+position = Vector2( -108, 77 )
+texture = ExtResource( 10 )
