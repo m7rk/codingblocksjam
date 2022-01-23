@@ -1,6 +1,5 @@
 [gd_scene load_steps=26 format=2]
 
-[ext_resource path="res://Protagonist Parts/Protag Complete.png" type="Texture" id=1]
 [ext_resource path="res://Player.gd" type="Script" id=2]
 [ext_resource path="res://crate.png" type="Texture" id=3]
 [ext_resource path="res://griffon.png" type="Texture" id=4]
@@ -32,9 +31,25 @@ extents = Vector2( 4000, 10 )
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 21.5, 19 )
 
+[sub_resource type="Animation" id=4]
+resource_name = "Idle"
+tracks/0/type = "value"
+tracks/0/path = NodePath("Pelvis/BoneTorso:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"update": 0,
+"values": [  ]
+}
+
 [node name="Dungeon" type="Node2D"]
 
 [node name="Level" type="Node2D" parent="."]
+z_index = -1000
 
 [node name="TileMap" type="TileMap" parent="Level"]
 tile_set = ExtResource( 5 )
@@ -94,13 +109,107 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Sprite" type="Sprite" parent="Player"]
-position = Vector2( 10, -27 )
-scale = Vector2( 0.17, 0.17 )
-texture = ExtResource( 1 )
+[node name="CharacterRig" type="Node2D" parent="Player"]
+scale = Vector2( 0.2, 0.2 )
+
+[node name="Pelvis" type="Sprite" parent="Player/CharacterRig"]
+position = Vector2( -38.8889, 66.6666 )
+texture = ExtResource( 11 )
+
+[node name="BoneTorso" type="Node2D" parent="Player/CharacterRig/Pelvis"]
+position = Vector2( 2, 2 )
+scale = Vector2( 1, 1 )
+
+[node name="Torso" type="Sprite" parent="Player/CharacterRig/Pelvis/BoneTorso"]
+position = Vector2( 16, -127 )
+scale = Vector2( 1, 1 )
+texture = ExtResource( 19 )
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="BoneUpperLeftArm" type="Node2D" parent="Player/CharacterRig/Pelvis/BoneTorso/Torso"]
+position = Vector2( 0.666504, -17.4443 )
+
+[node name="UpperLeftArm" type="Sprite" parent="Player/CharacterRig/Pelvis/BoneTorso/Torso/BoneUpperLeftArm"]
+position = Vector2( -92, 1 )
+texture = ExtResource( 10 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="LowerLeftArm" type="Sprite" parent="Player/CharacterRig/Pelvis/BoneTorso/Torso/BoneUpperLeftArm/UpperLeftArm"]
+position = Vector2( -69.1113, 115.667 )
+texture = ExtResource( 21 )
+
+[node name="BoneUpperRightArm" type="Node2D" parent="Player/CharacterRig/Pelvis/BoneTorso/Torso"]
+position = Vector2( 67.3333, -34.1111 )
+z_index = -1
+
+[node name="UpperRightArm" type="Sprite" parent="Player/CharacterRig/Pelvis/BoneTorso/Torso/BoneUpperRightArm"]
+position = Vector2( 30.6457, 41.3623 )
+texture = ExtResource( 18 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="LowerRightArm" type="Sprite" parent="Player/CharacterRig/Pelvis/BoneTorso/Torso/BoneUpperRightArm/UpperRightArm"]
+position = Vector2( 30.4653, 97.5265 )
+texture = ExtResource( 17 )
+
+[node name="Bow" type="Sprite" parent="Player/CharacterRig/Pelvis/BoneTorso/Torso/BoneUpperRightArm/UpperRightArm/LowerRightArm"]
+position = Vector2( 5.55569, 22.2222 )
+texture = ExtResource( 16 )
+
+[node name="BoneNeck" type="Node2D" parent="Player/CharacterRig/Pelvis/BoneTorso/Torso"]
+
+[node name="Neck" type="Sprite" parent="Player/CharacterRig/Pelvis/BoneTorso/Torso/BoneNeck"]
+position = Vector2( 34, -78.5555 )
+texture = ExtResource( 20 )
+
+[node name="Head" type="Sprite" parent="Player/CharacterRig/Pelvis/BoneTorso/Torso/BoneNeck/Neck"]
+position = Vector2( -33.3335, -72.222 )
+texture = ExtResource( 22 )
+
+[node name="BoneUpperRightLeg" type="Node2D" parent="Player/CharacterRig/Pelvis"]
+
+[node name="UpperRightLeg" type="Sprite" parent="Player/CharacterRig/Pelvis/BoneUpperRightLeg"]
+position = Vector2( -65, 46.9999 )
+rotation = 0.156739
+scale = Vector2( 1, 1 )
+z_index = -1
+texture = ExtResource( 12 )
+
+[node name="LowerRightLeg" type="Sprite" parent="Player/CharacterRig/Pelvis/BoneUpperRightLeg/UpperRightLeg"]
+position = Vector2( -16, 126 )
+z_index = -1
+texture = ExtResource( 13 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="BoneUpperLeftLeg" type="Node2D" parent="Player/CharacterRig/Pelvis"]
+position = Vector2( 53.8889, 18.3335 )
+z_index = -1
+
+[node name="UpperLeftLeg" type="Sprite" parent="Player/CharacterRig/Pelvis/BoneUpperLeftLeg"]
+position = Vector2( 30.0002, 40 )
+scale = Vector2( 1, 1 )
+texture = ExtResource( 14 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="LowerLeftLeg" type="Sprite" parent="Player/CharacterRig/Pelvis/BoneUpperLeftLeg/UpperLeftLeg"]
+position = Vector2( 16.6665, 94.4446 )
+z_index = -1
+texture = ExtResource( 15 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Player/CharacterRig"]
+anims/Idle = SubResource( 4 )
 
 [node name="Sprite" type="Sprite" parent="."]
 position = Vector2( 791, 165 )
@@ -176,57 +285,3 @@ visible = false
 offset = Vector2( 0, 250 )
 current = true
 script = ExtResource( 6 )
-
-[node name="CharacterRig" type="Node2D" parent="."]
-
-[node name="Bow" type="Sprite" parent="CharacterRig"]
-position = Vector2( 121, 199 )
-texture = ExtResource( 16 )
-
-[node name="LowerRightArm" type="Sprite" parent="CharacterRig"]
-position = Vector2( 117, 179 )
-texture = ExtResource( 17 )
-
-[node name="UpperRightArm" type="Sprite" parent="CharacterRig"]
-position = Vector2( 82, 93 )
-texture = ExtResource( 18 )
-
-[node name="Neck" type="Sprite" parent="CharacterRig"]
-position = Vector2( 13, -5 )
-texture = ExtResource( 20 )
-
-[node name="Head" type="Sprite" parent="CharacterRig"]
-position = Vector2( -23, -88 )
-texture = ExtResource( 22 )
-
-[node name="LowerRightLeg" type="Sprite" parent="CharacterRig"]
-position = Vector2( -113, 376 )
-texture = ExtResource( 13 )
-
-[node name="UpperRightLeg" type="Sprite" parent="CharacterRig"]
-position = Vector2( -97, 250 )
-texture = ExtResource( 12 )
-
-[node name="LowerLeftLeg" type="Sprite" parent="CharacterRig"]
-position = Vector2( 64, 346 )
-texture = ExtResource( 15 )
-
-[node name="UpperLeftLeg" type="Sprite" parent="CharacterRig"]
-position = Vector2( 42, 250 )
-texture = ExtResource( 14 )
-
-[node name="Pelvis" type="Sprite" parent="CharacterRig"]
-position = Vector2( -32, 203 )
-texture = ExtResource( 11 )
-
-[node name="Torso" type="Sprite" parent="CharacterRig"]
-position = Vector2( -16, 76 )
-texture = ExtResource( 19 )
-
-[node name="LowerLeftArm" type="Sprite" parent="CharacterRig"]
-position = Vector2( -168, 164 )
-texture = ExtResource( 21 )
-
-[node name="UpperLeftArm" type="Sprite" parent="CharacterRig"]
-position = Vector2( -108, 77 )
-texture = ExtResource( 10 )
