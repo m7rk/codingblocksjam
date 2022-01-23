@@ -458,4 +458,3 @@ texture = ExtResource( 31 )
 
 [connection signal="body_entered" from="BossEncounter" to="BossEncounter" method="_on_BossEncounter_body_entered"]
 [connection signal="body_entered" from="BossEncounter2" to="BossEncounter2" method="_on_BossEncounter2_body_entered"]
-[connection signal="body_entered" from="MeetGriffon" to="MeetGriffon" method="_on_BossEncounter2_body_entered"]
