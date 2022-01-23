@@ -23,7 +23,7 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="Shadow" type="Sprite" parent="."]
 position = Vector2( -15, 0 )
 scale = Vector2( 0.05, 0.05 )
 texture = ExtResource( 2 )

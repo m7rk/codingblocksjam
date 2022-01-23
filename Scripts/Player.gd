@@ -2,9 +2,9 @@ extends KinematicBody2D
 var arrow = preload("res://Scenes/Arrow.tscn")
 
 # Declare member variables here. Examples:
-var SPEED = 150
+var SPEED = 200
 
-var AIM_SPEED = 50
+var AIM_SPEED = 60
 # var b = "text"
 var aimer_active = true
 var aim_time = 0
@@ -44,7 +44,8 @@ func _physics_process(delta):
 	if(aimer_active):
 		target = Vector2(-450 + get_node("../Camera").global_position.x + get_viewport().get_mouse_position().x, get_viewport().get_mouse_position().y)
 		aim_time += delta
-		get_node("CharacterRig").scale.x = 0.2 * sign(get_viewport().get_mouse_position().x  - 450)
+		var aim_delt = -450  + (get_viewport().get_mouse_position().x + get_node("../Camera").global_position.x) - (global_position.x)
+		get_node("CharacterRig").scale.x = 0.2 * sign(aim_delt)
 		if(aim_time > AIM_LIMIT):
 			aim_time = AIM_LIMIT
 		rigAim(getAimerPosition())
