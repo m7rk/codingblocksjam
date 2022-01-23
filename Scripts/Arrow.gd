@@ -46,4 +46,4 @@ func set_arrow_target(x,y):
 
 func _on_Arrow_body_entered(body):
 	impact()
-	body.queue_free()
+	body.onHit()

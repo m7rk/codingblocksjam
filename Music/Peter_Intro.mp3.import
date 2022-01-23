@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Peter_Intro.mp3-f2c602cd84af27d932601c0041e2b2e8.mp3str"
+
+[deps]
+
+source_file="res://Music/Peter_Intro.mp3"
+dest_files=[ "res://.import/Peter_Intro.mp3-f2c602cd84af27d932601c0041e2b2e8.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

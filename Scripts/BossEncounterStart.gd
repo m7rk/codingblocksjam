@@ -16,6 +16,8 @@ func _ready():
 #	pass
 
 
-func _on_BossEncounter_body_entered(body):
+func _on_BossEncounter2_body_entered(body):
 	if(body.name == "Player"):
-		print("A")
+		queue_free()
+		get_node("../Music").playSong("Boss")
+		get_node("../Camera").frozen = true

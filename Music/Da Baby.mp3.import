@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Da Baby.mp3-87b0f92841237bb46b4c57a68bd04d03.mp3str"
+
+[deps]
+
+source_file="res://Music/Da Baby.mp3"
+dest_files=[ "res://.import/Da Baby.mp3-87b0f92841237bb46b4c57a68bd04d03.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

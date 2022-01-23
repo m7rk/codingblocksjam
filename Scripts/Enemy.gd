@@ -11,3 +11,6 @@ func _ready():
 func _physics_process(delta):
 	var delt = global_position - (get_node("../../Player").global_position)
 	move_and_slide(-delt.normalized() * SPEED)
+
+func onHit():
+	queue_free()
