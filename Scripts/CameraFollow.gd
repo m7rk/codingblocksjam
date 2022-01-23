@@ -15,10 +15,9 @@ func _ready():
 func _process(delta):
 	global_position.x = lerp(global_position.x, targ, 3 * delta)
 	if(endgame):
-		if(get_node("../RightBarrier")):
-			get_node("../RightBarrier").queue_free()
-		if(get_node("../Player").global_position.x + 450 > global_position.x):
+		if(get_node("../Player").global_position.x - 450 > global_position.x):
 			get_parent().finish()
+			endgame = false
 			
 	if(frozen):
 		return
