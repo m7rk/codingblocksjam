@@ -2,6 +2,9 @@ extends KinematicBody2D
 
 var dragging = false
 
+#variable to keep track of whehter it's in the inventory or not
+var in_backpack = false
+
 signal dragsignal;
 
 func _ready():
@@ -27,6 +30,6 @@ func _on_KinematicBody2D_input_event(viewport, event, shape_idx):
 			emit_signal("dragsignal")
 	elif event is InputEventScreenTouch:
 		if event.pressed and event.get_index() == 0:
-			self.global_position = event.get_position()
+			self.position = event.get_position()
 		
 
