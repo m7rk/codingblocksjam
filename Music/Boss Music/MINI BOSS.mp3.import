@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/MINI BOSS.mp3-e02743a42a369b980ba1c389b7139a91.mp3str"
+
+[deps]
+
+source_file="res://Music/Boss Music/MINI BOSS.mp3"
+dest_files=[ "res://.import/MINI BOSS.mp3-e02743a42a369b980ba1c389b7139a91.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

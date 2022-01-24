@@ -8,6 +8,7 @@ var targ = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	global_position.x = (450 - PROGRESS_LINE) + get_node("../Player").global_position.x
+	targ = global_position.x
 	get_node("../LeftBarrier").global_position.x = get_node("../Player").global_position.x - PROGRESS_LINE
 
 
@@ -26,5 +27,3 @@ func _process(delta):
 		get_node("../RightBarrier").global_position.x = get_node("../Player").global_position.x - PROGRESS_LINE + 900
 		targ = (450 - PROGRESS_LINE) + get_node("../Player").global_position.x
 
-			
-		

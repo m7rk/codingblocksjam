@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/VS UR FRIEND.mp3-563b869ffdfd8b67edcbca481edff385.mp3str"
+
+[deps]
+
+source_file="res://Music/Boss Music/VS UR FRIEND.mp3"
+dest_files=[ "res://.import/VS UR FRIEND.mp3-563b869ffdfd8b67edcbca481edff385.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

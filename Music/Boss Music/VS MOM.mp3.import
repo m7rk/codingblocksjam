@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/VS MOM.mp3-6321bb4217ef8d94c67d42e5e1158187.mp3str"
+
+[deps]
+
+source_file="res://Music/Boss Music/VS MOM.mp3"
+dest_files=[ "res://.import/VS MOM.mp3-6321bb4217ef8d94c67d42e5e1158187.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

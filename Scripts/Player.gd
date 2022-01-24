@@ -6,7 +6,7 @@ var SPEED = 200
 
 var AIM_SPEED = 60
 # var b = "text"
-var aimer_active = true
+var aimer_active = false
 var aim_time = 0
 var AIM_MAX = 2.5
 var AIM_LIMIT = 2.0

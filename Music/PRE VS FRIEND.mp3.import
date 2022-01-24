@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/PRE VS FRIEND.mp3-2989bf33988920a292da07681a595afe.mp3str"
+
+[deps]
+
+source_file="res://Music/PRE VS FRIEND.mp3"
+dest_files=[ "res://.import/PRE VS FRIEND.mp3-2989bf33988920a292da07681a595afe.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
