@@ -31,7 +31,7 @@ func _physics_process(delta):
 		impact()
 	position += delta * (Vector2(xvel,yvel))
 	# no idea why values are so small here so x 1000 lol
-	get_node("ArrowSprite").rotation_degrees = 1500 * atan2(zvel,xvel)
+	get_node("ArrowSprite").rotation_degrees = 1500 * atan2(zvel,abs(xvel))
 
 func set_arrow_target(x,y):
 	# let's assume that time scales linearly with distance.
