@@ -351,7 +351,7 @@ __meta__ = {
 }
 
 [node name="Player" type="KinematicBody2D" parent="."]
-position = Vector2( 4300, 300 )
+position = Vector2( 5650, 300 )
 collision_mask = 41
 script = ExtResource( 5 )
 
@@ -511,7 +511,8 @@ __meta__ = {
 [node name="Peter" type="KinematicBody2D" parent="."]
 visible = false
 position = Vector2( 5895, 137 )
-collision_layer = 32
+z_index = 50
+collision_layer = 16
 collision_mask = 0
 script = ExtResource( 81 )
 
@@ -529,7 +530,7 @@ __meta__ = {
 
 [node name="BoneWing2" type="Node2D" parent="Peter/CharacterRig/Torso"]
 position = Vector2( 140, -40 )
-rotation = -0.032212
+rotation = -0.151612
 scale = Vector2( 1, 1 )
 z_index = -1
 
@@ -539,7 +540,7 @@ texture = ExtResource( 79 )
 
 [node name="BoneWing1" type="Node2D" parent="Peter/CharacterRig/Torso"]
 position = Vector2( 120, -20 )
-rotation = -0.0536866
+rotation = -0.252687
 scale = Vector2( 1, 1 )
 z_index = 2
 

@@ -39,7 +39,10 @@ func _physics_process(delta):
 		raw_input = Vector2(0,-1)
 	elif(Input.is_action_pressed("down")):
 		raw_input = Vector2(0,1)
-	
+		
+	if(get_parent().finish_flag):
+		raw_input = Vector2(1,0)
+		
 	if(raw_input != Vector2(0,0)):
 		get_node("CharacterRig/LAnimator").play("Walk")
 	else:

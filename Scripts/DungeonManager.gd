@@ -5,6 +5,7 @@ extends Node2D
 # var a = 2
 # var b = "text"
 
+var finish_flag = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -13,6 +14,7 @@ func _ready():
 	get_node("Tween").start()
 
 func finish():
+	finish_flag = true
 	get_node("Tween").interpolate_property(get_node("Camera/FrontSprite"), "modulate", Color(0,0,0,0), Color(1,1,1,1), 3, Tween.TRANS_QUAD, Tween.EASE_IN_OUT)
 	get_node("Tween").interpolate_property(get_node("Music/Main"), "volume_db", 0, -80, 3, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 	get_node("Tween").start()
