@@ -41,6 +41,8 @@ func set_arrow_target(x,y):
 	zvel = (0.5 + -(0.5 * zgrav * airtime * airtime)) / airtime
 	yvel = (y / airtime)
 	xvel = (x / airtime)
+	if(x < 0):
+		scale = Vector2(-1,1)
 	
 
 
