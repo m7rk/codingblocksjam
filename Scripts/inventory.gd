@@ -1,8 +1,8 @@
-extends Node
+extends Area2D
 
 #2 arrays, one for the items you collected, one for the backpack
-Array collected[10]
-Array backpack[10]
+#Array collected[10]
+#Array backpack[10]
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -12,3 +12,5 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+func _on_backpack_body_entered(body):
+	print("Put In")
