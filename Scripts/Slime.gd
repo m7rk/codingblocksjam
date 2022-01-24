@@ -27,6 +27,7 @@ func onHit():
 	get_node("Tween").start()
 	get_node("Death").play()
 	get_node("CollisionShape2D").queue_free()
+	get_node("../../Peter").killBonus()
 
 func _on_Tween_tween_all_completed():
 	queue_free()

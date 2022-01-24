@@ -71,6 +71,34 @@ func calcuateState():
 	if(confidence == 5):
 		return "CHEERFUL"
 
+func set_random_waypoint_behind_player():
+	dest = player.global_position + Vector2(rand_range(-150,-50), rand_range(-50,50))
+	# wait here for a minute
+	wait_time = rand_range(0.3,0.6)
+	if(dest.y > 500):
+		dest = null
+		
+func set_random_waypoint_near_player():
+	dest = player.global_position + Vector2(rand_range(-150,50), rand_range(-100,100))
+	if((player.global_position - global_position).length() < 150):
+		# wait here for a minute
+		wait_time = rand_range(0.7,1.3)
+	if(dest.y > 500 || (player.global_position - global_position).length() < 50):
+		dest = null
+		return
+
+func set_random_waypoint():
+	dest = player.global_position + Vector2(rand_range(-200,300), rand_range(-200,300))
+	if(dest.y > 500):
+		dest = null
+
+func set_lead_player():
+	dest = player.global_position + Vector2(rand_range(100,300), rand_range(-300,300))
+	# wait here for a minute
+	wait_time = rand_range(0.5,1.5)
+	if(dest.y > 500):
+		dest = null
+
 func AI(delta):
 	if(get_parent().finish_flag):
 		move_and_slide(Vector2(SPEED,0))
@@ -81,17 +109,44 @@ func AI(delta):
 		wait_time -= delta
 		return
 
-	if(state == "CURIOUS"):
+	if(state == "CURIOUS" || state == "HUNGRY"):
 		if(dest == null or global_position.distance_to(dest) < 10):
-			dest = player.global_position + Vector2(rand_range(-150,50), rand_range(-100,100))
-			if((player.global_position - global_position).length() < 150):
-				# wait here for a minute
-				wait_time = rand_range(0.7,1.3)
-			if(dest.y > 500 || (player.global_position - global_position).length() < 50):
-				dest = null
-				return
+			set_random_waypoint_near_player()
+
+	if(state == "UNTAMED"):
+		dest = global_position + Vector2(0,-1000)
+		if(global_position.y < -100):
+			active = false
+
+	if(state == "ANGRY"):
+		if(dest == null or global_position.distance_to(dest) < 10):
+			set_random_waypoint()
+	
+	if(state == "STARVING" || state == "PANICKED"):
+		set_random_waypoint_behind_player()
+	
+	if(state == "SCARED"):
+		if(dest == null or global_position.distance_to(dest) < 10):
+			if(rand_range(0.0,1.0) < 0.5):
+				set_random_waypoint_near_player()
+			else:
+				set_random_waypoint_behind_player()
+	
+	if(state == "PLEASED" || state == "CONFIDENT" || state == "CHEERFUL"):
+		set_lead_player()
+		if(wait_time > 1)
+
+	if(dest == null):
+		return
 	move_and_slide((dest - global_position).normalized() * SPEED)
 	
+
+func lfireball(v):
+	var launched = fireball.instance()
+	launced.layer = 4
+	launched.set_velocity(Vector(100,0))
+	launched.global_position = global_position
+	get_parent().add_child(launched)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -122,3 +177,18 @@ func colorLookup():
 		return Color(0.2,0.8,0.4,1)
 	if(state == "CHEERFUL"):
 		return Color(0.2,1,0.2,1)
+
+# lower mean amount.
+# add confidence if we can.
+func killBonus():
+	if(mean > 0 and rand_range(0,1) < 0.5):
+		mean -= 1
+		return
+	if(mean == 0 && rand_range(0.0,confidence + 0.1) < 0.5):
+		confidence += 1
+		confidence = min(confidence,5)
+
+func killBossBonus():
+	mean = 0
+	confidence += 2
+	confidence = min(confidence,5)

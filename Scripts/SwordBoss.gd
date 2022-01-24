@@ -25,6 +25,7 @@ func _process(delta):
 
 func onHit():
 	get_node("../../Music").fadeOut()
+	get_node("../../Peter").killBossBonus()
 	get_node("CollisionShape2D").queue_free()
 	get_node("Tween").start()
 	phase = "DEAD"
