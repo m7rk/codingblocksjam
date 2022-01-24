@@ -8,8 +8,11 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
-	var delt = global_position - (get_node("../../Player").global_position)
-	move_and_slide(-delt.normalized() * SPEED)
+	if(global_position.x - get_node("../../Player").global_position.x < 1000):
+		var delt = global_position - (get_node("../../Player").global_position)
+		move_and_slide(-delt.normalized() * SPEED)
+	if(global_position.x - get_node("../../Player").global_position.x < -500):
+		queue_free()
 
 func onHit():
 	get_node("Tween").start()

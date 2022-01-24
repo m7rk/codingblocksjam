@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/overworld_sounds_bow_release.wav-cb563576e0a8e8fa32781da5da2d4a37.sample"
+
+[deps]
+
+source_file="res://Sounds/overworld_sounds_bow_release.wav"
+dest_files=[ "res://.import/overworld_sounds_bow_release.wav-cb563576e0a8e8fa32781da5da2d4a37.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

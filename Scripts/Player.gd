@@ -8,7 +8,7 @@ var AIM_SPEED = 60
 # var b = "text"
 var aimer_active = false
 var aim_time = 0
-var draw_time = 0
+var draw_time = 1
 var AIM_MAX = 2.5
 var AIM_LIMIT = 2.0
 var AIM_CURS_ROT_SPEED = 90
@@ -16,7 +16,8 @@ var ARROW_BONE_ROOT_POSITION = Vector2(9,33)
 onready var arrow_node = get_node("CharacterRig/Pelvis/BoneTorso/Torso/BoneUpperRightArm/UpperRightArm/LowerRightArm/Bow/ArrowBone")
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
+	get_node("CharacterRig/UAnimator").play("Draw")
+	arrow_node.visible = false
 
 
 func _physics_process(delta):
@@ -112,7 +113,10 @@ func _input(event):
 	# Mouse in viewport coordinates.
 	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT and event.pressed:
 		aimer_active = true
+		get_node("CharacterRig/Pelvis/BoneTorso/Torso/BoneUpperLeftArm").rotation_degrees = 0
+		get_node("CharacterRig/Pelvis/BoneTorso/Torso/BoneUpperLeftArm/UpperLeftArm/BoneLowerLeftArm").rotation_degrees = 0
 		get_node("CharacterRig/UAnimator").stop()
+		get_node("BowPull").play()
 	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT and !event.pressed:
 		if(aimer_active != true):
 			return
@@ -123,8 +127,9 @@ func _input(event):
 		var rand = addAimRandomness(40 * getAimScale())
 		instance.set_arrow_target(getAimerPosition()[0] + rand.x, getAimerPosition()[1] + rand.y) 
 		aimer_active = false
-		draw_time = 2
+		draw_time = 1
 		get_node("CharacterRig/UAnimator").play("Draw")
+		get_node("BowFire").play()
 		
 func rigAim(vec):
 	# properly animate the left arm

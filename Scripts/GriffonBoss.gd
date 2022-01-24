@@ -13,6 +13,9 @@ onready var fireball = preload("res://Scenes/Fire.tscn")
 # taunt?
 var phase = "INTRO"
 
+var fireballed_left = false
+var fireballed_right = false
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	get_node("Animation").play("Idle")
@@ -31,15 +34,23 @@ func _physics_process(delta):
 			if(global_position.y < 0):
 				phase = "LEFTATTACK"
 				global_position = TARGET_START + Vector2(500,0)
+				
 		if(phase == "LEFTATTACK"):
 			move_and_slide(Vector2(-1,0) * 2 * SPEED)
-			if(global_position.x < TARGET_START.x - 500):
+			if(global_position.x < TARGET_START.x + 300 && !fireballed_left):
+				lfireball(Vector2(-10,0))
+				fireballed_left = true
+			if(global_position.x < TARGET_START.x - 900):
 				phase = "RIGHTATTACK"
-			global_position = TARGET_START - Vector2(500,0)
-		if(phase == "LEFTATTACK"):
-			move_and_slide(Vector2(-1,0) * 2 * SPEED)
-			if(global_position.x > TARGET_START.x + 500):
+		
+		if(phase == "RIGHTATTACK"):
+			move_and_slide(Vector2(1,0) * 2 * SPEED)
+			if(global_position.x > TARGET_START.x - 300 && !fireballed_right):
+				lfireball(Vector2(10,0))
+				fireballed_right = true
+			if(global_position.x > TARGET_START.x + 900):
 				phase = "INTRO"
+
 
 func onHit():
 	get_node("../../Music").fadeOut()
@@ -49,7 +60,8 @@ func onHit():
 	get_node("../../Camera").frozen = false
 	queue_free()
 	
-func fireball():
-	var launched = fireball().instantiate()
+func lfireball(v):
+	var launched = fireball.instance()
+	launched.set_velocity(v)
 	launched.global_position = global_position
 	get_parent().add_child(launched)
