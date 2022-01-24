@@ -12,7 +12,9 @@ func _ready():
 	get_node("../LeftBarrier").global_position.x = get_node("../Player").global_position.x - PROGRESS_LINE
 
 func backpack(delta):
-	if(get_viewport().get_mouse_position().x < get_node("Backpack").global_position.x + get_node("Backpack").scale.x * 300 && get_viewport().get_mouse_position().y < get_node("Backpack").global_position.y+ get_node("Backpack").scale.y * 300):
+	var x_qual = get_viewport().get_mouse_position().x < get_node("Backpack").global_position.x + get_node("Backpack").scale.x * 300 
+	var y_qual = get_viewport().get_mouse_position().y < get_node("Backpack").global_position.y + get_node("Backpack").scale.y * 300
+	if(x_qual && y_qual):
 		get_node("Backpack").scale = lerp(get_node("Backpack").scale,Vector2(0.3,0.3),5*delta)
 		get_node("Backpack").modulate = lerp(get_node("Backpack").modulate,Color(1,1,1,0.5),5*delta)
 		get_node("Backpack").position = lerp(get_node("Backpack").position,Vector2(-400 + 100,50 + 100),5*delta)
