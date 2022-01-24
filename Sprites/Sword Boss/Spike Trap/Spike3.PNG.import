@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Protag Complete.png-66534045fef600a3bb2b4f85bd20c44f.stex"
+path="res://.import/Spike3.PNG-5df679a55c01c26e882277b0e85c3cec.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Protag Complete.png"
-dest_files=[ "res://.import/Protag Complete.png-66534045fef600a3bb2b4f85bd20c44f.stex" ]
+source_file="res://Sprites/Sword Boss/Spike Trap/Spike3.PNG"
+dest_files=[ "res://.import/Spike3.PNG-5df679a55c01c26e882277b0e85c3cec.stex" ]
 
 [params]
 

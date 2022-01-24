@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/IN CAVE.mp3-ab7ec42ffaa578c08e012b093beb429c.mp3str"
+
+[deps]
+
+source_file="res://Music/IN CAVE.mp3"
+dest_files=[ "res://.import/IN CAVE.mp3-ab7ec42ffaa578c08e012b093beb429c.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
