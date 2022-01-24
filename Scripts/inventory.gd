@@ -14,3 +14,7 @@ func _ready():
 #	pass
 func _on_backpack_body_entered(body):
 	print("Put In")
+
+
+func _on_backpack_body_exited(body):
+	print("Take Out") # Replace with function body.
