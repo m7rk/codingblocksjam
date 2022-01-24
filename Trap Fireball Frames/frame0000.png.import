@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/target.png-50f77dba651fe488d065e1c256210db4.stex"
+path="res://.import/frame0000.png-23fe08e4b64dbba8c0525160897d48ce.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/target.png"
-dest_files=[ "res://.import/target.png-50f77dba651fe488d065e1c256210db4.stex" ]
+source_file="res://Trap Fireball Frames/frame0000.png"
+dest_files=[ "res://.import/frame0000.png-23fe08e4b64dbba8c0525160897d48ce.stex" ]
 
 [params]
 

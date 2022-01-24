@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/target.png-50f77dba651fe488d065e1c256210db4.stex"
+path="res://.import/griffon 6.png-21ddb99fe5c9f106bf1c19da6af4ce08.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/target.png"
-dest_files=[ "res://.import/target.png-50f77dba651fe488d065e1c256210db4.stex" ]
+source_file="res://Griffon Parts/griffon 6.png"
+dest_files=[ "res://.import/griffon 6.png-21ddb99fe5c9f106bf1c19da6af4ce08.stex" ]
 
 [params]
 
