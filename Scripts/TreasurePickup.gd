@@ -15,6 +15,6 @@ func _ready():
 #func _process(delta):
 #	pass
 func _on_Treasure1_body_entered(body):
-	if(get_node("../../Camera/Backpack").addItem("Gold")):
+	if(get_node("../../Camera/Backpack").addItem(name)):
 		queue_free()
 		get_node("../../Player/GetTreasure").play()

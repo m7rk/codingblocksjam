@@ -10,8 +10,6 @@ extends Sprite
 func _ready():
 	get_node("Tween").interpolate_property(self, "modulate", Color(1,0,0,1), Color(1,1,1,0), 1, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 
-
-
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func dissolve():
 	get_node("Area2D").queue_free()

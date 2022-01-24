@@ -42,7 +42,7 @@ func finish():
 	else:
 		AppState.stored_its = []
 		for v in get_node("Camera/Backpack").get_children():
-			AppState.stored_its.append([v.name,v.position])
+			AppState.stored_its.append([v.name.rstrip("0123456789"),v.position])
 		get_tree().change_scene("res://Scenes/ItemMenu.tscn")
 		
 
