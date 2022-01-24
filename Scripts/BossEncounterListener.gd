@@ -19,4 +19,4 @@ func _ready():
 func _on_BossEncounter_body_entered(body):
 	if(body.name == "Player"):
 		queue_free()
-		get_node("../Music").fadeOut()
+		get_node("../../../Music").fadeOut()

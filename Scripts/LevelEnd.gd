@@ -18,7 +18,7 @@ func _ready():
 
 func _on_LevelEnd_body_entered(body):
 	if(body.name == "Player"):
-		get_node("../Camera").frozen = true
-		get_node("../Camera").endgame = true
-		get_node("../RightBarrier").queue_free()
+		get_node("../../../Camera").frozen = true
+		get_node("../../../Camera").endgame = true
+		get_node("../../../RightBarrier").queue_free()
 		queue_free()

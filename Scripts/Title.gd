@@ -4,7 +4,7 @@ extends Node2D
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
-
+var game_started = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -16,6 +16,9 @@ func _ready():
 func _input(event):
 	# Mouse in viewport coordinates.
 	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT and event.pressed:
+		if(game_started):
+			return
+		game_started = true
 		get_node("Tween").start()
 		get_node("FrontSprite").queue_free()
 

@@ -1,27 +1,26 @@
-[gd_scene load_steps=59 format=2]
+[gd_scene load_steps=72 format=2]
 
-[ext_resource path="res://Sprites/griffon.png" type="Texture" id=1]
 [ext_resource path="res://Tile Maps/dungeon_tileset.tres" type="TileSet" id=2]
-[ext_resource path="res://Sprites/Skull Flames/skullsprite.tres" type="SpriteFrames" id=3]
+[ext_resource path="res://Sprites/Skull/skullsprite.tres" type="SpriteFrames" id=3]
 [ext_resource path="res://Scripts/Enemy.gd" type="Script" id=4]
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=5]
-[ext_resource path="res://Sprites/Protagonist Parts/Left Arm Lower.png" type="Texture" id=6]
-[ext_resource path="res://Sprites/Protagonist Parts/Head.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Protag/Left Arm Lower.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Protag/Head.png" type="Texture" id=7]
 [ext_resource path="res://Sprites/aimer.png" type="Texture" id=8]
 [ext_resource path="res://Sprites/crate.png" type="Texture" id=9]
-[ext_resource path="res://Sprites/Protagonist Parts/Neck.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/Protag/Neck.png" type="Texture" id=10]
 [ext_resource path="res://Sprites/blob.png" type="Texture" id=11]
-[ext_resource path="res://Sprites/Protagonist Parts/Torso.png" type="Texture" id=12]
-[ext_resource path="res://Sprites/Protagonist Parts/Upper Right Arm.png" type="Texture" id=13]
+[ext_resource path="res://Sprites/Protag/Torso.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/Protag/Upper Right Arm.png" type="Texture" id=13]
 [ext_resource path="res://Scripts/CameraFollow.gd" type="Script" id=14]
-[ext_resource path="res://Sprites/Protagonist Parts/Left Leg Lower.png" type="Texture" id=15]
-[ext_resource path="res://Sprites/Protagonist Parts/Right Leg Upper.png" type="Texture" id=16]
-[ext_resource path="res://Sprites/Protagonist Parts/Right leg Lower.png" type="Texture" id=17]
-[ext_resource path="res://Sprites/Protagonist Parts/Bow.png" type="Texture" id=18]
-[ext_resource path="res://Sprites/Protagonist Parts/Right Arm Lower.png" type="Texture" id=19]
-[ext_resource path="res://Sprites/Protagonist Parts/Left Arm Upper.png" type="Texture" id=20]
-[ext_resource path="res://Sprites/Protagonist Parts/Pelvis.png" type="Texture" id=21]
-[ext_resource path="res://Sprites/Protagonist Parts/Left Leg Upper.png" type="Texture" id=22]
+[ext_resource path="res://Sprites/Protag/Left Leg Lower.png" type="Texture" id=15]
+[ext_resource path="res://Sprites/Protag/Right Leg Upper.png" type="Texture" id=16]
+[ext_resource path="res://Sprites/Protag/Right leg Lower.png" type="Texture" id=17]
+[ext_resource path="res://Sprites/Protag/Bow.png" type="Texture" id=18]
+[ext_resource path="res://Sprites/Protag/Right Arm Lower.png" type="Texture" id=19]
+[ext_resource path="res://Sprites/Protag/Left Arm Upper.png" type="Texture" id=20]
+[ext_resource path="res://Sprites/Protag/Pelvis.png" type="Texture" id=21]
+[ext_resource path="res://Sprites/Protag/Left Leg Upper.png" type="Texture" id=22]
 [ext_resource path="res://Sprites/transition.png" type="Texture" id=23]
 [ext_resource path="res://Scripts/DungeonManager.gd" type="Script" id=24]
 [ext_resource path="res://Music/OLD/MainLoopTest.mp3" type="AudioStream" id=25]
@@ -32,25 +31,38 @@
 [ext_resource path="res://Scripts/BossEncounterStart.gd" type="Script" id=30]
 [ext_resource path="res://Scripts/LevelEnd.gd" type="Script" id=31]
 [ext_resource path="res://Scripts/GriffonBoss.gd" type="Script" id=32]
-[ext_resource path="res://Sprites/SwordsMan/SwordArmBottomR.PNG" type="Texture" id=33]
-[ext_resource path="res://Sprites/SwordsMan/SwordLegBottomR.PNG" type="Texture" id=34]
-[ext_resource path="res://Sprites/SwordsMan/SwordLegTopR.PNG" type="Texture" id=35]
-[ext_resource path="res://Sprites/SwordsMan/SwordSwordHand.PNG" type="Texture" id=36]
-[ext_resource path="res://Sprites/SwordsMan/SwordTorso.PNG" type="Texture" id=37]
-[ext_resource path="res://Sprites/SwordsMan/SwordLegBottomL.PNG" type="Texture" id=38]
-[ext_resource path="res://Sprites/SwordsMan/SwordArmBottomL.PNG" type="Texture" id=39]
-[ext_resource path="res://Sprites/SwordsMan/SwordArmTopL.PNG" type="Texture" id=40]
-[ext_resource path="res://Sprites/SwordsMan/SwordHead.PNG" type="Texture" id=41]
-[ext_resource path="res://Sprites/SwordsMan/SwordLegTopL.PNG" type="Texture" id=42]
-[ext_resource path="res://Sprites/SwordsMan/SwordArmTopR.PNG" type="Texture" id=43]
+[ext_resource path="res://Sprites/Sword Boss/SwordArmBottomR.PNG" type="Texture" id=33]
+[ext_resource path="res://Sprites/Sword Boss/SwordLegBottomR.PNG" type="Texture" id=34]
+[ext_resource path="res://Sprites/Sword Boss/SwordLegTopR.PNG" type="Texture" id=35]
+[ext_resource path="res://Sprites/Sword Boss/SwordSwordHand.PNG" type="Texture" id=36]
+[ext_resource path="res://Sprites/Sword Boss/SwordTorso.PNG" type="Texture" id=37]
+[ext_resource path="res://Sprites/Sword Boss/SwordLegBottomL.PNG" type="Texture" id=38]
+[ext_resource path="res://Sprites/Sword Boss/SwordArmBottomL.PNG" type="Texture" id=39]
+[ext_resource path="res://Sprites/Sword Boss/SwordArmTopL.PNG" type="Texture" id=40]
+[ext_resource path="res://Sprites/Sword Boss/SwordHead.PNG" type="Texture" id=41]
+[ext_resource path="res://Sprites/Sword Boss/SwordLegTopL.PNG" type="Texture" id=42]
+[ext_resource path="res://Sprites/Sword Boss/SwordArmTopR.PNG" type="Texture" id=43]
 [ext_resource path="res://Music/INTRO.mp3" type="AudioStream" id=44]
-[ext_resource path="res://Sprites/Treasures and Treats/Gold Bar.png" type="Texture" id=45]
+[ext_resource path="res://Sprites/Pickupables/Gold Bar.png" type="Texture" id=45]
 [ext_resource path="res://Scenes/Treasure.gd" type="Script" id=46]
 [ext_resource path="res://Sprites/tutorial-1.png" type="Texture" id=47]
 [ext_resource path="res://Sprites/tutorial-2.png" type="Texture" id=48]
 [ext_resource path="res://Sprites/tutorial-3.png" type="Texture" id=49]
 [ext_resource path="res://Sprites/backpack.png" type="Texture" id=50]
 [ext_resource path="res://Scenes/Backpack.gd" type="Script" id=51]
+[ext_resource path="res://Sprites/Griffon Adult/griffon 2.png" type="Texture" id=52]
+[ext_resource path="res://Sprites/Griffon Adult/griffon 6.png" type="Texture" id=53]
+[ext_resource path="res://Sprites/Griffon Adult/griffon 12.png" type="Texture" id=54]
+[ext_resource path="res://Sprites/Griffon Adult/griffon 13.png" type="Texture" id=55]
+[ext_resource path="res://Sprites/Griffon Adult/griffon 7.png" type="Texture" id=56]
+[ext_resource path="res://Sprites/Griffon Adult/griffon 1.png" type="Texture" id=57]
+[ext_resource path="res://Sprites/Griffon Adult/griffon 3.png" type="Texture" id=58]
+[ext_resource path="res://Sprites/Griffon Adult/griffon 4.png" type="Texture" id=59]
+[ext_resource path="res://Sprites/Griffon Adult/griffon 5.png" type="Texture" id=60]
+[ext_resource path="res://Sprites/Griffon Adult/griffon 8.png" type="Texture" id=61]
+[ext_resource path="res://Sprites/Griffon Adult/griffon 9.png" type="Texture" id=62]
+[ext_resource path="res://Sprites/Griffon Adult/griffon 10.png" type="Texture" id=63]
+[ext_resource path="res://Sprites/Griffon Adult/griffon 11.png" type="Texture" id=64]
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 10, 600 )
@@ -141,6 +153,9 @@ tracks/2/keys = {
 
 [sub_resource type="CircleShape2D" id=7]
 radius = 30.0
+
+[sub_resource type="RectangleShape2D" id=8]
+extents = Vector2( 78, 33 )
 
 [sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 53, 324.5 )
@@ -391,25 +406,6 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Boss1" type="KinematicBody2D" parent="DungeonItems1"]
-position = Vector2( 3286, 284 )
-collision_layer = 4
-collision_mask = 7
-script = ExtResource( 32 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="DungeonItems1/Boss1"]
-position = Vector2( -1.5, 4 )
-shape = SubResource( 1 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Sprite" type="Sprite" parent="DungeonItems1/Boss1"]
-texture = ExtResource( 1 )
-__meta__ = {
-"_edit_lock_": true
-}
-
 [node name="SkeletonHead" type="KinematicBody2D" parent="DungeonItems1"]
 position = Vector2( 2278, 230 )
 collision_layer = 4
@@ -427,7 +423,6 @@ __meta__ = {
 position = Vector2( 4, -37 )
 scale = Vector2( 0.2, 0.2 )
 frames = ExtResource( 3 )
-frame = 4
 speed_scale = 2.0
 playing = true
 
@@ -457,6 +452,111 @@ shape = SubResource( 7 )
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="GriffonBoss" type="KinematicBody2D" parent="DungeonItems1"]
+position = Vector2( 3564, 269 )
+rotation = 3.14159
+scale = Vector2( 1, -1 )
+collision_layer = 6
+collision_mask = 6
+script = ExtResource( 32 )
+
+[node name="CharacterRig" type="Node2D" parent="DungeonItems1/GriffonBoss"]
+scale = Vector2( 0.3, 0.3 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Torso" type="Sprite" parent="DungeonItems1/GriffonBoss/CharacterRig"]
+texture = ExtResource( 61 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="FrontLeg2" type="Sprite" parent="DungeonItems1/GriffonBoss/CharacterRig/Torso"]
+position = Vector2( 148, 142 )
+texture = ExtResource( 63 )
+
+[node name="BackLeg2" type="Sprite" parent="DungeonItems1/GriffonBoss/CharacterRig/Torso"]
+position = Vector2( -150, 166 )
+texture = ExtResource( 55 )
+
+[node name="FrontLeg1" type="Sprite" parent="DungeonItems1/GriffonBoss/CharacterRig/Torso"]
+position = Vector2( 151, 154 )
+texture = ExtResource( 52 )
+
+[node name="BackLeg1" type="Sprite" parent="DungeonItems1/GriffonBoss/CharacterRig/Torso"]
+position = Vector2( -127, 150 )
+texture = ExtResource( 57 )
+
+[node name="Wing1" type="Sprite" parent="DungeonItems1/GriffonBoss/CharacterRig/Torso"]
+position = Vector2( -101, -222 )
+texture = ExtResource( 62 )
+
+[node name="Wing2" type="Sprite" parent="DungeonItems1/GriffonBoss/CharacterRig/Torso"]
+position = Vector2( -186, -230 )
+texture = ExtResource( 56 )
+
+[node name="Neck" type="Sprite" parent="DungeonItems1/GriffonBoss/CharacterRig/Torso"]
+position = Vector2( 176, -2 )
+texture = ExtResource( 53 )
+
+[node name="Head" type="Sprite" parent="DungeonItems1/GriffonBoss/CharacterRig/Torso/Neck"]
+position = Vector2( 61, -108 )
+texture = ExtResource( 60 )
+
+[node name="LowerBeak" type="Sprite" parent="DungeonItems1/GriffonBoss/CharacterRig/Torso/Neck/Head"]
+position = Vector2( 69, 66 )
+texture = ExtResource( 59 )
+
+[node name="UpperBeak" type="Sprite" parent="DungeonItems1/GriffonBoss/CharacterRig/Torso/Neck/Head/LowerBeak"]
+position = Vector2( 5, -1 )
+texture = ExtResource( 58 )
+
+[node name="Tail1" type="Sprite" parent="DungeonItems1/GriffonBoss/CharacterRig/Torso"]
+position = Vector2( -340, 26 )
+texture = ExtResource( 54 )
+
+[node name="Tail2" type="Sprite" parent="DungeonItems1/GriffonBoss/CharacterRig/Torso/Tail1"]
+position = Vector2( -168, 94 )
+texture = ExtResource( 64 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DungeonItems1/GriffonBoss"]
+position = Vector2( 3, 60 )
+shape = SubResource( 8 )
+
+[node name="Triggers" type="Node2D" parent="DungeonItems1"]
+
+[node name="PreBoss" type="Area2D" parent="DungeonItems1/Triggers"]
+position = Vector2( 1000, 0 )
+script = ExtResource( 28 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DungeonItems1/Triggers/PreBoss"]
+position = Vector2( 1674, 303 )
+shape = SubResource( 6 )
+
+[node name="VS Mom" type="Area2D" parent="DungeonItems1/Triggers"]
+position = Vector2( 1000, 0 )
+script = ExtResource( 30 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DungeonItems1/Triggers/VS Mom"]
+position = Vector2( 2115, 301 )
+shape = SubResource( 6 )
+
+[node name="MeetGriffon" type="Area2D" parent="DungeonItems1/Triggers"]
+position = Vector2( 1000, 0 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DungeonItems1/Triggers/MeetGriffon"]
+position = Vector2( 2889, 288 )
+shape = SubResource( 6 )
+
+[node name="LevelEnd" type="Area2D" parent="DungeonItems1/Triggers"]
+position = Vector2( 1000, 0 )
+script = ExtResource( 31 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DungeonItems1/Triggers/LevelEnd"]
+position = Vector2( 4027, 278 )
+shape = SubResource( 6 )
 
 [node name="DungeonItems2" type="Node2D" parent="."]
 visible = false
@@ -553,37 +653,6 @@ position = Vector2( 0, 250 )
 z_index = 1000
 texture = ExtResource( 23 )
 
-[node name="PreBoss" type="Area2D" parent="."]
-position = Vector2( 1000, 0 )
-script = ExtResource( 28 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PreBoss"]
-position = Vector2( 1674, 303 )
-shape = SubResource( 6 )
-
-[node name="VS Mom" type="Area2D" parent="."]
-position = Vector2( 1000, 0 )
-script = ExtResource( 30 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="VS Mom"]
-position = Vector2( 2115, 301 )
-shape = SubResource( 6 )
-
-[node name="MeetGriffon" type="Area2D" parent="."]
-position = Vector2( 1000, 0 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="MeetGriffon"]
-position = Vector2( 2889, 288 )
-shape = SubResource( 6 )
-
-[node name="LevelEnd" type="Area2D" parent="."]
-position = Vector2( 1000, 0 )
-script = ExtResource( 31 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="LevelEnd"]
-position = Vector2( 4027, 278 )
-shape = SubResource( 6 )
-
 [node name="Music" type="Node2D" parent="."]
 script = ExtResource( 29 )
 __meta__ = {
@@ -603,6 +672,6 @@ stream = ExtResource( 44 )
 [node name="Tween" type="Tween" parent="Music"]
 
 [connection signal="body_entered" from="DungeonItems1/Treasure1" to="DungeonItems1/Treasure1" method="_on_Treasure1_body_entered"]
-[connection signal="body_entered" from="PreBoss" to="PreBoss" method="_on_BossEncounter_body_entered"]
-[connection signal="body_entered" from="VS Mom" to="VS Mom" method="_on_BossEncounter2_body_entered"]
-[connection signal="body_entered" from="LevelEnd" to="LevelEnd" method="_on_LevelEnd_body_entered"]
+[connection signal="body_entered" from="DungeonItems1/Triggers/PreBoss" to="DungeonItems1/Triggers/PreBoss" method="_on_BossEncounter_body_entered"]
+[connection signal="body_entered" from="DungeonItems1/Triggers/VS Mom" to="DungeonItems1/Triggers/VS Mom" method="_on_BossEncounter2_body_entered"]
+[connection signal="body_entered" from="DungeonItems1/Triggers/LevelEnd" to="DungeonItems1/Triggers/LevelEnd" method="_on_LevelEnd_body_entered"]
