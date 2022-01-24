@@ -13,6 +13,7 @@ func _physics_process(delta):
 
 func onHit():
 	get_node("Tween").start()
+	get_node("Death").play()
 
 func _on_Tween_tween_all_completed():
 	queue_free()

@@ -1,9 +1,9 @@
-[gd_scene load_steps=77 format=2]
+[gd_scene load_steps=78 format=2]
 
 [ext_resource path="res://Sprites/arrow.png" type="Texture" id=1]
 [ext_resource path="res://Tile Maps/dungeon_tileset.tres" type="TileSet" id=2]
 [ext_resource path="res://Scenes/SkeletonHead.tscn" type="PackedScene" id=3]
-[ext_resource path="res://Scenes/PlayIncidental.gd" type="Script" id=4]
+[ext_resource path="res://Scripts/PlayIncidental.gd" type="Script" id=4]
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=5]
 [ext_resource path="res://Sprites/Protag/Left Arm Lower.png" type="Texture" id=6]
 [ext_resource path="res://Sprites/Protag/Head.png" type="Texture" id=7]
@@ -43,7 +43,7 @@
 [ext_resource path="res://Sprites/Sword Boss/SwordHead.PNG" type="Texture" id=41]
 [ext_resource path="res://Sprites/Sword Boss/SwordLegTopL.PNG" type="Texture" id=42]
 [ext_resource path="res://Sprites/Sword Boss/SwordArmTopR.PNG" type="Texture" id=43]
-[ext_resource path="res://Scenes/HatchTrigger.gd" type="Script" id=44]
+[ext_resource path="res://Scripts/HatchTrigger.gd" type="Script" id=44]
 [ext_resource path="res://Sprites/Pickupables/Gold Bar.png" type="Texture" id=45]
 [ext_resource path="res://Scripts/Treasure.gd" type="Script" id=46]
 [ext_resource path="res://Sprites/tutorial-1.png" type="Texture" id=47]
@@ -66,6 +66,7 @@
 [ext_resource path="res://Sprites/Griffon Adult/griffon 11.png" type="Texture" id=64]
 [ext_resource path="res://Sounds/get_treasure.mp3" type="AudioStream" id=65]
 [ext_resource path="res://Sounds/get_food.mp3" type="AudioStream" id=66]
+[ext_resource path="res://Sounds/egg_crack.mp3" type="AudioStream" id=67]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 600 )
@@ -313,12 +314,10 @@ texture = ExtResource( 20 )
 
 [node name="BoneLowerLeftArm" type="Node2D" parent="Player/CharacterRig/Pelvis/BoneTorso/Torso/BoneUpperLeftArm/UpperLeftArm"]
 position = Vector2( -23.7847, 51.2815 )
-scale = Vector2( 1, 1 )
 
 [node name="LowerLeftArm" type="Sprite" parent="Player/CharacterRig/Pelvis/BoneTorso/Torso/BoneUpperLeftArm/UpperLeftArm/BoneLowerLeftArm"]
 position = Vector2( -30.8484, 58.1753 )
 rotation = -2.98023e-08
-scale = Vector2( 1, 1 )
 texture = ExtResource( 6 )
 
 [node name="BoneUpperRightArm" type="Node2D" parent="Player/CharacterRig/Pelvis/BoneTorso/Torso"]
@@ -543,7 +542,7 @@ shape = SubResource( 7 )
 [node name="Triggers" type="Node2D" parent="DungeonItems1"]
 
 [node name="PreBoss" type="Area2D" parent="DungeonItems1/Triggers"]
-position = Vector2( 3680, 30 )
+position = Vector2( 4006, 46 )
 script = ExtResource( 28 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DungeonItems1/Triggers/PreBoss"]
@@ -634,6 +633,9 @@ __meta__ = {
 position = Vector2( 5773, 184 )
 scale = Vector2( 0.07, 0.07 )
 frames = ExtResource( 11 )
+
+[node name="Crack" type="AudioStreamPlayer2D" parent="DungeonItems1/Egg"]
+stream = ExtResource( 67 )
 
 [node name="DungeonItems2" type="Node2D" parent="."]
 visible = false

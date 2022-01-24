@@ -17,4 +17,5 @@ func _ready():
 
 
 func _on_Hatch_body_entered(body):
-	get_node("../../Egg").sprite_frame = get_node("../../Egg").sprite_frame + 1
+	get_node("../../Egg").frame = get_node("../../Egg").frame + 1
+	get_node("../../Egg/Crack").play()

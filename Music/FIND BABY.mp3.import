@@ -11,5 +11,5 @@ dest_files=[ "res://.import/FIND BABY.mp3-360b12d7f39b6a4950f968848fba9c05.mp3st
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

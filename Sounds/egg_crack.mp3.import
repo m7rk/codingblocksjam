@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/egg_crack.mp3-da78d5ebcfd62401839134167574d84c.mp3str"
+
+[deps]
+
+source_file="res://Sounds/egg_crack.mp3"
+dest_files=[ "res://.import/egg_crack.mp3-da78d5ebcfd62401839134167574d84c.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0
