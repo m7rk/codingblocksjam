@@ -1,15 +1,15 @@
 [gd_scene load_steps=5 format=2]
 
-[ext_resource path="res://Scripts/SkeletonHead.gd" type="Script" id=1]
-[ext_resource path="res://Sprites/Skull/skullsprite.tres" type="SpriteFrames" id=2]
+[ext_resource path="res://Scripts/Slime.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/Slime Boi/slimeframes.tres" type="SpriteFrames" id=2]
 [ext_resource path="res://Sounds/skull/skull_death.mp3" type="AudioStream" id=3]
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 17, 17 )
 
-[node name="SkeletonHead" type="KinematicBody2D"]
+[node name="Slime" type="KinematicBody2D"]
 position = Vector2( 2278, 230 )
-collision_layer = 4
+collision_layer = 5
 collision_mask = 7
 script = ExtResource( 1 )
 
@@ -20,7 +20,7 @@ shape = SubResource( 3 )
 [node name="AnimatedSprite" type="AnimatedSprite" parent="."]
 scale = Vector2( 0.2, 0.2 )
 frames = ExtResource( 2 )
-frame = 5
+frame = 10
 speed_scale = 2.0
 playing = true
 __meta__ = {
