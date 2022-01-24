@@ -17,9 +17,8 @@ func _ready():
 func impact():
 	disabled = true
 	get_node("CShape").queue_free()
-	get_node("Shadow").queue_free()
 	get_node("ArrowSprite").texture = alt_arrow_sprite
-	z_index = -999 #floor is -1000
+	z_index = -899 #floor is -1000
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):

@@ -54,7 +54,7 @@ func _physics_process(delta):
 		target = Vector2(-450 + get_node("../Camera").global_position.x + get_viewport().get_mouse_position().x, get_viewport().get_mouse_position().y)
 		aim_time += delta
 		var aim_delt = -450  + (get_viewport().get_mouse_position().x + get_node("../Camera").global_position.x) - (global_position.x)
-		get_node("CharacterRig").scale.x = 0.2 * sign(aim_delt)
+		get_node("CharacterRig").scale.x = 0.22 * sign(aim_delt)
 		if(sign(aim_delt) == 0):
 			get_node("CharacterRig").scale.x = 1
 

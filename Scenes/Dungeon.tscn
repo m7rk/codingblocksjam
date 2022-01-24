@@ -65,13 +65,13 @@
 [ext_resource path="res://Sprites/Griffon Adult/griffon 10.png" type="Texture" id=63]
 [ext_resource path="res://Sprites/Griffon Adult/griffon 11.png" type="Texture" id=64]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 600 )
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 4000, 10 )
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 21.5, 19 )
 
 [sub_resource type="Animation" id=4]
@@ -152,13 +152,13 @@ tracks/2/keys = {
 "values": [ 0.0, -50.0, 0.0 ]
 }
 
-[sub_resource type="CircleShape2D" id=7]
+[sub_resource type="CircleShape2D" id=6]
 radius = 30.0
 
-[sub_resource type="RectangleShape2D" id=8]
+[sub_resource type="RectangleShape2D" id=7]
 extents = Vector2( 78, 33 )
 
-[sub_resource type="RectangleShape2D" id=6]
+[sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 53, 324.5 )
 
 [node name="Dungeon" type="Node2D"]
@@ -172,7 +172,7 @@ collision_layer = 8
 collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LeftBarrier"]
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -181,7 +181,7 @@ __meta__ = {
 position = Vector2( 1584, 535 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RightBarrier"]
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -202,7 +202,7 @@ __meta__ = {
 position = Vector2( 1067, 90 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Up"]
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -211,7 +211,7 @@ __meta__ = {
 position = Vector2( 1105, 510 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Level/Down"]
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -222,14 +222,14 @@ collision_mask = 9
 script = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-shape = SubResource( 1 )
+shape = SubResource( 3 )
 __meta__ = {
 "_edit_lock_": true
 }
 
 [node name="CharacterRig" type="Node2D" parent="Player"]
 position = Vector2( 8, -41 )
-scale = Vector2( 0.2, 0.2 )
+scale = Vector2( 0.22, 0.23 )
 
 [node name="Pelvis" type="Sprite" parent="Player/CharacterRig"]
 position = Vector2( -38.8889, 66.6666 )
@@ -282,7 +282,7 @@ position = Vector2( 9, 33 )
 [node name="ArrowSprite" type="Sprite" parent="Player/CharacterRig/Pelvis/BoneTorso/Torso/BoneUpperRightArm/UpperRightArm/LowerRightArm/Bow/ArrowBone"]
 position = Vector2( 30, 15 )
 rotation = 0.968658
-scale = Vector2( 0.203232, 0.16195 )
+scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 1 )
 
 [node name="BoneNeck" type="Node2D" parent="Player/CharacterRig/Pelvis/BoneTorso/Torso"]
@@ -368,7 +368,7 @@ script = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DungeonItems1/Enemy"]
 position = Vector2( -1.5, 4 )
-shape = SubResource( 1 )
+shape = SubResource( 3 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -387,7 +387,7 @@ script = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DungeonItems1/Enemy2"]
 position = Vector2( -1.5, 4 )
-shape = SubResource( 1 )
+shape = SubResource( 3 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -406,7 +406,7 @@ script = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DungeonItems1/Enemy3"]
 position = Vector2( -1.5, 4 )
-shape = SubResource( 1 )
+shape = SubResource( 3 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -425,7 +425,7 @@ script = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DungeonItems1/SkeletonHead"]
 position = Vector2( -1.5, 4 )
-shape = SubResource( 1 )
+shape = SubResource( 3 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -434,16 +434,21 @@ __meta__ = {
 position = Vector2( 4, -37 )
 scale = Vector2( 0.2, 0.2 )
 frames = ExtResource( 3 )
+frame = 3
 speed_scale = 2.0
 playing = true
 
 [node name="Target" type="Sprite" parent="DungeonItems1"]
 position = Vector2( 1295, 156 )
+scale = Vector2( 0.2, 0.2 )
+z_index = -950
 texture = ExtResource( 26 )
 offset = Vector2( -22, -1 )
 
 [node name="Target2" type="Sprite" parent="DungeonItems1"]
 position = Vector2( 1401, 329 )
+scale = Vector2( 0.2, 0.2 )
+z_index = -950
 texture = ExtResource( 26 )
 offset = Vector2( -22, -1 )
 
@@ -459,7 +464,7 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DungeonItems1/Treasure1"]
-shape = SubResource( 7 )
+shape = SubResource( 6 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -534,7 +539,7 @@ texture = ExtResource( 64 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DungeonItems1/GriffonBoss"]
 position = Vector2( 3, 60 )
-shape = SubResource( 8 )
+shape = SubResource( 7 )
 
 [node name="Triggers" type="Node2D" parent="DungeonItems1"]
 
@@ -544,7 +549,7 @@ script = ExtResource( 28 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DungeonItems1/Triggers/PreBoss"]
 position = Vector2( 1674, 303 )
-shape = SubResource( 6 )
+shape = SubResource( 8 )
 
 [node name="VS Mom" type="Area2D" parent="DungeonItems1/Triggers"]
 position = Vector2( 1000, 0 )
@@ -552,14 +557,14 @@ script = ExtResource( 30 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DungeonItems1/Triggers/VS Mom"]
 position = Vector2( 2115, 301 )
-shape = SubResource( 6 )
+shape = SubResource( 8 )
 
 [node name="MeetGriffon" type="Area2D" parent="DungeonItems1/Triggers"]
 position = Vector2( 1000, 0 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DungeonItems1/Triggers/MeetGriffon"]
 position = Vector2( 2889, 288 )
-shape = SubResource( 6 )
+shape = SubResource( 8 )
 
 [node name="LevelEnd" type="Area2D" parent="DungeonItems1/Triggers"]
 position = Vector2( 1000, 0 )
@@ -567,7 +572,7 @@ script = ExtResource( 31 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DungeonItems1/Triggers/LevelEnd"]
 position = Vector2( 4027, 278 )
-shape = SubResource( 6 )
+shape = SubResource( 8 )
 
 [node name="DungeonItems2" type="Node2D" parent="."]
 visible = false
