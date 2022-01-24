@@ -1,4 +1,4 @@
-[gd_scene load_steps=99 format=2]
+[gd_scene load_steps=100 format=2]
 
 [ext_resource path="res://Sprites/arrow.png" type="Texture" id=1]
 [ext_resource path="res://Tile Maps/dungeon_tileset.tres" type="TileSet" id=2]
@@ -84,6 +84,7 @@
 [ext_resource path="res://Sounds/overworld_sounds_bow_pull.wav" type="AudioStream" id=82]
 [ext_resource path="res://Sounds/overworld_sounds_bow_release.wav" type="AudioStream" id=83]
 [ext_resource path="res://Scripts/HatchTrigger.gd" type="Script" id=84]
+[ext_resource path="res://Sprites/Pickupables/Treat.png" type="Texture" id=85]
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 4000, 10 )
@@ -788,6 +789,49 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="Food1" type="Area2D" parent="Dungeon1"]
+position = Vector2( 3858, 143 )
+z_index = -100
+collision_layer = 0
+script = ExtResource( 46 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Dungeon1/Food1"]
+position = Vector2( 1, 12 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 85 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dungeon1/Food1"]
+shape = SubResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Food2" type="Area2D" parent="Dungeon1"]
+position = Vector2( 8480, 295 )
+z_index = -100
+collision_layer = 0
+script = ExtResource( 46 )
+
+[node name="Sprite" type="Sprite" parent="Dungeon1/Food2"]
+position = Vector2( 1, 12 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 85 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dungeon1/Food2"]
+shape = SubResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
 [node name="GriffonBoss" type="KinematicBody2D" parent="Dungeon1"]
 position = Vector2( 5205, 275 )
 rotation = 3.14159
@@ -1322,6 +1366,8 @@ stream = ExtResource( 9 )
 [connection signal="body_entered" from="Dungeon1/Treasure2" to="Dungeon1/Treasure2" method="_on_Treasure1_body_entered"]
 [connection signal="body_entered" from="Dungeon1/Treasure3" to="Dungeon1/Treasure3" method="_on_Treasure1_body_entered"]
 [connection signal="body_entered" from="Dungeon1/Treasure4" to="Dungeon1/Treasure4" method="_on_Treasure1_body_entered"]
+[connection signal="body_entered" from="Dungeon1/Food1" to="Dungeon1/Food1" method="_on_Treasure1_body_entered"]
+[connection signal="body_entered" from="Dungeon1/Food2" to="Dungeon1/Food2" method="_on_Treasure1_body_entered"]
 [connection signal="tween_all_completed" from="Dungeon1/GriffonBoss/Tween" to="Dungeon1/GriffonBoss" method="_on_Tween_tween_all_completed"]
 [connection signal="body_entered" from="Dungeon1/Triggers/PreBoss" to="Dungeon1/Triggers/PreBoss" method="_on_BossEncounter_body_entered"]
 [connection signal="body_entered" from="Dungeon1/Triggers/VS Mom" to="Dungeon1/Triggers/VS Mom" method="_on_BossEncounter2_body_entered"]
