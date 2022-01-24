@@ -56,7 +56,7 @@ func _physics_process(delta):
 	#facing
 	if(raw_input.x > 0):
 		get_node("CharacterRig").scale.x = 0.22
-	else:
+	if(raw_input.x < 0):
 		get_node("CharacterRig").scale.x = -0.22
 	
 	if(draw_time >= 0):

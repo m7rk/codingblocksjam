@@ -654,7 +654,6 @@ texture = ExtResource( 57 )
 
 [node name="BoneWing2" type="Node2D" parent="DungeonItems1/GriffonBoss/CharacterRig/Torso"]
 position = Vector2( 53.334, -76.6667 )
-rotation = 0.0562359
 
 [node name="Wing2" type="Sprite" parent="DungeonItems1/GriffonBoss/CharacterRig/Torso/BoneWing2"]
 position = Vector2( -113.334, -146.666 )
@@ -663,7 +662,6 @@ texture = ExtResource( 62 )
 
 [node name="BoneWing1" type="Node2D" parent="DungeonItems1/GriffonBoss/CharacterRig/Torso"]
 position = Vector2( 53.334, -76.6667 )
-rotation = 0.0421769
 
 [node name="Wing1" type="Sprite" parent="DungeonItems1/GriffonBoss/CharacterRig/Torso/BoneWing1"]
 position = Vector2( -226.668, -163.333 )
@@ -788,7 +786,7 @@ __meta__ = {
 }
 
 [node name="LevelEnd" type="Area2D" parent="DungeonItems1/Triggers"]
-position = Vector2( 8256, 47 )
+position = Vector2( 7807, 65 )
 script = ExtResource( 31 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DungeonItems1/Triggers/LevelEnd"]

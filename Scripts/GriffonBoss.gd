@@ -4,8 +4,9 @@ extends KinematicBody2D
 # Declare member variables here. Examples:
 # var a = 2
 var active = false
-var SPEED = 100
-var TARGET_START = Vector2(4500, 250)
+var SPEED = 400
+var TARGET_START = Vector2(4650, 250)
+onready var fireball = preload("res://Scenes/Fire.tscn")
 # intro
 # swoop left
 # swoop right
@@ -23,7 +24,7 @@ func _physics_process(delta):
 			if(TARGET_START.distance_to(global_position) < 5):
 				phase = "IDLE"
 		if(phase == "IDLE"):
-			if(get_node("../../Player").aim_time > 1.5):
+			if(get_node("../../Player").draw_time > 1.5):
 				phase = "SWOOP"
 		if(phase == "SWOOP"):
 			move_and_slide(Vector2(0,-1) * 2 * SPEED)
@@ -47,3 +48,8 @@ func onHit():
 	yield(get_tree().create_timer(2.0), "timeout")
 	get_node("../../Camera").frozen = false
 	queue_free()
+	
+func fireball():
+	var launched = fireball().instantiate()
+	launched.global_position = global_position
+	get_parent().add_child(launched)
