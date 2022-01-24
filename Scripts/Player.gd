@@ -52,6 +52,13 @@ func _physics_process(delta):
 	var target = Vector2(0,10000)
 	
 	arrow_node.visible = draw_time <= 0.5
+	
+	#facing
+	if(raw_input.x > 0):
+		get_node("CharacterRig").scale.x = 0.22
+	else:
+		get_node("CharacterRig").scale.x = -0.22
+	
 	if(draw_time >= 0):
 		get_node("../Aimer").global_position = target
 		draw_time -= delta

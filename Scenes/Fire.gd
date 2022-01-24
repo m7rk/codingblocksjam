@@ -1,4 +1,4 @@
-extends Area2D
+extends Node2D
 
 
 # Declare member variables here. Examples:
@@ -14,11 +14,3 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
-
-
-func _on_Hatch_body_entered(body):
-	get_node("../../Egg").frame = get_node("../../Egg").frame + 1
-	get_node("../../Egg/Crack").play()
-	if(get_node("../../Egg").frame == 3):
-		get_node("../../../Peter").visible = true
-		get_node("../../../Peter").active = true

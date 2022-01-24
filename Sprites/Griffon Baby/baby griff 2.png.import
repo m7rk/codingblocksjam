@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/baby griff 6.png-3da73f6e363e671bd5ae3440f359b70c.stex"
+path="res://.import/baby griff 2.png-1acce64cdf69c89c8919e1a1c5e84c1c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Griffon Babe/baby griff 6.png"
-dest_files=[ "res://.import/baby griff 6.png-3da73f6e363e671bd5ae3440f359b70c.stex" ]
+source_file="res://Sprites/Griffon Baby/baby griff 2.png"
+dest_files=[ "res://.import/baby griff 2.png-1acce64cdf69c89c8919e1a1c5e84c1c.stex" ]
 
 [params]
 
