@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/sm_attack3.mp3-d022f6d21bb92ae3aca10ae3f4f6b1d5.mp3str"
+
+[deps]
+
+source_file="res://Sounds/swordman/sm_attack3.mp3"
+dest_files=[ "res://.import/sm_attack3.mp3-d022f6d21bb92ae3aca10ae3f4f6b1d5.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

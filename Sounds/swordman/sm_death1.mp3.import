@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/sm_death1.mp3-4c31b3b4dad94879985f4e5d76e30814.mp3str"
+
+[deps]
+
+source_file="res://Sounds/swordman/sm_death1.mp3"
+dest_files=[ "res://.import/sm_death1.mp3-4c31b3b4dad94879985f4e5d76e30814.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

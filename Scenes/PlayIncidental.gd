@@ -16,7 +16,7 @@ func _ready():
 #	pass
 
 
-func _on_Treasure1_body_entered(body):
-	if(get_node("../../Camera/Backpack").addItem(name)):
+func _on_PlayIncidental_body_entered(body):
+	if(body.name == "Player"):
 		queue_free()
-		get_node("../../Player/GetTreasure").play()
+		get_node("../../../Music").playSong("FindBaby")

@@ -16,7 +16,5 @@ func _ready():
 #	pass
 
 
-func _on_Treasure1_body_entered(body):
-	if(get_node("../../Camera/Backpack").addItem(name)):
-		queue_free()
-		get_node("../../Player/GetTreasure").play()
+func _on_Hatch_body_entered(body):
+	get_node("../../Egg").sprite_frame = get_node("../../Egg").sprite_frame + 1

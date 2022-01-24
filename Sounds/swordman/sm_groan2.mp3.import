@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/sm_groan2.mp3-37cb4935bd9b5ecb1ee0465e67d54ddd.mp3str"
+
+[deps]
+
+source_file="res://Sounds/swordman/sm_groan2.mp3"
+dest_files=[ "res://.import/sm_groan2.mp3-37cb4935bd9b5ecb1ee0465e67d54ddd.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

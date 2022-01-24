@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/skull_idle2.mp3-e1aef51f8dbf040798070829374cd46c.mp3str"
+
+[deps]
+
+source_file="res://Sounds/skull/skull_idle2.mp3"
+dest_files=[ "res://.import/skull_idle2.mp3-e1aef51f8dbf040798070829374cd46c.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
