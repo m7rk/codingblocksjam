@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/baby griff 13.png-726c4461fb9c379695c9e7aa3d223af7.stex"
+path="res://.import/frame0004.png-0185939307607323299da900df6db609.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Baby Griff Parts/baby griff 13.png"
-dest_files=[ "res://.import/baby griff 13.png-726c4461fb9c379695c9e7aa3d223af7.stex" ]
+source_file="res://Trap Fireball Frames/frame0004.png"
+dest_files=[ "res://.import/frame0004.png-0185939307607323299da900df6db609.stex" ]
 
 [params]
 
