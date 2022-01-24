@@ -17,8 +17,9 @@ func _ready():
 
 
 func _on_Hatch_body_entered(body):
+	queue_free()
 	get_node("../../Egg").frame = get_node("../../Egg").frame + 1
 	get_node("../../Egg/Crack").play()
-	if(get_node("../../Egg").frame == 3):
+	if(get_node("../../Egg").frame == 4):
 		get_node("../../../Peter").visible = true
 		get_node("../../../Peter").active = true

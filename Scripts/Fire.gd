@@ -17,3 +17,8 @@ func _process(delta):
 
 func set_velocity(v):
 	vel = v
+	scale = Vector2(2 * sign(v.x),2)
+
+
+func _on_Fire_body_entered(body):
+	body.onHit()

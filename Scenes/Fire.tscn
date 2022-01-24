@@ -7,8 +7,9 @@
 extents = Vector2( 5.50001, 7.50001 )
 
 [node name="Fire" type="Area2D"]
-scale = Vector2( 14.2857, 14.2857 )
-collision_layer = 2
+scale = Vector2( 2, 2 )
+z_index = 100
+collision_layer = 32
 collision_mask = 0
 script = ExtResource( 2 )
 
@@ -19,6 +20,11 @@ shape = SubResource( 1 )
 position = Vector2( -15, 2 )
 scale = Vector2( 0.07, 0.07 )
 frames = ExtResource( 1 )
+frame = 2
+speed_scale = 2.0
+playing = true
 __meta__ = {
 "_edit_lock_": true
 }
+
+[connection signal="body_entered" from="." to="." method="_on_Fire_body_entered"]
