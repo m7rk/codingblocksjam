@@ -6,13 +6,8 @@
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 1, 1 )
 
-[node name="Arrow" type="Area2D"]
-collision_layer = 2
-collision_mask = 0
+[node name="ArrowRoot" type="Node2D"]
 script = ExtResource( 3 )
-
-[node name="CShape" type="CollisionShape2D" parent="."]
-shape = SubResource( 1 )
 
 [node name="ArrowSprite" type="Sprite" parent="."]
 position = Vector2( -20, -30 )
@@ -22,4 +17,14 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[connection signal="body_entered" from="." to="." method="_on_Arrow_body_entered"]
+[node name="Arrow" type="Area2D" parent="ArrowSprite"]
+position = Vector2( 285.714, 428.571 )
+scale = Vector2( 14.2857, 14.2857 )
+collision_layer = 2
+collision_mask = 0
+
+[node name="CShape" type="CollisionShape2D" parent="ArrowSprite/Arrow"]
+position = Vector2( 1, -30 )
+shape = SubResource( 1 )
+
+[connection signal="body_entered" from="ArrowSprite/Arrow" to="." method="_on_Arrow_body_entered"]

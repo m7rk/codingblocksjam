@@ -1,4 +1,5 @@
-extends Area2D
+extends Node2D
+
 onready var arrow_sprite = get_node("ArrowSprite")
 onready var alt_arrow_sprite = preload("res://Sprites/arrow_stuck.png")
 
@@ -16,7 +17,7 @@ func _ready():
 
 func impact():
 	disabled = true
-	get_node("CShape").queue_free()
+	get_node("ArrowSprite/Arrow/CShape").queue_free()
 	get_node("ArrowSprite").texture = alt_arrow_sprite
 	z_index = -899 #floor is -1000
 	
@@ -44,7 +45,6 @@ func set_arrow_target(x,y):
 		scale = Vector2(-1,1)
 	
 
-
 func _on_Arrow_body_entered(body):
-	impact()
+	queue_free()
 	body.onHit()

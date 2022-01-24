@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Target.png-e977b3fa9637f43c02a8fd4ee98a3624.stex"
+path="res://.import/floor tile four.png-a3d4135afe4b2f057fb9b6670ed56d69.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Target.png"
-dest_files=[ "res://.import/Target.png-e977b3fa9637f43c02a8fd4ee98a3624.stex" ]
+source_file="res://Tile Maps/Tileset/floor tile four.png"
+dest_files=[ "res://.import/floor tile four.png-a3d4135afe4b2f057fb9b6670ed56d69.stex" ]
 
 [params]
 

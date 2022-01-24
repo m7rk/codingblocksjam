@@ -61,14 +61,14 @@ func _physics_process(delta):
 		if(aim_time > AIM_LIMIT):
 			aim_time = AIM_LIMIT
 		
+		arrow_node.visible = true
 		arrow_node.position = ARROW_BONE_ROOT_POSITION + Vector2(-20*aim_time, -20*aim_time)
-		
 		rigAim(getAimerPosition())
 	else:
 		aim_time = 0
 		get_node("../Aimer").rotation_degrees = 0
-		
-		
+		arrow_node.visible = false
+	
 	get_node("../Aimer").global_position = target
 	var aimscale = getAimScale()
 	get_node("../Aimer").global_scale = Vector2(aimscale,aimscale)
