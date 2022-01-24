@@ -1,9 +1,12 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Sprites/bag.png" type="Texture" id=1]
-[ext_resource path="res://Scripts/inventory.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/Inventory.gd" type="Script" id=2]
 [ext_resource path="res://Scripts/Goody.gd" type="Script" id=3]
 [ext_resource path="res://Sprites/crate.png" type="Texture" id=4]
+[ext_resource path="res://Scenes/ItemMenu.gd" type="Script" id=5]
+[ext_resource path="res://Music/IN BETWEEN.mp3" type="AudioStream" id=6]
+[ext_resource path="res://Sprites/transition.png" type="Texture" id=7]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 25, 24.5 )
@@ -11,11 +14,11 @@ extents = Vector2( 25, 24.5 )
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 186.25, 167 )
 
-[node name="test_box" type="Node2D"]
-position = Vector2( 242, 195 )
+[node name="ItemMenu" type="Node2D"]
+script = ExtResource( 5 )
 
 [node name="testbox1" type="KinematicBody2D" parent="."]
-position = Vector2( -83, -78 )
+position = Vector2( 86, 255 )
 input_pickable = true
 script = ExtResource( 3 )
 
@@ -33,7 +36,7 @@ __meta__ = {
 }
 
 [node name="testbox2" type="KinematicBody2D" parent="."]
-position = Vector2( -62, 33 )
+position = Vector2( 140, 93 )
 input_pickable = true
 script = ExtResource( 3 )
 
@@ -51,7 +54,7 @@ __meta__ = {
 }
 
 [node name="testbox3" type="KinematicBody2D" parent="."]
-position = Vector2( 48, -34 )
+position = Vector2( 159, 202 )
 input_pickable = true
 script = ExtResource( 3 )
 
@@ -69,23 +72,29 @@ __meta__ = {
 }
 
 [node name="backpack" type="Area2D" parent="."]
-position = Vector2( 420, 80 )
+position = Vector2( 629, 227 )
 script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="backpack"]
 position = Vector2( -8.75, 0 )
 shape = SubResource( 2 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="Sprite" type="Sprite" parent="backpack"]
 scale = Vector2( 0.5, 0.5 )
 z_index = -1
 texture = ExtResource( 1 )
+__meta__ = {
+"_edit_lock_": true
+}
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-margin_left = -104.0
-margin_top = -193.0
-margin_right = 163.0
-margin_bottom = -153.0
+margin_left = 39.0
+margin_top = 19.0
+margin_right = 306.0
+margin_bottom = 59.0
 text = "Collected"
 fit_content_height = true
 scroll_active = false
@@ -95,10 +104,10 @@ __meta__ = {
 }
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="."]
-margin_left = 309.0
-margin_top = -195.0
-margin_right = 576.0
-margin_bottom = -155.0
+margin_left = 529.0
+margin_top = 11.0
+margin_right = 796.0
+margin_bottom = 51.0
 text = "Backpack"
 fit_content_height = true
 scroll_active = false
@@ -107,8 +116,29 @@ __meta__ = {
 "_editor_description_": ""
 }
 
+[node name="Button" type="Button" parent="."]
+margin_left = 754.0
+margin_top = 451.0
+margin_right = 834.0
+margin_bottom = 471.0
+text = "CONTINUE"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Transitioner" type="Sprite" parent="."]
+position = Vector2( 450, 250 )
+texture = ExtResource( 7 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+
+[node name="Tween" type="Tween" parent="."]
+
 [connection signal="input_event" from="testbox1" to="testbox1" method="_on_KinematicBody2D_input_event"]
 [connection signal="input_event" from="testbox2" to="testbox2" method="_on_KinematicBody2D_input_event"]
 [connection signal="input_event" from="testbox3" to="testbox3" method="_on_KinematicBody2D_input_event"]
 [connection signal="body_entered" from="backpack" to="backpack" method="_on_backpack_body_entered"]
 [connection signal="body_exited" from="backpack" to="backpack" method="_on_backpack_body_exited"]
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="tween_all_completed" from="Tween" to="." method="_on_Tween_tween_all_completed"]
