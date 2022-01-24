@@ -152,7 +152,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id=10]
 resource_name = "Draw"
-length = 3.0
+length = 2.0
 tracks/0/type = "value"
 tracks/0/path = NodePath("Pelvis/BoneTorso/Torso/BoneUpperLeftArm:rotation_degrees")
 tracks/0/interp = 1
@@ -160,7 +160,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 1, 2, 2.5, 3 ),
+"times": PoolRealArray( 0, 1, 1.5, 2 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
 "values": [ -138.7, -56.0, -50.0, 0.0 ]
@@ -172,7 +172,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 1, 2, 2.5, 3 ),
+"times": PoolRealArray( 0, 1, 1.5, 2 ),
 "transitions": PoolRealArray( 1, 1, 1, 1 ),
 "update": 0,
 "values": [ -113.3, -36.7, -36.0, 0.0 ]
@@ -184,7 +184,7 @@ tracks/2/loop_wrap = true
 tracks/2/imported = false
 tracks/2/enabled = true
 tracks/2/keys = {
-"times": PoolRealArray( 1, 3 ),
+"times": PoolRealArray( 0, 2 ),
 "transitions": PoolRealArray( 1, 1 ),
 "update": 0,
 "values": [ 0.0, 0.0 ]
