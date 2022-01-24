@@ -147,3 +147,7 @@ func rigAim(vec):
 	else:
 		get_node("CharacterRig/Pelvis/BoneTorso/Torso/BoneUpperRightArm").rotation_degrees = -55 + 57 * atan2(vec.y,vec.x)
 		get_node("CharacterRig/Pelvis/BoneTorso/Torso/BoneUpperLeftArm").rotation_degrees = offset + 57 * atan2(vec.y,vec.x)
+
+func onHit():
+	pass
+	# later, treasure drop

@@ -323,7 +323,7 @@ __meta__ = {
 
 [node name="Player" type="KinematicBody2D" parent="."]
 position = Vector2( 4300, 300 )
-collision_mask = 9
+collision_mask = 41
 script = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
@@ -483,6 +483,8 @@ __meta__ = {
 visible = false
 position = Vector2( 5775, 148 )
 rotation = 3.14159
+collision_layer = 32
+collision_mask = 0
 script = ExtResource( 81 )
 
 [node name="CharacterRig" type="Node2D" parent="Peter"]
@@ -923,6 +925,7 @@ __meta__ = {
 [node name="Egg" type="AnimatedSprite" parent="DungeonItems1"]
 position = Vector2( 5773, 184 )
 scale = Vector2( 0.07, 0.07 )
+z_index = -100
 frames = ExtResource( 11 )
 
 [node name="Crack" type="AudioStreamPlayer2D" parent="DungeonItems1/Egg"]
@@ -1006,6 +1009,7 @@ texture = ExtResource( 36 )
 
 [node name="Aimer" type="Sprite" parent="."]
 position = Vector2( 1257, 258 )
+z_index = 900
 texture = ExtResource( 8 )
 
 [node name="Camera" type="Camera2D" parent="."]
