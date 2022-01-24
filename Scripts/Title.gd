@@ -22,6 +22,5 @@ func _input(event):
 		get_node("Tween").start()
 		get_node("FrontSprite").queue_free()
 
-
 func _on_Tween_tween_all_completed():
 	get_tree().change_scene("res://Scenes/Dungeon.tscn")

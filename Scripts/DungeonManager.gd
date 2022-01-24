@@ -37,7 +37,14 @@ func finish():
 	get_node("Tween").interpolate_property(get_node("Music/Main"), "volume_db", 0, -80, 3, Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
 	get_node("Tween").start()
 	yield(get_tree().create_timer(3.0), "timeout")
-	get_tree().change_scene("res://Scenes/ItemMenu.tscn")
+	if(AppState.level_to_load == 3):
+		get_tree().change_scene("res://Scenes/End.tscn")
+	else:
+		AppState.stored_its = []
+		for v in get_node("Camera/Backpack").get_children():
+			AppState.stored_its.append([v.name,v.position])
+		get_tree().change_scene("res://Scenes/ItemMenu.tscn")
+		
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):

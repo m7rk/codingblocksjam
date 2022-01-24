@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Sprites/Pickupables/Gold Bar.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/BackpackItem.gd" type="Script" id=2]
+
+[node name="GoldTreasure" type="Sprite"]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( -150, 230 )
+texture = ExtResource( 1 )
+script = ExtResource( 2 )
+
+[node name="Area2D" type="Area2D" parent="."]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
+polygon = PoolVector2Array( 97.5, -77.3, 97.5, -75.3, 117.5, -53.3, 117.5, -50.1, 114.9, -43.5, 112.1, -43.5, -59.9, 64.5, -62.7, 64.5, -124.5, 50.1, -124.5, 48, -127.5, 40.5, -124.6, 40.5, -101.6, 3.5, -99, 3.5, 43.5, -80.6, 43.5, -82.7 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Tween" type="Tween" parent="."]
+
+[connection signal="tween_all_completed" from="Tween" to="." method="_on_Tween_tween_all_completed"]

@@ -23,3 +23,7 @@ func _on_Button_pressed():
 func _process(delta):
 	if(!exiting):
 		get_node("Transitioner").modulate = lerp(get_node("Transitioner").modulate,Color(0,0,0,0), delta)
+
+
+func _on_AudioStreamPlayer_finished():
+	get_node("AudioStreamPlayer").play(1.14)

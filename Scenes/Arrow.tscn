@@ -4,7 +4,7 @@
 [ext_resource path="res://Scripts/Arrow.gd" type="Script" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 1, 1 )
+extents = Vector2( 11, 1 )
 
 [node name="ArrowRoot" type="Node2D"]
 script = ExtResource( 3 )
@@ -24,7 +24,7 @@ collision_layer = 2
 collision_mask = 0
 
 [node name="CShape" type="CollisionShape2D" parent="ArrowSprite/Arrow"]
-position = Vector2( 1, -30 )
+position = Vector2( -9, -30 )
 shape = SubResource( 1 )
 
 [connection signal="body_entered" from="ArrowSprite/Arrow" to="." method="_on_Arrow_body_entered"]

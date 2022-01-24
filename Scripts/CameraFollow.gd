@@ -11,10 +11,24 @@ func _ready():
 	targ = global_position.x
 	get_node("../LeftBarrier").global_position.x = get_node("../Player").global_position.x - PROGRESS_LINE
 
+func backpack(delta):
+	if(get_viewport().get_mouse_position().x < get_node("Backpack").global_position.x + get_node("Backpack").scale.x * 300 && get_viewport().get_mouse_position().y < get_node("Backpack").global_position.y+ get_node("Backpack").scale.y * 300):
+		get_node("Backpack").scale = lerp(get_node("Backpack").scale,Vector2(0.3,0.3),5*delta)
+		get_node("Backpack").modulate = lerp(get_node("Backpack").modulate,Color(1,1,1,0.5),5*delta)
+		get_node("Backpack").position = lerp(get_node("Backpack").position,Vector2(-400 + 100,50 + 100),5*delta)
+		for i in get_node("Backpack").get_children():
+			i.modulate = lerp(i.modulate,Color(1,1,1,2),5*delta)
+	else:
+		get_node("Backpack").scale = lerp(get_node("Backpack").scale,Vector2(0.1,0.1),5*delta)
+		get_node("Backpack").modulate = lerp(get_node("Backpack").modulate,Color(1,1,1,1),5*delta)
+		get_node("Backpack").position = lerp(get_node("Backpack").position,Vector2(-400,50),5*delta)
+		for i in get_node("Backpack").get_children():
+			i.modulate = lerp(i.modulate,Color(1,1,1,0),5*delta)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	global_position.x = lerp(global_position.x, targ, 3 * delta)
+	backpack(delta)
 	if(endgame):
 		if(get_node("../Player").global_position.x - 450 > global_position.x):
 			get_parent().finish()
@@ -26,11 +40,4 @@ func _process(delta):
 		get_node("../RightBarrier").global_position.x = get_node("../Player").global_position.x - PROGRESS_LINE + 900
 		targ = (450 - PROGRESS_LINE) + get_node("../Player").global_position.x
 
-	if(get_viewport().get_mouse_position().x < get_node("Backpack").global_position.x + get_node("Backpack").scale.x * 300 && get_viewport().get_mouse_position().y < get_node("Backpack").global_position.y+ get_node("Backpack").scale.y * 300):
-		get_node("Backpack").scale = lerp(get_node("Backpack").scale,Vector2(0.3,0.3),5*delta)
-		get_node("Backpack").modulate = lerp(get_node("Backpack").modulate,Color(1,1,1,0.5),5*delta)
-		get_node("Backpack").position = lerp(get_node("Backpack").position,Vector2(-400 + 100,50 + 100),5*delta)
-	else:
-		get_node("Backpack").scale = lerp(get_node("Backpack").scale,Vector2(0.1,0.1),5*delta)
-		get_node("Backpack").modulate = lerp(get_node("Backpack").modulate,Color(1,1,1,1),5*delta)
-		get_node("Backpack").position = lerp(get_node("Backpack").position,Vector2(-400,50),5*delta)
+

@@ -20,11 +20,12 @@ shape = SubResource( 1 )
 position = Vector2( -15, 2 )
 scale = Vector2( 0.07, 0.07 )
 frames = ExtResource( 1 )
-frame = 4
-speed_scale = 2.0
+frame = 3
+speed_scale = 4.0
 playing = true
 __meta__ = {
 "_edit_lock_": true
 }
 
+[connection signal="area_entered" from="." to="." method="_on_Fire_area_entered"]
 [connection signal="body_entered" from="." to="." method="_on_Fire_body_entered"]

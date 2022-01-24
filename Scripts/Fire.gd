@@ -26,3 +26,8 @@ func set_velocity(v):
 func _on_Fire_body_entered(body):
 	body.onHit()
 	queue_free()
+
+
+func _on_Fire_area_entered(area):
+	area.get_parent().onHit()
+	queue_free()

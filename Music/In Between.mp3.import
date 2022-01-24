@@ -11,5 +11,5 @@ dest_files=[ "res://.import/IN BETWEEN.mp3-d86591375bd18ac10376c08f982168fb.mp3s
 
 [params]
 
-loop=true
-loop_offset=0
+loop=false
+loop_offset=0.0

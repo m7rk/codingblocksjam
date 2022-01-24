@@ -132,6 +132,7 @@ texture = ExtResource( 7 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
+autoplay = true
 
 [node name="Tween" type="Tween" parent="."]
 
@@ -141,4 +142,5 @@ stream = ExtResource( 6 )
 [connection signal="body_entered" from="backpack" to="backpack" method="_on_backpack_body_entered"]
 [connection signal="body_exited" from="backpack" to="backpack" method="_on_backpack_body_exited"]
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+[connection signal="finished" from="AudioStreamPlayer" to="." method="_on_AudioStreamPlayer_finished"]
 [connection signal="tween_all_completed" from="Tween" to="." method="_on_Tween_tween_all_completed"]

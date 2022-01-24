@@ -152,5 +152,15 @@ func rigAim(vec):
 		get_node("CharacterRig/Pelvis/BoneTorso/Torso/BoneUpperLeftArm").rotation_degrees = offset + 57 * atan2(vec.y,vec.x)
 
 func onHit():
-	pass
-	# later, treasure drop
+	if(get_node("../Camera/Backpack").get_child_count() > 0):
+		var v = get_node("../Camera/Backpack").get_child(rand_range(0,get_node("../Camera/Backpack").get_child_count()))
+		v.get_parent().remove_child(v)
+		add_child(v)
+		v.position = Vector2(0,-150)
+		v.global_scale = Vector2(0.2,0.2)
+		v.dissolve()
+
+
+func _on_UpperHitbox_body_entered(body):
+	onHit()
+	body.onHit()
