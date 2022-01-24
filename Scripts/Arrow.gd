@@ -48,3 +48,5 @@ func set_arrow_target(x,y):
 func _on_Arrow_body_entered(body):
 	queue_free()
 	body.onHit()
+	if(body.name == "Peter"):
+		body.friendlyFire()

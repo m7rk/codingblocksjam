@@ -41,5 +41,12 @@ func _process(delta):
 		get_node("../LeftBarrier").global_position.x = get_node("../Player").global_position.x - PROGRESS_LINE
 		get_node("../RightBarrier").global_position.x = get_node("../Player").global_position.x - PROGRESS_LINE + 900
 		targ = (450 - PROGRESS_LINE) + get_node("../Player").global_position.x
+		
+	get_node("Mood Label").visible = get_node("../Peter").active
+	get_node("Mood").visible = get_node("../Peter").active
+	
+	get_node("Mood").text = get_node("../Peter").state
+	get_node("Mood").modulate = get_node("../Peter").colorLookup()
+		
 
 
