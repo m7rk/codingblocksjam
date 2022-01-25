@@ -1321,7 +1321,7 @@ __meta__ = {
 }
 
 [node name="PreBoss" type="Area2D" parent="Dungeon2/Triggers"]
-position = Vector2( 5379, 84 )
+position = Vector2( 4987, 108 )
 script = ExtResource( 28 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dungeon2/Triggers/PreBoss"]
@@ -1453,6 +1453,46 @@ __meta__ = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dungeon2/Food2"]
+shape = SubResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Food3" type="Area2D" parent="Dungeon2"]
+position = Vector2( 6767, 221 )
+z_index = -100
+collision_layer = 0
+script = ExtResource( 46 )
+
+[node name="Sprite" type="Sprite" parent="Dungeon2/Food3"]
+position = Vector2( 1, 12 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 85 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dungeon2/Food3"]
+shape = SubResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Food4" type="Area2D" parent="Dungeon2"]
+position = Vector2( 6775, 375 )
+z_index = -100
+collision_layer = 0
+script = ExtResource( 46 )
+
+[node name="Sprite" type="Sprite" parent="Dungeon2/Food4"]
+position = Vector2( 1, 12 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 85 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dungeon2/Food4"]
 shape = SubResource( 6 )
 __meta__ = {
 "_edit_lock_": true
@@ -2400,6 +2440,8 @@ stream = ExtResource( 9 )
 [connection signal="body_entered" from="Dungeon2/Treasure4" to="Dungeon2/Treasure4" method="_on_Treasure1_body_entered"]
 [connection signal="body_entered" from="Dungeon2/Food1" to="Dungeon2/Food1" method="_on_Treasure1_body_entered"]
 [connection signal="body_entered" from="Dungeon2/Food2" to="Dungeon2/Food2" method="_on_Treasure1_body_entered"]
+[connection signal="body_entered" from="Dungeon2/Food3" to="Dungeon2/Food3" method="_on_Treasure1_body_entered"]
+[connection signal="body_entered" from="Dungeon2/Food4" to="Dungeon2/Food4" method="_on_Treasure1_body_entered"]
 [connection signal="body_entered" from="Dungeon3/Triggers/LevelEnd" to="Dungeon3/Triggers/LevelEnd" method="_on_LevelEnd_body_entered"]
 [connection signal="body_entered" from="Dungeon3/Treasure1" to="Dungeon3/Treasure1" method="_on_Treasure1_body_entered"]
 [connection signal="body_entered" from="Dungeon3/Treasure2" to="Dungeon3/Treasure2" method="_on_Treasure1_body_entered"]
