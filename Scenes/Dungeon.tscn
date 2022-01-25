@@ -103,7 +103,7 @@
 [ext_resource path="res://Sounds/griffon/adult_hurt2.mp3" type="AudioStream" id=101]
 
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 4000, 10 )
+extents = Vector2( 10000, 10 )
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 10, 600 )
@@ -539,7 +539,6 @@ position = Vector2( 3.5, -74 )
 shape = SubResource( 16 )
 
 [node name="Peter" type="KinematicBody2D" parent="."]
-visible = false
 position = Vector2( 5895, 137 )
 z_index = 50
 collision_layer = 16
@@ -1173,7 +1172,7 @@ position = Vector2( 4327, 247 )
 [node name="RopeTrap" type="Sprite" parent="Dungeon2"]
 position = Vector2( 2493, 50 )
 scale = Vector2( 0.5, 0.5 )
-z_index = -200
+z_index = -900
 texture = ExtResource( 89 )
 script = ExtResource( 90 )
 
@@ -1214,7 +1213,7 @@ scale = Vector2( 0.333333, 0.351667 )
 [node name="RopeTrap2" type="Sprite" parent="Dungeon2"]
 position = Vector2( 3219, 51 )
 scale = Vector2( 0.5, 0.5 )
-z_index = -200
+z_index = -900
 texture = ExtResource( 89 )
 script = ExtResource( 90 )
 
@@ -1234,7 +1233,7 @@ position = Vector2( 16, 272 )
 [node name="RopeTrap3" type="Sprite" parent="Dungeon2"]
 position = Vector2( 3219, 51 )
 scale = Vector2( 0.5, 0.5 )
-z_index = -200
+z_index = -900
 texture = ExtResource( 89 )
 script = ExtResource( 90 )
 
@@ -1254,7 +1253,7 @@ position = Vector2( 16, 272 )
 [node name="RopeTrap4" type="Sprite" parent="Dungeon2"]
 position = Vector2( 3425, 55 )
 scale = Vector2( 0.5, 0.5 )
-z_index = -200
+z_index = -900
 texture = ExtResource( 89 )
 script = ExtResource( 90 )
 
@@ -1340,6 +1339,125 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="Treasure1" type="Area2D" parent="Dungeon2"]
+position = Vector2( 1858, 395 )
+z_index = -100
+collision_layer = 0
+script = ExtResource( 46 )
+
+[node name="Sprite" type="Sprite" parent="Dungeon2/Treasure1"]
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 45 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dungeon2/Treasure1"]
+shape = SubResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Treasure2" type="Area2D" parent="Dungeon2"]
+position = Vector2( 3208, 301 )
+z_index = -100
+collision_layer = 0
+script = ExtResource( 46 )
+
+[node name="Sprite" type="Sprite" parent="Dungeon2/Treasure2"]
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 45 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dungeon2/Treasure2"]
+shape = SubResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Treasure3" type="Area2D" parent="Dungeon2"]
+position = Vector2( 3110, 303 )
+z_index = -100
+collision_layer = 0
+script = ExtResource( 46 )
+
+[node name="Sprite" type="Sprite" parent="Dungeon2/Treasure3"]
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 45 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dungeon2/Treasure3"]
+shape = SubResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Treasure4" type="Area2D" parent="Dungeon2"]
+position = Vector2( 3743, 142 )
+z_index = -100
+collision_layer = 0
+script = ExtResource( 46 )
+
+[node name="Sprite" type="Sprite" parent="Dungeon2/Treasure4"]
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 45 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dungeon2/Treasure4"]
+shape = SubResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Food1" type="Area2D" parent="Dungeon2"]
+position = Vector2( 3858, 143 )
+z_index = -100
+collision_layer = 0
+script = ExtResource( 46 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Dungeon2/Food1"]
+position = Vector2( 1, 12 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 85 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dungeon2/Food1"]
+shape = SubResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Food2" type="Area2D" parent="Dungeon2"]
+position = Vector2( 8480, 295 )
+z_index = -100
+collision_layer = 0
+script = ExtResource( 46 )
+
+[node name="Sprite" type="Sprite" parent="Dungeon2/Food2"]
+position = Vector2( 1, 12 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 85 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dungeon2/Food2"]
+shape = SubResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
 [node name="Dungeon3" type="Node2D" parent="."]
 
 [node name="Level" type="Node2D" parent="Dungeon3"]
@@ -1365,107 +1483,6 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="KinematicBody2D" type="KinematicBody2D" parent="Dungeon3"]
-position = Vector2( 9000, 0 )
-
-[node name="CharacterRig" type="Node2D" parent="Dungeon3/KinematicBody2D"]
-position = Vector2( 347, 263 )
-scale = Vector2( 0.3, 0.3 )
-
-[node name="Pelvis" type="Node2D" parent="Dungeon3/KinematicBody2D/CharacterRig"]
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BoneUpperRightLeg" type="Node2D" parent="Dungeon3/KinematicBody2D/CharacterRig/Pelvis"]
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="UpperRightLeg" type="Sprite" parent="Dungeon3/KinematicBody2D/CharacterRig/Pelvis/BoneUpperRightLeg"]
-rotation = -0.293696
-texture = ExtResource( 35 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="LowerRightLeg" type="Sprite" parent="Dungeon3/KinematicBody2D/CharacterRig/Pelvis/BoneUpperRightLeg/UpperRightLeg"]
-texture = ExtResource( 34 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BoneUpperLeftLeg" type="Node2D" parent="Dungeon3/KinematicBody2D/CharacterRig/Pelvis"]
-position = Vector2( -42.5, 17.5 )
-rotation = 0.612344
-z_index = -1
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="UpperLeftLeg" type="Sprite" parent="Dungeon3/KinematicBody2D/CharacterRig/Pelvis/BoneUpperLeftLeg"]
-position = Vector2( 42.5, -17.5 )
-texture = ExtResource( 42 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="LowerLeftLeg" type="Sprite" parent="Dungeon3/KinematicBody2D/CharacterRig/Pelvis/BoneUpperLeftLeg/UpperLeftLeg"]
-texture = ExtResource( 38 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="BoneTorso" type="Node2D" parent="Dungeon3/KinematicBody2D/CharacterRig/Pelvis"]
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Torso" type="Sprite" parent="Dungeon3/KinematicBody2D/CharacterRig/Pelvis/BoneTorso"]
-texture = ExtResource( 37 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Head" type="Sprite" parent="Dungeon3/KinematicBody2D/CharacterRig/Pelvis/BoneTorso/Torso"]
-texture = ExtResource( 41 )
-
-[node name="UpperLeftArmBone" type="Node2D" parent="Dungeon3/KinematicBody2D/CharacterRig/Pelvis/BoneTorso"]
-position = Vector2( -105, -87.5 )
-rotation = 1.85456
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="UpperLeftArm" type="Sprite" parent="Dungeon3/KinematicBody2D/CharacterRig/Pelvis/BoneTorso/UpperLeftArmBone"]
-position = Vector2( 105, 90 )
-z_index = -1
-texture = ExtResource( 40 )
-
-[node name="LowerLeftArm" type="Sprite" parent="Dungeon3/KinematicBody2D/CharacterRig/Pelvis/BoneTorso/UpperLeftArmBone/UpperLeftArm"]
-texture = ExtResource( 39 )
-
-[node name="UpperRightArmBone" type="Node2D" parent="Dungeon3/KinematicBody2D/CharacterRig/Pelvis/BoneTorso"]
-position = Vector2( 17.5, -97.5 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="UpperRightArm" type="Sprite" parent="Dungeon3/KinematicBody2D/CharacterRig/Pelvis/BoneTorso/UpperRightArmBone"]
-position = Vector2( -15, 97.5 )
-texture = ExtResource( 43 )
-
-[node name="LowerRightArmBone" type="Node2D" parent="Dungeon3/KinematicBody2D/CharacterRig/Pelvis/BoneTorso/UpperRightArmBone/UpperRightArm"]
-position = Vector2( 52.5, -40 )
-rotation = 1.28522
-
-[node name="LowerRightArm" type="Sprite" parent="Dungeon3/KinematicBody2D/CharacterRig/Pelvis/BoneTorso/UpperRightArmBone/UpperRightArm/LowerRightArmBone"]
-position = Vector2( -57.5, 37.5 )
-texture = ExtResource( 33 )
-
-[node name="Sword" type="Sprite" parent="Dungeon3/KinematicBody2D/CharacterRig/Pelvis/BoneTorso/UpperRightArmBone/UpperRightArm/LowerRightArmBone/LowerRightArm"]
-texture = ExtResource( 36 )
-
 [node name="Triggers" type="Node2D" parent="Dungeon3"]
 
 [node name="LevelEnd" type="Area2D" parent="Dungeon3/Triggers"]
@@ -1476,6 +1493,242 @@ script = ExtResource( 31 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dungeon3/Triggers/LevelEnd"]
 position = Vector2( 0, 200 )
 shape = SubResource( 8 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Slime9" parent="Dungeon3" instance=ExtResource( 86 )]
+position = Vector2( 4570, 292 )
+
+[node name="Slime10" parent="Dungeon3" instance=ExtResource( 86 )]
+position = Vector2( 4938, 138 )
+
+[node name="Slime11" parent="Dungeon3" instance=ExtResource( 86 )]
+position = Vector2( 4990, 185 )
+
+[node name="SkeletonHead" parent="Dungeon3" instance=ExtResource( 3 )]
+position = Vector2( 2116, 355 )
+
+[node name="SkeletonHead2" parent="Dungeon3" instance=ExtResource( 3 )]
+position = Vector2( 2110, 266 )
+
+[node name="SkeletonHead3" parent="Dungeon3" instance=ExtResource( 3 )]
+position = Vector2( 3008, 229 )
+
+[node name="SkeletonHead4" parent="Dungeon3" instance=ExtResource( 3 )]
+position = Vector2( 3002, 140 )
+
+[node name="SkeletonHead5" parent="Dungeon3" instance=ExtResource( 3 )]
+position = Vector2( 3611, 466 )
+
+[node name="SkeletonHead6" parent="Dungeon3" instance=ExtResource( 3 )]
+position = Vector2( 3605, 377 )
+
+[node name="SkeletonHead7" parent="Dungeon3" instance=ExtResource( 3 )]
+position = Vector2( 4016, 276 )
+
+[node name="SkeletonHead8" parent="Dungeon3" instance=ExtResource( 3 )]
+position = Vector2( 4010, 187 )
+
+[node name="SkeletonHead9" parent="Dungeon3" instance=ExtResource( 3 )]
+position = Vector2( 4409, 336 )
+
+[node name="SkeletonHead10" parent="Dungeon3" instance=ExtResource( 3 )]
+position = Vector2( 4403, 247 )
+
+[node name="Slime12" parent="Dungeon3" instance=ExtResource( 86 )]
+position = Vector2( 4267, 290 )
+
+[node name="Slime13" parent="Dungeon3" instance=ExtResource( 86 )]
+position = Vector2( 4635, 136 )
+
+[node name="Slime14" parent="Dungeon3" instance=ExtResource( 86 )]
+position = Vector2( 4687, 183 )
+
+[node name="SkeletonHead11" parent="Dungeon3" instance=ExtResource( 3 )]
+position = Vector2( 1813, 353 )
+
+[node name="SkeletonHead12" parent="Dungeon3" instance=ExtResource( 3 )]
+position = Vector2( 1807, 264 )
+
+[node name="SkeletonHead13" parent="Dungeon3" instance=ExtResource( 3 )]
+position = Vector2( 2705, 227 )
+
+[node name="SkeletonHead14" parent="Dungeon3" instance=ExtResource( 3 )]
+position = Vector2( 2699, 138 )
+
+[node name="SkeletonHead15" parent="Dungeon3" instance=ExtResource( 3 )]
+position = Vector2( 3308, 464 )
+
+[node name="SkeletonHead16" parent="Dungeon3" instance=ExtResource( 3 )]
+position = Vector2( 3302, 375 )
+
+[node name="SkeletonHead17" parent="Dungeon3" instance=ExtResource( 3 )]
+position = Vector2( 3713, 274 )
+
+[node name="SkeletonHead18" parent="Dungeon3" instance=ExtResource( 3 )]
+position = Vector2( 3707, 185 )
+
+[node name="SkeletonHead19" parent="Dungeon3" instance=ExtResource( 3 )]
+position = Vector2( 4106, 334 )
+
+[node name="SkeletonHead20" parent="Dungeon3" instance=ExtResource( 3 )]
+position = Vector2( 4100, 245 )
+
+[node name="Slime15" parent="Dungeon3" instance=ExtResource( 86 )]
+position = Vector2( 4026, 284 )
+
+[node name="Slime16" parent="Dungeon3" instance=ExtResource( 86 )]
+position = Vector2( 4394, 130 )
+
+[node name="Slime17" parent="Dungeon3" instance=ExtResource( 86 )]
+position = Vector2( 4446, 177 )
+
+[node name="SkeletonHead21" parent="Dungeon3" instance=ExtResource( 3 )]
+position = Vector2( 1572, 347 )
+
+[node name="SkeletonHead22" parent="Dungeon3" instance=ExtResource( 3 )]
+position = Vector2( 1566, 258 )
+
+[node name="SkeletonHead23" parent="Dungeon3" instance=ExtResource( 3 )]
+position = Vector2( 2464, 221 )
+
+[node name="SkeletonHead24" parent="Dungeon3" instance=ExtResource( 3 )]
+position = Vector2( 2458, 132 )
+
+[node name="SkeletonHead25" parent="Dungeon3" instance=ExtResource( 3 )]
+position = Vector2( 3067, 458 )
+
+[node name="SkeletonHead26" parent="Dungeon3" instance=ExtResource( 3 )]
+position = Vector2( 3061, 369 )
+
+[node name="SkeletonHead27" parent="Dungeon3" instance=ExtResource( 3 )]
+position = Vector2( 3472, 268 )
+
+[node name="SkeletonHead28" parent="Dungeon3" instance=ExtResource( 3 )]
+position = Vector2( 3466, 179 )
+
+[node name="SkeletonHead29" parent="Dungeon3" instance=ExtResource( 3 )]
+position = Vector2( 3865, 328 )
+
+[node name="SkeletonHead30" parent="Dungeon3" instance=ExtResource( 3 )]
+position = Vector2( 3859, 239 )
+
+[node name="Treasure1" type="Area2D" parent="Dungeon3"]
+position = Vector2( 1858, 395 )
+z_index = -100
+collision_layer = 0
+script = ExtResource( 46 )
+
+[node name="Sprite" type="Sprite" parent="Dungeon3/Treasure1"]
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 45 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dungeon3/Treasure1"]
+shape = SubResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Treasure2" type="Area2D" parent="Dungeon3"]
+position = Vector2( 3208, 301 )
+z_index = -100
+collision_layer = 0
+script = ExtResource( 46 )
+
+[node name="Sprite" type="Sprite" parent="Dungeon3/Treasure2"]
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 45 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dungeon3/Treasure2"]
+shape = SubResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Treasure3" type="Area2D" parent="Dungeon3"]
+position = Vector2( 3110, 303 )
+z_index = -100
+collision_layer = 0
+script = ExtResource( 46 )
+
+[node name="Sprite" type="Sprite" parent="Dungeon3/Treasure3"]
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 45 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dungeon3/Treasure3"]
+shape = SubResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Treasure4" type="Area2D" parent="Dungeon3"]
+position = Vector2( 3743, 142 )
+z_index = -100
+collision_layer = 0
+script = ExtResource( 46 )
+
+[node name="Sprite" type="Sprite" parent="Dungeon3/Treasure4"]
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 45 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dungeon3/Treasure4"]
+shape = SubResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Food1" type="Area2D" parent="Dungeon3"]
+position = Vector2( 3858, 143 )
+z_index = -100
+collision_layer = 0
+script = ExtResource( 46 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Dungeon3/Food1"]
+position = Vector2( 1, 12 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 85 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dungeon3/Food1"]
+shape = SubResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Food2" type="Area2D" parent="Dungeon3"]
+position = Vector2( 8480, 295 )
+z_index = -100
+collision_layer = 0
+script = ExtResource( 46 )
+
+[node name="Sprite" type="Sprite" parent="Dungeon3/Food2"]
+position = Vector2( 1, 12 )
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 85 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dungeon3/Food2"]
+shape = SubResource( 6 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1616,6 +1869,310 @@ script = ExtResource( 31 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dungeon4/Triggers/LevelEnd"]
 position = Vector2( 0, 200 )
 shape = SubResource( 8 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Treasure1" type="Area2D" parent="Dungeon4"]
+position = Vector2( 1503, 238 )
+z_index = -100
+collision_layer = 0
+script = ExtResource( 46 )
+
+[node name="Sprite" type="Sprite" parent="Dungeon4/Treasure1"]
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 45 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dungeon4/Treasure1"]
+shape = SubResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Treasure2" type="Area2D" parent="Dungeon4"]
+position = Vector2( 1264, 160 )
+z_index = -100
+collision_layer = 0
+script = ExtResource( 46 )
+
+[node name="Sprite" type="Sprite" parent="Dungeon4/Treasure2"]
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 45 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dungeon4/Treasure2"]
+shape = SubResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Treasure3" type="Area2D" parent="Dungeon4"]
+position = Vector2( 1369, 170 )
+z_index = -100
+collision_layer = 0
+script = ExtResource( 46 )
+
+[node name="Sprite" type="Sprite" parent="Dungeon4/Treasure3"]
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 45 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dungeon4/Treasure3"]
+shape = SubResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Treasure4" type="Area2D" parent="Dungeon4"]
+position = Vector2( 1257, 453 )
+z_index = -100
+collision_layer = 0
+script = ExtResource( 46 )
+
+[node name="Sprite" type="Sprite" parent="Dungeon4/Treasure4"]
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 45 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dungeon4/Treasure4"]
+shape = SubResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Treasure5" type="Area2D" parent="Dungeon4"]
+position = Vector2( 1504, 309 )
+z_index = -100
+collision_layer = 0
+script = ExtResource( 46 )
+
+[node name="Sprite" type="Sprite" parent="Dungeon4/Treasure5"]
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 45 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dungeon4/Treasure5"]
+shape = SubResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Treasure6" type="Area2D" parent="Dungeon4"]
+position = Vector2( 1428, 456 )
+z_index = -100
+collision_layer = 0
+script = ExtResource( 46 )
+
+[node name="Sprite" type="Sprite" parent="Dungeon4/Treasure6"]
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 45 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dungeon4/Treasure6"]
+shape = SubResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Treasure7" type="Area2D" parent="Dungeon4"]
+position = Vector2( 1416, 349 )
+z_index = -100
+collision_layer = 0
+script = ExtResource( 46 )
+
+[node name="Sprite" type="Sprite" parent="Dungeon4/Treasure7"]
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 45 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dungeon4/Treasure7"]
+shape = SubResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Treasure8" type="Area2D" parent="Dungeon4"]
+position = Vector2( 1209, 194 )
+z_index = -100
+collision_layer = 0
+script = ExtResource( 46 )
+
+[node name="Sprite" type="Sprite" parent="Dungeon4/Treasure8"]
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 45 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dungeon4/Treasure8"]
+shape = SubResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Treasure9" type="Area2D" parent="Dungeon4"]
+position = Vector2( 1505, 378 )
+z_index = -100
+collision_layer = 0
+script = ExtResource( 46 )
+
+[node name="Sprite" type="Sprite" parent="Dungeon4/Treasure9"]
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 45 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dungeon4/Treasure9"]
+shape = SubResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Treasure10" type="Area2D" parent="Dungeon4"]
+position = Vector2( 1352, 239 )
+z_index = -100
+collision_layer = 0
+script = ExtResource( 46 )
+
+[node name="Sprite" type="Sprite" parent="Dungeon4/Treasure10"]
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 45 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dungeon4/Treasure10"]
+shape = SubResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Treasure11" type="Area2D" parent="Dungeon4"]
+position = Vector2( 1398, 255 )
+z_index = -100
+collision_layer = 0
+script = ExtResource( 46 )
+
+[node name="Sprite" type="Sprite" parent="Dungeon4/Treasure11"]
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 45 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dungeon4/Treasure11"]
+shape = SubResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Treasure12" type="Area2D" parent="Dungeon4"]
+position = Vector2( 1230, 286 )
+z_index = -100
+collision_layer = 0
+script = ExtResource( 46 )
+
+[node name="Sprite" type="Sprite" parent="Dungeon4/Treasure12"]
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 45 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dungeon4/Treasure12"]
+shape = SubResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Treasure13" type="Area2D" parent="Dungeon4"]
+position = Vector2( 1509, 440 )
+z_index = -100
+collision_layer = 0
+script = ExtResource( 46 )
+
+[node name="Sprite" type="Sprite" parent="Dungeon4/Treasure13"]
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 45 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dungeon4/Treasure13"]
+shape = SubResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Treasure14" type="Area2D" parent="Dungeon4"]
+position = Vector2( 1318, 362 )
+z_index = -100
+collision_layer = 0
+script = ExtResource( 46 )
+
+[node name="Sprite" type="Sprite" parent="Dungeon4/Treasure14"]
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 45 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dungeon4/Treasure14"]
+shape = SubResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Treasure15" type="Area2D" parent="Dungeon4"]
+position = Vector2( 1441, 173 )
+z_index = -100
+collision_layer = 0
+script = ExtResource( 46 )
+
+[node name="Sprite" type="Sprite" parent="Dungeon4/Treasure15"]
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 45 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dungeon4/Treasure15"]
+shape = SubResource( 6 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="Treasure16" type="Area2D" parent="Dungeon4"]
+position = Vector2( 1355, 446 )
+z_index = -100
+collision_layer = 0
+script = ExtResource( 46 )
+
+[node name="Sprite" type="Sprite" parent="Dungeon4/Treasure16"]
+scale = Vector2( 0.2, 0.2 )
+texture = ExtResource( 45 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Dungeon4/Treasure16"]
+shape = SubResource( 6 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1851,7 +2408,35 @@ stream = ExtResource( 9 )
 [connection signal="body_entered" from="Dungeon2/Triggers/LevelEnd" to="Dungeon2/Triggers/LevelEnd" method="_on_LevelEnd_body_entered"]
 [connection signal="body_entered" from="Dungeon2/Triggers/PreBoss" to="Dungeon2/Triggers/PreBoss" method="_on_BossEncounter_body_entered"]
 [connection signal="body_entered" from="Dungeon2/Triggers/SwordEncounter" to="Dungeon2/Triggers/SwordEncounter" method="_on_SwordEncounter_body_entered"]
+[connection signal="body_entered" from="Dungeon2/Treasure1" to="Dungeon2/Treasure1" method="_on_Treasure1_body_entered"]
+[connection signal="body_entered" from="Dungeon2/Treasure2" to="Dungeon2/Treasure2" method="_on_Treasure1_body_entered"]
+[connection signal="body_entered" from="Dungeon2/Treasure3" to="Dungeon2/Treasure3" method="_on_Treasure1_body_entered"]
+[connection signal="body_entered" from="Dungeon2/Treasure4" to="Dungeon2/Treasure4" method="_on_Treasure1_body_entered"]
+[connection signal="body_entered" from="Dungeon2/Food1" to="Dungeon2/Food1" method="_on_Treasure1_body_entered"]
+[connection signal="body_entered" from="Dungeon2/Food2" to="Dungeon2/Food2" method="_on_Treasure1_body_entered"]
 [connection signal="body_entered" from="Dungeon3/Triggers/LevelEnd" to="Dungeon3/Triggers/LevelEnd" method="_on_LevelEnd_body_entered"]
+[connection signal="body_entered" from="Dungeon3/Treasure1" to="Dungeon3/Treasure1" method="_on_Treasure1_body_entered"]
+[connection signal="body_entered" from="Dungeon3/Treasure2" to="Dungeon3/Treasure2" method="_on_Treasure1_body_entered"]
+[connection signal="body_entered" from="Dungeon3/Treasure3" to="Dungeon3/Treasure3" method="_on_Treasure1_body_entered"]
+[connection signal="body_entered" from="Dungeon3/Treasure4" to="Dungeon3/Treasure4" method="_on_Treasure1_body_entered"]
+[connection signal="body_entered" from="Dungeon3/Food1" to="Dungeon3/Food1" method="_on_Treasure1_body_entered"]
+[connection signal="body_entered" from="Dungeon3/Food2" to="Dungeon3/Food2" method="_on_Treasure1_body_entered"]
 [connection signal="body_entered" from="Dungeon4/Triggers/LevelEnd" to="Dungeon4/Triggers/LevelEnd" method="_on_LevelEnd_body_entered"]
+[connection signal="body_entered" from="Dungeon4/Treasure1" to="Dungeon4/Treasure1" method="_on_Treasure1_body_entered"]
+[connection signal="body_entered" from="Dungeon4/Treasure2" to="Dungeon4/Treasure2" method="_on_Treasure1_body_entered"]
+[connection signal="body_entered" from="Dungeon4/Treasure3" to="Dungeon4/Treasure3" method="_on_Treasure1_body_entered"]
+[connection signal="body_entered" from="Dungeon4/Treasure4" to="Dungeon4/Treasure4" method="_on_Treasure1_body_entered"]
+[connection signal="body_entered" from="Dungeon4/Treasure5" to="Dungeon4/Treasure5" method="_on_Treasure1_body_entered"]
+[connection signal="body_entered" from="Dungeon4/Treasure6" to="Dungeon4/Treasure6" method="_on_Treasure1_body_entered"]
+[connection signal="body_entered" from="Dungeon4/Treasure7" to="Dungeon4/Treasure7" method="_on_Treasure1_body_entered"]
+[connection signal="body_entered" from="Dungeon4/Treasure8" to="Dungeon4/Treasure8" method="_on_Treasure1_body_entered"]
+[connection signal="body_entered" from="Dungeon4/Treasure9" to="Dungeon4/Treasure9" method="_on_Treasure1_body_entered"]
+[connection signal="body_entered" from="Dungeon4/Treasure10" to="Dungeon4/Treasure10" method="_on_Treasure1_body_entered"]
+[connection signal="body_entered" from="Dungeon4/Treasure11" to="Dungeon4/Treasure11" method="_on_Treasure1_body_entered"]
+[connection signal="body_entered" from="Dungeon4/Treasure12" to="Dungeon4/Treasure12" method="_on_Treasure1_body_entered"]
+[connection signal="body_entered" from="Dungeon4/Treasure13" to="Dungeon4/Treasure13" method="_on_Treasure1_body_entered"]
+[connection signal="body_entered" from="Dungeon4/Treasure14" to="Dungeon4/Treasure14" method="_on_Treasure1_body_entered"]
+[connection signal="body_entered" from="Dungeon4/Treasure15" to="Dungeon4/Treasure15" method="_on_Treasure1_body_entered"]
+[connection signal="body_entered" from="Dungeon4/Treasure16" to="Dungeon4/Treasure16" method="_on_Treasure1_body_entered"]
 [connection signal="body_entered" from="Dungeon5/Triggers/PreBoss" to="Dungeon5/Triggers/PreBoss" method="_on_BossEncounter_body_entered"]
 [connection signal="body_entered" from="Dungeon5/Triggers/LevelEnd" to="Dungeon5/Triggers/LevelEnd" method="_on_LevelEnd_body_entered"]

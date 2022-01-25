@@ -1,13 +1,38 @@
-[gd_scene format=2]
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://GameFont.tres" type="DynamicFont" id=1]
+[ext_resource path="res://End card.png" type="Texture" id=2]
 
 [node name="Node2D" type="Node2D"]
 
-[node name="RichTextLabel" type="RichTextLabel" parent="."]
-margin_left = 458.0
-margin_top = 251.0
-margin_right = 498.0
-margin_bottom = 340.0
-text = "THE END LOL"
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 464.937, 261.875 )
+scale = Vector2( 0.3063, 0.240625 )
+texture = ExtResource( 2 )
+
+[node name="Label" type="Label" parent="."]
+margin_left = 122.0
+margin_top = 360.0
+margin_right = 226.0
+margin_bottom = 391.0
+rect_scale = Vector2( 3, 3 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "THE END"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="."]
+margin_left = 71.0
+margin_top = 460.0
+margin_right = 495.0
+margin_bottom = 491.0
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 1 )
+text = "sorry i didnt finish the game lol"
 __meta__ = {
 "_edit_use_anchors_": false
 }

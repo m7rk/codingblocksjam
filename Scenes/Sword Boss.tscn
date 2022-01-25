@@ -171,6 +171,7 @@ tracks/4/keys = {
 
 [sub_resource type="Animation" id=20]
 resource_name = "Taunt"
+loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("CharacterRig/Pelvis/BoneTorso/UpperRightArmBone:rotation_degrees")
 tracks/0/interp = 1
@@ -278,6 +279,7 @@ texture = ExtResource( 9 )
 
 [node name="UpperLeftArmBone" type="Node2D" parent="CharacterRig/Pelvis/BoneTorso"]
 position = Vector2( -105, -87.5 )
+rotation = 2.60493
 __meta__ = {
 "_edit_lock_": true
 }
@@ -297,7 +299,6 @@ texture = ExtResource( 7 )
 
 [node name="UpperRightArmBone" type="Node2D" parent="CharacterRig/Pelvis/BoneTorso"]
 position = Vector2( 10, -93.3333 )
-rotation = 3.14159
 __meta__ = {
 "_edit_lock_": true
 }

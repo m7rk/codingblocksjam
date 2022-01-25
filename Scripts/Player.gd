@@ -163,10 +163,10 @@ func onHit(bonus):
 		v.position = Vector2(0,-150)
 		v.global_scale = Vector2(0.2,0.2)
 		v.dissolve()
-		if(rand_range(0,1.0) < 0.5):
-			get_node("Hurt1").play()
-		else:
-			get_node("Hurt2").play()
+	if(rand_range(0,1.0) < 0.5):
+		get_node("Hurt1").play()
+	else:
+		get_node("Hurt2").play()
 	get_node("../Peter").scare()
 
 func _on_UpperHitbox_body_entered(body):
