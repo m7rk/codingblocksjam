@@ -11,7 +11,7 @@ var gold = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	for v in AppState.stored_its:
-		if(v[0] == "F"):
+		if(v[0][0] == "F"):
 			food += 1
 		else:
 			gold += 1

@@ -170,6 +170,8 @@ func friendlyFire():
 	get_node("Hurt2").play()
 	
 func scare():
+	if(!active):
+		return
 	confidence -= 1
 
 func colorLookup():
