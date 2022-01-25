@@ -13,7 +13,7 @@ func _ready():
 #func _process(delta):
 #	pass
 func _on_backpack_body_entered(body):
-	print("Put In")
+	print(body.get_type() + " put In")
 
 
 func _on_backpack_body_exited(body):

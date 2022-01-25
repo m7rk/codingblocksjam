@@ -4,6 +4,8 @@ var dragging = false
 
 #variable to keep track of whehter it's in the inventory or not
 var in_backpack = false
+#determines whether it's food or an item or whatever
+var item_type = "treasure"
 
 signal dragsignal;
 
@@ -16,7 +18,8 @@ func _process(delta):
 		var mousepos = get_viewport().get_mouse_position()
 		self.global_position = Vector2(mousepos.x, mousepos.y)
 
-		
+func get_type():
+	return item_type
 
 func _set_drag_pc():
 	dragging=!dragging

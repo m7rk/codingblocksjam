@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Sprites/bag.png" type="Texture" id=1]
 [ext_resource path="res://Scripts/Inventory.gd" type="Script" id=2]
@@ -14,11 +14,13 @@ extents = Vector2( 25, 24.5 )
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 186.25, 167 )
 
+[sub_resource type="RectangleShape2D" id=3]
+
 [node name="ItemMenu" type="Node2D"]
 script = ExtResource( 5 )
 
 [node name="testbox1" type="KinematicBody2D" parent="."]
-position = Vector2( 86, 255 )
+position = Vector2( 279, 122 )
 input_pickable = true
 script = ExtResource( 3 )
 
@@ -36,7 +38,7 @@ __meta__ = {
 }
 
 [node name="testbox2" type="KinematicBody2D" parent="."]
-position = Vector2( 140, 93 )
+position = Vector2( 180, 118 )
 input_pickable = true
 script = ExtResource( 3 )
 
@@ -54,7 +56,7 @@ __meta__ = {
 }
 
 [node name="testbox3" type="KinematicBody2D" parent="."]
-position = Vector2( 159, 202 )
+position = Vector2( 75, 135 )
 input_pickable = true
 script = ExtResource( 3 )
 
@@ -89,6 +91,39 @@ texture = ExtResource( 1 )
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="mixbox1" type="Area2D" parent="."]
+position = Vector2( 76, 380 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mixbox1"]
+shape = SubResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="mixbox1"]
+scale = Vector2( 2, 2 )
+z_index = -1
+texture = ExtResource( 4 )
+
+[node name="mixbox2" type="Area2D" parent="."]
+position = Vector2( 192, 380 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="mixbox2"]
+shape = SubResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="mixbox2"]
+scale = Vector2( 2, 2 )
+z_index = -1
+texture = ExtResource( 4 )
+
+[node name="resultbox" type="Area2D" parent="."]
+position = Vector2( 350, 378 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="resultbox"]
+shape = SubResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="resultbox"]
+scale = Vector2( 2, 2 )
+z_index = -1
+texture = ExtResource( 4 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 margin_left = 39.0
@@ -127,6 +162,7 @@ __meta__ = {
 }
 
 [node name="Transitioner" type="Sprite" parent="."]
+visible = false
 position = Vector2( 450, 250 )
 texture = ExtResource( 7 )
 
