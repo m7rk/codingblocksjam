@@ -11,5 +11,5 @@ dest_files=[ "res://.import/confident.mp3-ae546d0a290d9a1d9527283c6d19e7e6.mp3st
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

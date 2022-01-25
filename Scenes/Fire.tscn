@@ -20,6 +20,7 @@ shape = SubResource( 1 )
 position = Vector2( -10, 1.5 )
 scale = Vector2( 0.04, 0.04 )
 frames = ExtResource( 1 )
+frame = 4
 speed_scale = 4.0
 playing = true
 

@@ -11,5 +11,5 @@ dest_files=[ "res://.import/slime 4.mp3-92d3adbbf5650f5a080efe4aac1b2aff.mp3str"
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

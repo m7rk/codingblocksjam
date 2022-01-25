@@ -5,7 +5,7 @@ extends KinematicBody2D
 # var a = 2
 # var b = "text"
 var active = false
-var SPEED = 190
+var SPEED = 220
 var wait_time = 0
 
 var dest = null
@@ -183,16 +183,15 @@ func colorLookup():
 # lower mean amount.
 # add confidence if we can.
 func killBonus():
-	get_node("Confident").play()
 	if(mean > 0 and rand_range(0,1) < 0.5):
 		mean -= 1
 		return
 	if(mean == 0 && rand_range(0.0,confidence + 0.1) < 0.5):
 		confidence += 1
 		confidence = min(confidence,5)
+		get_node("Confident").play()
 
 func killBossBonus():
-	get_node("Confident").play()
 	mean = 0
 	confidence += 2
 	confidence = min(confidence,5)

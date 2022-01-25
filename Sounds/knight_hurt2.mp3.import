@@ -11,5 +11,5 @@ dest_files=[ "res://.import/knight_hurt2.mp3-110e429a8dbebcecbb40feca92ce8447.mp
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

@@ -11,5 +11,5 @@ dest_files=[ "res://.import/nock_arrow.mp3-1c360090823ba3f46ffaa4096453975e.mp3s
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

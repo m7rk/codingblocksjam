@@ -11,5 +11,5 @@ dest_files=[ "res://.import/adult_hurt2.mp3-3904a7143e91a0807abecdd5dafbf03d.mp3
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

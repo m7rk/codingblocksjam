@@ -11,5 +11,5 @@ dest_files=[ "res://.import/arrow_hit.mp3-52a7b6a2d2ee219760417b6d9a296379.mp3st
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0

@@ -69,6 +69,7 @@ func _physics_process(delta):
 
 
 func onHit(bonus):
+	print("hit!")
 	HP -= 1
 	get_node("Hurt").play()
 	if(HP == 0):

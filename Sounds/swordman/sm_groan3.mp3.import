@@ -11,5 +11,5 @@ dest_files=[ "res://.import/sm_groan3.mp3-75e28585c7472fdb636ead95e8f0eed4.mp3st
 
 [params]
 
-loop=true
+loop=false
 loop_offset=0
