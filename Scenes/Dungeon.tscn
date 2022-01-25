@@ -319,6 +319,7 @@ script = ExtResource( 24 )
 
 [node name="UpBarrier" type="StaticBody2D" parent="."]
 position = Vector2( 1067, 90 )
+collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="UpBarrier"]
 shape = SubResource( 2 )
@@ -328,6 +329,7 @@ __meta__ = {
 
 [node name="DownBarrier" type="StaticBody2D" parent="."]
 position = Vector2( 1105, 510 )
+collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DownBarrier"]
 shape = SubResource( 2 )
@@ -539,6 +541,7 @@ position = Vector2( 3.5, -74 )
 shape = SubResource( 16 )
 
 [node name="Peter" type="KinematicBody2D" parent="."]
+visible = false
 position = Vector2( 5895, 137 )
 z_index = 50
 collision_layer = 16
