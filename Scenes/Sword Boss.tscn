@@ -278,7 +278,6 @@ texture = ExtResource( 9 )
 
 [node name="UpperLeftArmBone" type="Node2D" parent="CharacterRig/Pelvis/BoneTorso"]
 position = Vector2( -105, -87.5 )
-rotation = -0.507891
 __meta__ = {
 "_edit_lock_": true
 }
@@ -290,7 +289,7 @@ texture = ExtResource( 11 )
 
 [node name="BoneLowerLeftArm" type="Node2D" parent="CharacterRig/Pelvis/BoneTorso/UpperLeftArmBone/UpperLeftArm"]
 position = Vector2( -110, -5.83331 )
-rotation = -0.523599
+rotation = 0.349066
 
 [node name="LowerLeftArm" type="Sprite" parent="CharacterRig/Pelvis/BoneTorso/UpperLeftArmBone/UpperLeftArm/BoneLowerLeftArm"]
 position = Vector2( 110, -6.66669 )
@@ -298,7 +297,7 @@ texture = ExtResource( 7 )
 
 [node name="UpperRightArmBone" type="Node2D" parent="CharacterRig/Pelvis/BoneTorso"]
 position = Vector2( 10, -93.3333 )
-rotation = 0.349066
+rotation = 3.14159
 __meta__ = {
 "_edit_lock_": true
 }
@@ -312,7 +311,7 @@ __meta__ = {
 
 [node name="LowerRightArmBone" type="Node2D" parent="CharacterRig/Pelvis/BoneTorso/UpperRightArmBone/UpperRightArm"]
 position = Vector2( 52.5, -40 )
-rotation = 3.39117
+rotation = 1.1781
 __meta__ = {
 "_edit_lock_": true
 }
