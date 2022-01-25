@@ -33,6 +33,14 @@ onready var player =  get_node("../Player")
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	get_node("Animation").play("Idle")
+	if(AppState.bed):
+		confidence += 1
+	if(AppState.rope):
+		confidence += 1
+	if(AppState.brush):
+		confidence += 1
+	if(AppState.clippers):
+		confidence += 1
 
 func calcuateState():
 	# you lose

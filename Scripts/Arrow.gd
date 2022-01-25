@@ -13,7 +13,8 @@ var disabled = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	if(AppState.string):
+		SPEED = 600
 
 func impact():
 	disabled = true

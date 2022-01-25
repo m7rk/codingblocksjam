@@ -17,4 +17,33 @@ func _ready():
 
 
 func _on_Button_pressed():
-	print(id)
+	if(id == 0 && get_parent().get_parent().get_parent().gold >= 2):
+		get_parent().get_parent().get_parent().gold -= 2
+		AppState.brush = true
+	if(id == 1 && get_parent().get_parent().get_parent().gold >= 3):
+		AppState.clippers = true
+		get_parent().get_parent().get_parent().gold -= 3
+		
+	if(id == 2 && get_parent().get_parent().get_parent().food >= 1):
+		get_parent().get_parent().get_parent().food -= 1
+		AppState.rope = true
+		
+	if(id == 3 && get_parent().get_parent().get_parent().gold >= 4):
+		get_parent().get_parent().get_parent().gold -= 4
+		AppState.lens = true
+	if(id == 4 && get_parent().get_parent().get_parent().gold >= 2):
+		get_parent().get_parent().get_parent().gold -= 2
+		AppState.tape = true
+	if(id == 5 && get_parent().get_parent().get_parent().food >= 4):
+		get_parent().get_parent().get_parent().food -= 4
+		AppState.string = true
+		
+	if(id == 6 && get_parent().get_parent().get_parent().gold >= 2):
+		get_parent().get_parent().get_parent().gold -= 2
+		AppState.bed = true
+	if(id == 7 && get_parent().get_parent().get_parent().gold >= 3):
+		get_parent().get_parent().get_parent().gold -= 3
+		AppState.shoe = true
+	if(id == 8 && get_parent().get_parent().get_parent().food >= 1):
+		get_parent().get_parent().get_parent().food -= 1
+		AppState.quiver = true

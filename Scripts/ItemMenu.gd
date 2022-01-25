@@ -6,15 +6,15 @@ extends Node2D
 # var b = "text"
 
 var exiting = false
-var foodcnt = 0
-var goldcnt = 0
+var food = 0
+var gold = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	for v in AppState.stored_its:
 		if(v[0] == "F"):
-			foodcnt += 1
+			food += 1
 		else:
-			goldcnt += 1
+			gold += 1
 	
 	var aset = int(rand_range(0,3))
 	get_node("opt1").get_child((aset + 1) % 3).queue_free()
@@ -42,7 +42,7 @@ func _on_Button_pressed():
 	get_node("Tween").start()
 
 func _process(delta):
-	get_node("Label2").text = "FOOD: " + str(foodcnt) + "\nGOLD: " + str(goldcnt)
+	get_node("Label2").text = "FOOD: " + str(food) + "\nGOLD: " + str(gold)
 	if(!exiting):
 		get_node("Transitioner").modulate = lerp(get_node("Transitioner").modulate,Color(0,0,0,0), delta)
 

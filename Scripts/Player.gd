@@ -18,7 +18,9 @@ onready var arrow_node = get_node("CharacterRig/Pelvis/BoneTorso/Torso/BoneUpper
 func _ready():
 	get_node("CharacterRig/UAnimator").play("Draw")
 	arrow_node.visible = false
-
+	if(AppState.shoe):
+		SPEED = 300
+	
 
 func _physics_process(delta):
 	var raw_input = Vector2(0,0)
@@ -70,6 +72,9 @@ func _physics_process(delta):
 	if(draw_time >= 0):
 		get_node("../Aimer").global_position = target
 		draw_time -= delta
+		if(AppState.quiver):
+			draw_time -= delta
+
 		return
 	
 	if(aimer_active):
@@ -109,6 +114,8 @@ func addAimRandomness(R):
 	return Vector2(x,y)
 
 func getAimScale():
+	if(AppState.lens):
+		return pow((AIM_MAX - aim_time) / AIM_MAX,0.8) / 3
 	return pow((AIM_MAX - aim_time) / AIM_MAX,0.8)
 	
 func isReversed():
@@ -127,6 +134,8 @@ func _input(event):
 	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT and !event.pressed:
 		if(aimer_active != true):
 			return
+			
+		# LOL
 		var instance = arrow.instance()
 		get_parent().add_child(instance)
 		# little nudge to make arrow heads land better
@@ -137,6 +146,16 @@ func _input(event):
 		draw_time = 1
 		get_node("CharacterRig/UAnimator").play("Draw")
 		get_node("BowFire").play()
+		
+		
+		if(AppState.tape):
+			instance = arrow.instance()
+			get_parent().add_child(instance)
+			# little nudge to make arrow heads land better
+			instance.global_position = arrow_node.global_position + Vector2(3,30)
+			rand = addAimRandomness(40 * getAimScale())
+			instance.set_arrow_target(getAimerPosition()[0] + rand.x, getAimerPosition()[1] + rand.y) 
+			
 		
 func rigAim(vec):
 	# properly animate the left arm
