@@ -7,7 +7,7 @@ var active = false
 var SPEED = 400
 var FBALL_SPEED = 400
 var TARGET_START = Vector2(4850, 250)
-onready var fireball = preload("res://Scenes/Fire.tscn")
+onready var fireball = preload("res://Scenes/FireAlly.tscn")
 # intro
 # swoop left
 # swoop right

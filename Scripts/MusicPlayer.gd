@@ -17,8 +17,9 @@ func _ready():
 
 func fadeOut():
 	get_node("Tween").interpolate_property(get_node("Main"), "volume_db", get_node("Main").volume_db, -80, 2, Tween.TRANS_QUAD, Tween.EASE_IN_OUT)
+	get_node("Tween").interpolate_property(get_node("Miniboss"), "volume_db", get_node("Miniboss").volume_db, -80, 2, Tween.TRANS_QUAD, Tween.EASE_IN_OUT)
 	get_node("Tween").interpolate_property(get_node("Boss"), "volume_db", get_node("Boss").volume_db, -80, 2, Tween.TRANS_QUAD, Tween.EASE_IN_OUT)
-	get_node("Tween").interpolate_property(get_node("Intro"), "volume_db", get_node("Boss").volume_db, -80, 2, Tween.TRANS_QUAD, Tween.EASE_IN_OUT)
+	get_node("Tween").interpolate_property(get_node("Intro"), "volume_db", get_node("Intro").volume_db, -80, 2, Tween.TRANS_QUAD, Tween.EASE_IN_OUT)
 	get_node("Tween").start()
 
 func playSong(songname):

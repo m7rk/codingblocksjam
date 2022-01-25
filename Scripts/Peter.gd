@@ -11,6 +11,8 @@ var wait_time = 0
 var dest = null
 var state = "CURIOUS"
 
+var fireball = preload("res://Scenes/FireAlly.tscn")
+
 var confidence = 2
 # PANICKED - run away from everything
 # SCARED - injured, but not by the player
@@ -30,6 +32,7 @@ var mean = 0
 # UPSET - stay away from player
 # ANGRY - attack anything within reach, stay away from player
 
+onready var player =  get_node("../Player")
 # LOSE COND
 # UNTAMED - attack the player (possible game over)
 
@@ -43,12 +46,12 @@ func calcuateState():
 		return "UNTAMED"
 
 	# critical states
+	if(mean == 2):
+		return "ANGRY"
 	if(confidence == 0):
 		return "PANICKED"
 	if(hunger > 90):
 		return "STARVING"
-	if(mean == 2):
-		return "ANGRY"
 		
 	# let the user know about hunger.
 	if(hunger > 60):
@@ -104,7 +107,6 @@ func AI(delta):
 		move_and_slide(Vector2(SPEED,0))
 		return
 
-	var player =  get_node("../Player")
 	if(wait_time > 0):
 		wait_time -= delta
 		return
@@ -118,12 +120,18 @@ func AI(delta):
 		if(global_position.y < -100):
 			active = false
 
+	if(state == "UPSET"):
+		if(dest == null or global_position.distance_to(dest) < 10 or dest.x > player.global_position.x):
+			set_random_waypoint()
+			wait_time = rand_range(0.3,1.1)
+		
 	if(state == "ANGRY"):
 		if(dest == null or global_position.distance_to(dest) < 10):
 			set_random_waypoint()
 	
 	if(state == "STARVING" || state == "PANICKED"):
-		set_random_waypoint_behind_player()
+		if(dest == null or global_position.distance_to(dest) < 10):
+			set_random_waypoint_behind_player()
 	
 	if(state == "SCARED"):
 		if(dest == null or global_position.distance_to(dest) < 10):
@@ -133,8 +141,10 @@ func AI(delta):
 				set_random_waypoint_behind_player()
 	
 	if(state == "PLEASED" || state == "CONFIDENT" || state == "CHEERFUL"):
-		set_lead_player()
-		if(wait_time > 1)
+		if(dest == null or global_position.distance_to(dest) < 10):
+			set_lead_player()
+		if(wait_time > 1):
+			lfireball(Vector2(400,0))
 
 	if(dest == null):
 		return
@@ -143,8 +153,7 @@ func AI(delta):
 
 func lfireball(v):
 	var launched = fireball.instance()
-	launced.layer = 4
-	launched.set_velocity(Vector(100,0))
+	launched.set_velocity(v)
 	launched.global_position = global_position
 	get_parent().add_child(launched)
 
@@ -156,12 +165,15 @@ func _process(delta):
 		hunger += delta
 		AI(delta)
 		
-func onHit():
+func onHit(reward):
 	confidence -= 1
 	
 func friendlyFire():
 	mean += 1
 	
+func scare():
+	confidence -= 1
+
 func colorLookup():
 	if(state == "UNTAMED"):
 		return Color(0.7,0,0,1)

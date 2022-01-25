@@ -20,14 +20,15 @@ func _physics_process(delta):
 		var collision = get_slide_collision(slide_count - 1)
 		var collider = collision.collider
 		if(collider.name == "Player"):
-			collider.onHit()
-			onHit()
+			collider.onHit(false)
+			onHit(false)
 
-func onHit():
+func onHit(bonus):
 	get_node("Tween").start()
 	get_node("Death").play()
 	get_node("CollisionShape2D").queue_free()
-	get_node("../../Peter").killBonus()
+	if(bonus):
+		get_node("../../Peter").killBonus()
 
 func _on_Tween_tween_all_completed():
 	queue_free()

@@ -6,7 +6,7 @@ extends KinematicBody2D
 # var b = "text"
 
 var phase = "TAUNTING"
-
+var active = false
 # state = taunting 
 # state = teleporting
 # state = attacking
@@ -20,15 +20,18 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if(phase == "TAUNTING"):
-		pass
+	if(active):
+		if(phase == "TAUNTING"):
+			pass
 
-func onHit():
+func onHit(bonus):
 	get_node("../../Music").fadeOut()
-	get_node("../../Peter").killBossBonus()
+	if(bonus):
+		get_node("../../Peter").killBossBonus()
 	get_node("CollisionShape2D").queue_free()
 	get_node("Tween").start()
 	phase = "DEAD"
 	yield(get_tree().create_timer(2.0), "timeout")
 	get_node("../../Camera").frozen = false
+	get_node("../../Music").playSong("Main")
 	queue_free()

@@ -151,7 +151,7 @@ func rigAim(vec):
 		get_node("CharacterRig/Pelvis/BoneTorso/Torso/BoneUpperRightArm").rotation_degrees = -55 + 57 * atan2(vec.y,vec.x)
 		get_node("CharacterRig/Pelvis/BoneTorso/Torso/BoneUpperLeftArm").rotation_degrees = offset + 57 * atan2(vec.y,vec.x)
 
-func onHit():
+func onHit(bonus):
 	if(get_node("../Camera/Backpack").get_child_count() > 0):
 		var v = get_node("../Camera/Backpack").get_child(rand_range(0,get_node("../Camera/Backpack").get_child_count()))
 		v.get_parent().remove_child(v)
@@ -159,8 +159,8 @@ func onHit():
 		v.position = Vector2(0,-150)
 		v.global_scale = Vector2(0.2,0.2)
 		v.dissolve()
-
+	get_node("../Peter").scare()
 
 func _on_UpperHitbox_body_entered(body):
-	onHit()
-	body.onHit()
+	onHit(false)
+	body.onHit(false)

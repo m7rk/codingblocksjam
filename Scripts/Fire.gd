@@ -14,8 +14,8 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	global_position = global_position + vel * delta
-	scale = lerp(scale,Vector2(0,0),0.2 * delta)
-	if(scale.length() < 0.2):
+	scale = lerp(scale,Vector2(0,0),delta)
+	if(scale.length() < 0.4):
 		queue_free()
 
 func set_velocity(v):
@@ -24,10 +24,10 @@ func set_velocity(v):
 
 
 func _on_Fire_body_entered(body):
-	body.onHit()
+	body.onHit(true)
 	queue_free()
 
 
 func _on_Fire_area_entered(area):
-	area.get_parent().onHit()
+	area.get_parent().onHit(true)
 	queue_free()
