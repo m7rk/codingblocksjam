@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Scripts/Slime.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/Slime Boi/slimeframes.tres" type="SpriteFrames" id=2]
-[ext_resource path="res://Sounds/skull/skull_death.mp3" type="AudioStream" id=3]
+[ext_resource path="res://Sounds/slime/slime 2.mp3" type="AudioStream" id=3]
+[ext_resource path="res://Sounds/slime/slime 1.mp3" type="AudioStream" id=4]
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 17, 17 )
@@ -21,16 +22,19 @@ shape = SubResource( 3 )
 position = Vector2( -3, -6 )
 scale = Vector2( 0.05, 0.05 )
 frames = ExtResource( 2 )
-frame = 11
+frame = 2
 speed_scale = 2.0
 playing = true
 
 [node name="Tween" type="Tween" parent="."]
 
 [node name="Death" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource( 3 )
+stream = ExtResource( 4 )
 __meta__ = {
 "_edit_lock_": true
 }
+
+[node name="Idle" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
 
 [connection signal="tween_all_completed" from="Tween" to="." method="_on_Tween_tween_all_completed"]

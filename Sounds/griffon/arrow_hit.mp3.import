@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/arrow_hit.mp3-52a7b6a2d2ee219760417b6d9a296379.mp3str"
+
+[deps]
+
+source_file="res://Sounds/griffon/arrow_hit.mp3"
+dest_files=[ "res://.import/arrow_hit.mp3-52a7b6a2d2ee219760417b6d9a296379.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

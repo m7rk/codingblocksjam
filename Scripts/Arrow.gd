@@ -19,6 +19,7 @@ func impact():
 	disabled = true
 	get_node("ArrowSprite/Arrow/CShape").queue_free()
 	get_node("ArrowSprite").texture = alt_arrow_sprite
+	get_node("Impact").play()
 	z_index = -899 #floor is -1000
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.

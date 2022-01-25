@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/frame0003.png-c74b2edd47d7f10095d0aad2d15bdb87.stex"
+path="res://.import/Speedy Shoes.png-9f3b796a0cee8536756b8a9500f6c13a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://updated egg/frame0003.png"
-dest_files=[ "res://.import/frame0003.png-c74b2edd47d7f10095d0aad2d15bdb87.stex" ]
+source_file="res://Crafting Images/Speedy Shoes.png"
+dest_files=[ "res://.import/Speedy Shoes.png-9f3b796a0cee8536756b8a9500f6c13a.stex" ]
 
 [params]
 

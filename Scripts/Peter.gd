@@ -21,12 +21,6 @@ var confidence = 2
 # CONFIDENT - attack enemies.
 # CHEERFUL - attack enemies.
 
-# counts up, has threshes.
-var hunger = 0
-# LOSE BY HUNGER
-# HUNGRY - demand food, annoy the player.
-# STARVING - demand food, annoy the player agressively.
-
 # LOSE BY FRIENDLY FIRE
 var mean = 0
 # UPSET - stay away from player
@@ -42,7 +36,7 @@ func _ready():
 
 func calcuateState():
 	# you lose
-	if(hunger > 120 || confidence <= -1 || mean >= 3):
+	if(confidence <= -1 || mean >= 3):
 		return "UNTAMED"
 
 	# critical states
@@ -50,12 +44,7 @@ func calcuateState():
 		return "ANGRY"
 	if(confidence == 0):
 		return "PANICKED"
-	if(hunger > 90):
-		return "STARVING"
 		
-	# let the user know about hunger.
-	if(hunger > 60):
-		return "HUNGRY"
 			
 	# states that mean confidence is pretty low but you did something else kinda bad
 	if(confidence == 1 || confidence == 2):
@@ -156,20 +145,21 @@ func lfireball(v):
 	launched.set_velocity(v)
 	launched.global_position = global_position
 	get_parent().add_child(launched)
+	get_node("Launch").play()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if(active):
 		state = calcuateState()
-		var delt = global_position - (get_node("../Player").global_position)
-		hunger += delta
 		AI(delta)
 		
 func onHit(reward):
 	confidence -= 1
+	get_node("Hurt").play()
 	
 func friendlyFire():
 	mean += 1
+	get_node("Hurt2").play()
 	
 func scare():
 	confidence -= 1
@@ -193,6 +183,7 @@ func colorLookup():
 # lower mean amount.
 # add confidence if we can.
 func killBonus():
+	get_node("Confident").play()
 	if(mean > 0 and rand_range(0,1) < 0.5):
 		mean -= 1
 		return
@@ -201,6 +192,7 @@ func killBonus():
 		confidence = min(confidence,5)
 
 func killBossBonus():
+	get_node("Confident").play()
 	mean = 0
 	confidence += 2
 	confidence = min(confidence,5)

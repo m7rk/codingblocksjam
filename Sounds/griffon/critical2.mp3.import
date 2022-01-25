@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/critical2.mp3-a75ed1cc227657dd72f0fb16601a230d.mp3str"
+
+[deps]
+
+source_file="res://Sounds/griffon/critical2.mp3"
+dest_files=[ "res://.import/critical2.mp3-a75ed1cc227657dd72f0fb16601a230d.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

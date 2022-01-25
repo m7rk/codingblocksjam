@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/bab_hurt1.mp3-f43487cc12f1cab349893e7f2922826d.mp3str"
+
+[deps]
+
+source_file="res://Sounds/griffon/bab_hurt1.mp3"
+dest_files=[ "res://.import/bab_hurt1.mp3-f43487cc12f1cab349893e7f2922826d.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

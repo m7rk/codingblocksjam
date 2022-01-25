@@ -17,6 +17,8 @@ var phase = "INTRO"
 var fireballed_left = false
 var fireballed_right = false
 
+var HP = 3
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	get_node("Animation").play("Idle")
@@ -67,13 +69,16 @@ func _physics_process(delta):
 
 
 func onHit(bonus):
-	get_node("../../Music").fadeOut()
-	get_node("CollisionShape2D").queue_free()
-	get_node("Tween").start()
-	phase = "DEAD"
-	yield(get_tree().create_timer(2.0), "timeout")
-	get_node("../../Camera").frozen = false
-	queue_free()
+	HP -= 1
+	get_node("Hurt").play()
+	if(HP == 0):
+		get_node("../../Music").fadeOut()
+		get_node("CollisionShape2D").queue_free()
+		get_node("Tween").start()
+		phase = "DEAD"
+		yield(get_tree().create_timer(2.0), "timeout")
+		get_node("../../Camera").frozen = false
+		queue_free()
 	
 func lfireball(v):
 	var launched = fireball.instance()

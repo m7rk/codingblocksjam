@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/adult_hurt2.mp3-3904a7143e91a0807abecdd5dafbf03d.mp3str"
+
+[deps]
+
+source_file="res://Sounds/griffon/adult_hurt2.mp3"
+dest_files=[ "res://.import/adult_hurt2.mp3-3904a7143e91a0807abecdd5dafbf03d.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

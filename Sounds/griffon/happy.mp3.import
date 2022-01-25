@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/happy.mp3-c3f830a842575268f1416dbfe7794aa6.mp3str"
+
+[deps]
+
+source_file="res://Sounds/griffon/happy.mp3"
+dest_files=[ "res://.import/happy.mp3-c3f830a842575268f1416dbfe7794aa6.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

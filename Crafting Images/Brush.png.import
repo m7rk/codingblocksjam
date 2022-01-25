@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/frame0002.png-4374d152a032e2cc64dfa18464b708ef.stex"
+path="res://.import/Brush.png-84cce6cd515b8d8dd2388c994e11d04b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://updated egg/frame0002.png"
-dest_files=[ "res://.import/frame0002.png-4374d152a032e2cc64dfa18464b708ef.stex" ]
+source_file="res://Crafting Images/Brush.png"
+dest_files=[ "res://.import/Brush.png-84cce6cd515b8d8dd2388c994e11d04b.stex" ]
 
 [params]
 

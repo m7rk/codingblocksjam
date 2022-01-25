@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/frame0001.png-053e9fd555bde0b7e967de957738fdfb.stex"
+path="res://.import/contact lens.png-9e684edf799281581a4a790889d8bfd5.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://updated egg/frame0001.png"
-dest_files=[ "res://.import/frame0001.png-053e9fd555bde0b7e967de957738fdfb.stex" ]
+source_file="res://Crafting Images/contact lens.png"
+dest_files=[ "res://.import/contact lens.png-9e684edf799281581a4a790889d8bfd5.stex" ]
 
 [params]
 

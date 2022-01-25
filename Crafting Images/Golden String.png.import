@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/frame0004.png-cb886ccc06bb6db688fe42b030666e9c.stex"
+path="res://.import/Golden String.png-481ce226eb08f8f67bb85c8f4bd3ea2c.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://updated egg/frame0004.png"
-dest_files=[ "res://.import/frame0004.png-cb886ccc06bb6db688fe42b030666e9c.stex" ]
+source_file="res://Crafting Images/Golden String.png"
+dest_files=[ "res://.import/Golden String.png-481ce226eb08f8f67bb85c8f4bd3ea2c.stex" ]
 
 [params]
 

@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/fire_hit.mp3-996e12bbfedf89cf317b5defe1a9a371.mp3str"
+
+[deps]
+
+source_file="res://Sounds/griffon/fire_hit.mp3"
+dest_files=[ "res://.import/fire_hit.mp3-996e12bbfedf89cf317b5defe1a9a371.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

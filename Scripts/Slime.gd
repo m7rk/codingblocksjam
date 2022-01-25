@@ -1,6 +1,6 @@
 extends KinematicBody2D
 
-var SPEED = 40
+var SPEED = 50
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -22,6 +22,9 @@ func _physics_process(delta):
 		if(collider.name == "Player"):
 			collider.onHit(false)
 			onHit(false)
+	
+	if(rand_range(0,1.0) < delta):
+		get_node("Idle").play()
 
 func onHit(bonus):
 	get_node("Tween").start()

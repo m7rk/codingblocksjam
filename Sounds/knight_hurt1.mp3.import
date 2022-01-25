@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/knight_hurt1.mp3-640b274aaaf333a226aa5d80a0d3b12c.mp3str"
+
+[deps]
+
+source_file="res://Sounds/knight_hurt1.mp3"
+dest_files=[ "res://.import/knight_hurt1.mp3-640b274aaaf333a226aa5d80a0d3b12c.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
