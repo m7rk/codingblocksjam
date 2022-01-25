@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Speedy Shoes.png-9f3b796a0cee8536756b8a9500f6c13a.stex"
+path="res://.import/Speedy Shoes.png-05548b35532dae1a049be735ce3d524d.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Crafting Images/Speedy Shoes.png"
-dest_files=[ "res://.import/Speedy Shoes.png-9f3b796a0cee8536756b8a9500f6c13a.stex" ]
+source_file="res://Sprites/Crafting/Speedy Shoes.png"
+dest_files=[ "res://.import/Speedy Shoes.png-05548b35532dae1a049be735ce3d524d.stex" ]
 
 [params]
 

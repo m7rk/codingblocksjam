@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/contact lens.png-9e684edf799281581a4a790889d8bfd5.stex"
+path="res://.import/duck tape.png-d4f5803badb8c3eec6ae1417c0e6e038.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Crafting Images/contact lens.png"
-dest_files=[ "res://.import/contact lens.png-9e684edf799281581a4a790889d8bfd5.stex" ]
+source_file="res://Sprites/Crafting/duck tape.png"
+dest_files=[ "res://.import/duck tape.png-d4f5803badb8c3eec6ae1417c0e6e038.stex" ]
 
 [params]
 

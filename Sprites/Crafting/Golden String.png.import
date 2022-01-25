@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Griff Bed.png-947a0799df2be1e96fa00c65cedb8ccd.stex"
+path="res://.import/Golden String.png-188e08599772fed8c716f1712df9123f.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Crafting Images/Griff Bed.png"
-dest_files=[ "res://.import/Griff Bed.png-947a0799df2be1e96fa00c65cedb8ccd.stex" ]
+source_file="res://Sprites/Crafting/Golden String.png"
+dest_files=[ "res://.import/Golden String.png-188e08599772fed8c716f1712df9123f.stex" ]
 
 [params]
 
