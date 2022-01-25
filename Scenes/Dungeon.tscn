@@ -1045,7 +1045,6 @@ __meta__ = {
 stream = ExtResource( 67 )
 
 [node name="Dungeon2" type="Node2D" parent="."]
-visible = false
 
 [node name="Slime" parent="Dungeon2" instance=ExtResource( 86 )]
 position = Vector2( 1351, 134 )
@@ -1281,7 +1280,6 @@ __meta__ = {
 }
 
 [node name="Dungeon3" type="Node2D" parent="."]
-visible = false
 
 [node name="Level" type="Node2D" parent="Dungeon3"]
 z_index = -1000
@@ -1422,7 +1420,6 @@ __meta__ = {
 }
 
 [node name="Dungeon4" type="Node2D" parent="."]
-visible = false
 
 [node name="Level" type="Node2D" parent="Dungeon4"]
 z_index = -1000
@@ -1563,7 +1560,6 @@ __meta__ = {
 }
 
 [node name="Dungeon5" type="Node2D" parent="."]
-visible = false
 
 [node name="Level" type="Node2D" parent="Dungeon5"]
 z_index = -1000
@@ -1674,28 +1670,6 @@ __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="VS Mom" type="Area2D" parent="Dungeon5/Triggers"]
-position = Vector2( 4529, 54 )
-script = ExtResource( 30 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Dungeon5/Triggers/VS Mom"]
-position = Vector2( 0, 200 )
-shape = SubResource( 8 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="PlayIncidental" type="Area2D" parent="Dungeon5/Triggers"]
-position = Vector2( 5565, 39 )
-script = ExtResource( 4 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Dungeon5/Triggers/PlayIncidental"]
-position = Vector2( 0, 200 )
-shape = SubResource( 8 )
-__meta__ = {
-"_edit_lock_": true
-}
-
 [node name="LevelEnd" type="Area2D" parent="Dungeon5/Triggers"]
 position = Vector2( 6606, 76 )
 collision_layer = 32
@@ -1716,7 +1690,6 @@ frames = ExtResource( 11 )
 frame = 4
 
 [node name="Aimer" type="Sprite" parent="."]
-visible = false
 position = Vector2( 1257, 258 )
 z_index = 900
 texture = ExtResource( 8 )
@@ -1820,6 +1793,4 @@ stream = ExtResource( 9 )
 [connection signal="body_entered" from="Dungeon3/Triggers/LevelEnd" to="Dungeon3/Triggers/LevelEnd" method="_on_LevelEnd_body_entered"]
 [connection signal="body_entered" from="Dungeon4/Triggers/LevelEnd" to="Dungeon4/Triggers/LevelEnd" method="_on_LevelEnd_body_entered"]
 [connection signal="body_entered" from="Dungeon5/Triggers/PreBoss" to="Dungeon5/Triggers/PreBoss" method="_on_BossEncounter_body_entered"]
-[connection signal="body_entered" from="Dungeon5/Triggers/VS Mom" to="Dungeon5/Triggers/VS Mom" method="_on_BossEncounter2_body_entered"]
-[connection signal="body_entered" from="Dungeon5/Triggers/PlayIncidental" to="Dungeon5/Triggers/PlayIncidental" method="_on_PlayIncidental_body_entered"]
 [connection signal="body_entered" from="Dungeon5/Triggers/LevelEnd" to="Dungeon5/Triggers/LevelEnd" method="_on_LevelEnd_body_entered"]

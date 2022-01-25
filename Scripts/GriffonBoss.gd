@@ -66,7 +66,7 @@ func _physics_process(delta):
 			return
 
 
-func onHit():
+func onHit(bonus):
 	get_node("../../Music").fadeOut()
 	get_node("CollisionShape2D").queue_free()
 	get_node("Tween").start()
