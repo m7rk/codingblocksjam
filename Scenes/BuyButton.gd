@@ -17,13 +17,13 @@ func _ready():
 
 
 func _on_Button_pressed():
+
 	if(id == 0 && get_parent().get_parent().get_parent().gold >= 2):
 		get_parent().get_parent().get_parent().gold -= 2
 		AppState.brush = true
 	if(id == 1 && get_parent().get_parent().get_parent().gold >= 3):
 		AppState.clippers = true
-		get_parent().get_parent().get_parent().gold -= 3
-		
+		get_parent().get_parent().get_parent().gold -= 3	
 	if(id == 2 && get_parent().get_parent().get_parent().food >= 1):
 		get_parent().get_parent().get_parent().food -= 1
 		AppState.rope = true
