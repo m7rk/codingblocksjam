@@ -183,6 +183,8 @@ func colorLookup():
 # lower mean amount.
 # add confidence if we can.
 func killBonus():
+	if(!active):
+		return
 	if(mean > 0 and rand_range(0,1) < 0.5):
 		mean -= 1
 		return
@@ -192,6 +194,8 @@ func killBonus():
 		get_node("Confident").play()
 
 func killBossBonus():
+	if(!active):
+		return
 	mean = 0
 	confidence += 2
 	confidence = min(confidence,5)
