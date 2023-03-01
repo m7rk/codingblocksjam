@@ -475,7 +475,6 @@ position = Vector2( 5.55569, 22.2222 )
 texture = ExtResource( 18 )
 
 [node name="ArrowBone" type="Node2D" parent="Player/CharacterRig/Pelvis/BoneTorso/Torso/BoneUpperRightArm/UpperRightArm/LowerRightArm/Bow"]
-visible = false
 position = Vector2( 9, 33 )
 z_index = 1
 
@@ -487,7 +486,7 @@ texture = ExtResource( 1 )
 
 [node name="StringTop" type="Node2D" parent="Player/CharacterRig/Pelvis/BoneTorso/Torso/BoneUpperRightArm/UpperRightArm/LowerRightArm/Bow"]
 position = Vector2( 79.4446, -93.8889 )
-rotation = -2.25986
+rotation = -2.26893
 scale = Vector2( 1, 1.15 )
 
 [node name="Sprite" type="Sprite" parent="Player/CharacterRig/Pelvis/BoneTorso/Torso/BoneUpperRightArm/UpperRightArm/LowerRightArm/Bow/StringTop"]
@@ -496,7 +495,7 @@ texture = ExtResource( 47 )
 
 [node name="StringBot" type="Node2D" parent="Player/CharacterRig/Pelvis/BoneTorso/Torso/BoneUpperRightArm/UpperRightArm/LowerRightArm/Bow"]
 position = Vector2( -87.2222, 79.4443 )
-rotation = 0.663436
+rotation = 0.698132
 scale = Vector2( 1, 1.1 )
 
 [node name="Sprite" type="Sprite" parent="Player/CharacterRig/Pelvis/BoneTorso/Torso/BoneUpperRightArm/UpperRightArm/LowerRightArm/Bow/StringBot"]
@@ -516,7 +515,7 @@ texture = ExtResource( 7 )
 
 [node name="BoneUpperRightLeg" type="Node2D" parent="Player/CharacterRig/Pelvis"]
 position = Vector2( -41.1108, 23.3335 )
-rotation = 0.357447
+rotation = 0.884783
 scale = Vector2( -1, 1 )
 z_index = -9
 
@@ -528,7 +527,7 @@ texture = ExtResource( 22 )
 
 [node name="BoneLowerRightLeg" type="Node2D" parent="Player/CharacterRig/Pelvis/BoneUpperRightLeg/UpperRightLeg"]
 position = Vector2( -22.4331, 60.915 )
-rotation = -0.143977
+rotation = 0.0301265
 scale = Vector2( 1, 1 )
 
 [node name="LowerRightLeg" type="Sprite" parent="Player/CharacterRig/Pelvis/BoneUpperRightLeg/UpperRightLeg/BoneLowerRightLeg"]
@@ -539,7 +538,7 @@ texture = ExtResource( 15 )
 
 [node name="BoneUpperLeftLeg" type="Node2D" parent="Player/CharacterRig/Pelvis"]
 position = Vector2( 53.8889, 18.3335 )
-rotation = 0.364176
+rotation = -0.189207
 z_index = -13
 
 [node name="UpperLeftLeg" type="Sprite" parent="Player/CharacterRig/Pelvis/BoneUpperLeftLeg"]
@@ -551,7 +550,7 @@ __meta__ = {
 
 [node name="BoneLowerLeftLeg" type="Node2D" parent="Player/CharacterRig/Pelvis/BoneUpperLeftLeg/UpperLeftLeg"]
 position = Vector2( 14.9998, 34.9998 )
-rotation = 0.0746734
+rotation = 0.135602
 
 [node name="LowerLeftLeg" type="Sprite" parent="Player/CharacterRig/Pelvis/BoneUpperLeftLeg/UpperLeftLeg/BoneLowerLeftLeg"]
 position = Vector2( 6.66675, 60 )

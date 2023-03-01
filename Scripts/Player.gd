@@ -80,6 +80,11 @@ func _physics_process(delta):
 	if(draw_time >= 0):
 		get_node("../Aimer").global_position = target
 		draw_time -= delta
+				# correct bow animation
+		get_node("CharacterRig/Pelvis/BoneTorso/Torso/BoneUpperRightArm/UpperRightArm/LowerRightArm/Bow/StringTop").rotation_degrees = -130
+		get_node("CharacterRig/Pelvis/BoneTorso/Torso/BoneUpperRightArm/UpperRightArm/LowerRightArm/Bow/StringBot").rotation_degrees = 40
+		get_node("CharacterRig/Pelvis/BoneTorso/Torso/BoneUpperRightArm/UpperRightArm/LowerRightArm/Bow/StringTop").scale = Vector2(1,1.15)
+		get_node("CharacterRig/Pelvis/BoneTorso/Torso/BoneUpperRightArm/UpperRightArm/LowerRightArm/Bow/StringBot").scale = Vector2(1,1.15)
 		if(AppState.quiver):
 			draw_time -= delta
 
@@ -102,6 +107,7 @@ func _physics_process(delta):
 	else:
 		aim_time = 0
 		get_node("../Aimer").rotation_degrees = 0
+
 	
 	get_node("../Aimer").global_position = target
 	var aimscale = getAimScale()
@@ -176,7 +182,15 @@ func rigAim(vec):
 		
 	# add an aimtime 
 	var arm_bend = aim_time * 30
-		
+	
+	# string top is -130
+	# string bot is 40
+	get_node("CharacterRig/Pelvis/BoneTorso/Torso/BoneUpperRightArm/UpperRightArm/LowerRightArm/Bow/StringTop").rotation_degrees = -130 + 30*aim_time
+	get_node("CharacterRig/Pelvis/BoneTorso/Torso/BoneUpperRightArm/UpperRightArm/LowerRightArm/Bow/StringBot").rotation_degrees = 40 - 30*aim_time
+	
+	get_node("CharacterRig/Pelvis/BoneTorso/Torso/BoneUpperRightArm/UpperRightArm/LowerRightArm/Bow/StringTop").scale = Vector2(1,1.15+ 0.2*aim_time)
+	get_node("CharacterRig/Pelvis/BoneTorso/Torso/BoneUpperRightArm/UpperRightArm/LowerRightArm/Bow/StringBot").scale = Vector2(1,1.15+ 0.2*aim_time)
+	
 	if(isReversed()):
 		# offset + rad to deg
 		get_node("CharacterRig/Pelvis/BoneTorso/Torso/BoneUpperRightArm").rotation_degrees = (-180 + -55) + -57 * atan2(vec.y,vec.x)
