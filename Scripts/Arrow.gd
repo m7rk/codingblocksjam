@@ -3,7 +3,7 @@ extends Node2D
 onready var arrow_sprite = get_node("ArrowSprite")
 onready var alt_arrow_sprite = preload("res://Sprites/arrow_stuck.png")
 
-var SPEED = 350
+var SPEED = 450
 var xvel = 0
 var yvel = 0
 var zvel = 0

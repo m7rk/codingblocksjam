@@ -1,18 +1,25 @@
 extends KinematicBody2D
 var arrow = preload("res://Scenes/Arrow.tscn")
 
-# Declare member variables here. Examples:
+# How fast when moving
 var SPEED = 200
-
+# How fast when aiming
 var AIM_SPEED = 60
-# var b = "text"
+
 var aimer_active = false
-var aim_time = 0
 var draw_time = 1
-var AIM_MAX = 2.5
-var AIM_LIMIT = 2.0
+
+# aim variables, a smaller AIM_MAX increases accuracy bounds.
+var aim_time = 0
+var AIM_MAX = 1.3
+var AIM_LIMIT = 1.0
+
 var AIM_CURS_ROT_SPEED = 90
 var ARROW_BONE_ROOT_POSITION = Vector2(9,33)
+var CHAR_SCALE = 0.15
+
+var RUNNING_MOD = 0.9
+
 onready var arrow_node = get_node("CharacterRig/Pelvis/BoneTorso/Torso/BoneUpperRightArm/UpperRightArm/LowerRightArm/Bow/ArrowBone")
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -46,7 +53,10 @@ func _physics_process(delta):
 		raw_input = Vector2(1,0)
 		
 	if(raw_input != Vector2(0,0)):
-		get_node("CharacterRig/LAnimator").play("Walk")
+		var runspeed = RUNNING_MOD
+		if(aimer_active):
+			runspeed = runspeed * (0.6)
+		get_node("CharacterRig/LAnimator").play("Walk", -1, runspeed)
 	else:
 		get_node("CharacterRig/LAnimator").play("Idle")
 	
@@ -65,9 +75,9 @@ func _physics_process(delta):
 	
 	#facing
 	if(raw_input.x > 0):
-		get_node("CharacterRig").scale.x = 0.22
+		get_node("CharacterRig").scale.x = CHAR_SCALE
 	if(raw_input.x < 0):
-		get_node("CharacterRig").scale.x = -0.22
+		get_node("CharacterRig").scale.x = -CHAR_SCALE
 	
 	if(draw_time >= 0):
 		get_node("../Aimer").global_position = target
@@ -81,7 +91,7 @@ func _physics_process(delta):
 		target = Vector2(-450 + get_node("../Camera").global_position.x + get_viewport().get_mouse_position().x, get_viewport().get_mouse_position().y)
 		aim_time += delta
 		var aim_delt = -450  + (get_viewport().get_mouse_position().x + get_node("../Camera").global_position.x) - (global_position.x)
-		get_node("CharacterRig").scale.x = 0.22 * sign(aim_delt)
+		get_node("CharacterRig").scale.x = CHAR_SCALE * sign(aim_delt)
 		if(sign(aim_delt) == 0):
 			get_node("CharacterRig").scale.x = 1
 
@@ -135,7 +145,7 @@ func _input(event):
 		if(aimer_active != true):
 			return
 			
-		# LOL
+		# this code is basically all bullshit
 		var instance = arrow.instance()
 		get_parent().add_child(instance)
 		# little nudge to make arrow heads land better
@@ -174,6 +184,7 @@ func rigAim(vec):
 		get_node("CharacterRig/Pelvis/BoneTorso/Torso/BoneUpperRightArm").rotation_degrees = -55 + 57 * atan2(vec.y,vec.x)
 		get_node("CharacterRig/Pelvis/BoneTorso/Torso/BoneUpperLeftArm").rotation_degrees = offset + 57 * atan2(vec.y,vec.x)
 
+# lose an item when you get hit.
 func onHit(bonus):
 	if(get_node("../Camera/Backpack").get_child_count() > 0):
 		var v = get_node("../Camera/Backpack").get_child(rand_range(0,get_node("../Camera/Backpack").get_child_count()))
