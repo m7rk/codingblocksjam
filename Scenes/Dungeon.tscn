@@ -1,4 +1,4 @@
-[gd_scene load_steps=118 format=2]
+[gd_scene load_steps=119 format=2]
 
 [ext_resource path="res://Sprites/arrow.png" type="Texture" id=1]
 [ext_resource path="res://Tile Maps/dungeon_tileset.tres" type="TileSet" id=2]
@@ -46,6 +46,7 @@
 [ext_resource path="res://Music/INTRO.mp3" type="AudioStream" id=44]
 [ext_resource path="res://Sprites/Pickupables/Gold Bar.png" type="Texture" id=45]
 [ext_resource path="res://Scripts/TreasurePickup.gd" type="Script" id=46]
+[ext_resource path="res://Sprites/string.png" type="Texture" id=47]
 [ext_resource path="res://Sprites/tutorial-2.png" type="Texture" id=48]
 [ext_resource path="res://Sprites/tutorial-3.png" type="Texture" id=49]
 [ext_resource path="res://Sprites/bag.png" type="Texture" id=50]
@@ -108,7 +109,7 @@ extents = Vector2( 10000, 10 )
 extents = Vector2( 10, 600 )
 
 [sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 37, 29 )
+extents = Vector2( 20, 7 )
 
 [sub_resource type="Animation" id=11]
 resource_name = "Idle"
@@ -412,12 +413,9 @@ position = Vector2( 300, 300 )
 collision_mask = 41
 script = ExtResource( 5 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2( 0, -1 )
+[node name="LowerHitbox" type="CollisionShape2D" parent="Player"]
+position = Vector2( 3, -2 )
 shape = SubResource( 3 )
-__meta__ = {
-"_edit_lock_": true
-}
 
 [node name="CharacterRig" type="Node2D" parent="Player"]
 position = Vector2( 8, -41 )
@@ -442,7 +440,7 @@ __meta__ = {
 
 [node name="BoneUpperLeftArm" type="Node2D" parent="Player/CharacterRig/Pelvis/BoneTorso/Torso"]
 position = Vector2( -59.1113, -31.6666 )
-rotation = -0.872665
+rotation = -2.42077
 
 [node name="UpperLeftArm" type="Sprite" parent="Player/CharacterRig/Pelvis/BoneTorso/Torso/BoneUpperLeftArm"]
 position = Vector2( -35, 30 )
@@ -451,7 +449,7 @@ texture = ExtResource( 20 )
 
 [node name="BoneLowerLeftArm" type="Node2D" parent="Player/CharacterRig/Pelvis/BoneTorso/Torso/BoneUpperLeftArm/UpperLeftArm"]
 position = Vector2( -23.7847, 51.2815 )
-rotation = -0.628319
+rotation = -1.97746
 
 [node name="LowerLeftArm" type="Sprite" parent="Player/CharacterRig/Pelvis/BoneTorso/Torso/BoneUpperLeftArm/UpperLeftArm/BoneLowerLeftArm"]
 position = Vector2( -30.8484, 58.1753 )
@@ -477,13 +475,34 @@ position = Vector2( 5.55569, 22.2222 )
 texture = ExtResource( 18 )
 
 [node name="ArrowBone" type="Node2D" parent="Player/CharacterRig/Pelvis/BoneTorso/Torso/BoneUpperRightArm/UpperRightArm/LowerRightArm/Bow"]
+visible = false
 position = Vector2( 9, 33 )
+z_index = 1
 
 [node name="ArrowSprite" type="Sprite" parent="Player/CharacterRig/Pelvis/BoneTorso/Torso/BoneUpperRightArm/UpperRightArm/LowerRightArm/Bow/ArrowBone"]
 position = Vector2( 30, 15 )
 rotation = 0.968658
 scale = Vector2( 0.3, 0.3 )
 texture = ExtResource( 1 )
+
+[node name="StringTop" type="Node2D" parent="Player/CharacterRig/Pelvis/BoneTorso/Torso/BoneUpperRightArm/UpperRightArm/LowerRightArm/Bow"]
+position = Vector2( 79.4446, -93.8889 )
+rotation = -2.25986
+scale = Vector2( 1, 1.15 )
+
+[node name="Sprite" type="Sprite" parent="Player/CharacterRig/Pelvis/BoneTorso/Torso/BoneUpperRightArm/UpperRightArm/LowerRightArm/Bow/StringTop"]
+position = Vector2( 0, -53.3334 )
+texture = ExtResource( 47 )
+
+[node name="StringBot" type="Node2D" parent="Player/CharacterRig/Pelvis/BoneTorso/Torso/BoneUpperRightArm/UpperRightArm/LowerRightArm/Bow"]
+position = Vector2( -87.2222, 79.4443 )
+rotation = 0.663436
+scale = Vector2( 1, 1.1 )
+
+[node name="Sprite" type="Sprite" parent="Player/CharacterRig/Pelvis/BoneTorso/Torso/BoneUpperRightArm/UpperRightArm/LowerRightArm/Bow/StringBot"]
+position = Vector2( 0, -53.3334 )
+rotation = -0.000109659
+texture = ExtResource( 47 )
 
 [node name="BoneNeck" type="Node2D" parent="Player/CharacterRig/Pelvis/BoneTorso/Torso"]
 
@@ -497,6 +516,8 @@ texture = ExtResource( 7 )
 
 [node name="BoneUpperRightLeg" type="Node2D" parent="Player/CharacterRig/Pelvis"]
 position = Vector2( -41.1108, 23.3335 )
+rotation = 0.357447
+scale = Vector2( -1, 1 )
 z_index = -9
 
 [node name="UpperRightLeg" type="Sprite" parent="Player/CharacterRig/Pelvis/BoneUpperRightLeg"]
@@ -507,6 +528,7 @@ texture = ExtResource( 22 )
 
 [node name="BoneLowerRightLeg" type="Node2D" parent="Player/CharacterRig/Pelvis/BoneUpperRightLeg/UpperRightLeg"]
 position = Vector2( -22.4331, 60.915 )
+rotation = -0.143977
 scale = Vector2( 1, 1 )
 
 [node name="LowerRightLeg" type="Sprite" parent="Player/CharacterRig/Pelvis/BoneUpperRightLeg/UpperRightLeg/BoneLowerRightLeg"]
@@ -517,6 +539,7 @@ texture = ExtResource( 15 )
 
 [node name="BoneUpperLeftLeg" type="Node2D" parent="Player/CharacterRig/Pelvis"]
 position = Vector2( 53.8889, 18.3335 )
+rotation = 0.364176
 z_index = -13
 
 [node name="UpperLeftLeg" type="Sprite" parent="Player/CharacterRig/Pelvis/BoneUpperLeftLeg"]
@@ -528,7 +551,7 @@ __meta__ = {
 
 [node name="BoneLowerLeftLeg" type="Node2D" parent="Player/CharacterRig/Pelvis/BoneUpperLeftLeg/UpperLeftLeg"]
 position = Vector2( 14.9998, 34.9998 )
-rotation = -0.0872665
+rotation = 0.0746734
 
 [node name="LowerLeftLeg" type="Sprite" parent="Player/CharacterRig/Pelvis/BoneUpperLeftLeg/UpperLeftLeg/BoneLowerLeftLeg"]
 position = Vector2( 6.66675, 60 )

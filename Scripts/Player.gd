@@ -18,8 +18,6 @@ var AIM_CURS_ROT_SPEED = 90
 var ARROW_BONE_ROOT_POSITION = Vector2(9,33)
 var CHAR_SCALE = 0.15
 
-var RUNNING_MOD = 0.9
-
 onready var arrow_node = get_node("CharacterRig/Pelvis/BoneTorso/Torso/BoneUpperRightArm/UpperRightArm/LowerRightArm/Bow/ArrowBone")
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -53,7 +51,7 @@ func _physics_process(delta):
 		raw_input = Vector2(1,0)
 		
 	if(raw_input != Vector2(0,0)):
-		var runspeed = RUNNING_MOD
+		var runspeed = 1.0
 		if(aimer_active):
 			runspeed = runspeed * (0.6)
 		get_node("CharacterRig/LAnimator").play("Walk", -1, runspeed)
@@ -176,13 +174,18 @@ func rigAim(vec):
 	if(vec.x < 0):
 		offset = lerp(larm_targ_hi,larm_targ_lo, (1.57 + atan2(vec.y,-vec.x)) / 3.14)
 		
+	# add an aimtime 
+	var arm_bend = aim_time * 30
+		
 	if(isReversed()):
 		# offset + rad to deg
 		get_node("CharacterRig/Pelvis/BoneTorso/Torso/BoneUpperRightArm").rotation_degrees = (-180 + -55) + -57 * atan2(vec.y,vec.x)
-		get_node("CharacterRig/Pelvis/BoneTorso/Torso/BoneUpperLeftArm").rotation_degrees = (offset) + 57 * atan2(vec.y,-vec.x)
+		get_node("CharacterRig/Pelvis/BoneTorso/Torso/BoneUpperLeftArm").rotation_degrees = arm_bend + (offset) + 57 * atan2(vec.y,-vec.x)
+		get_node("CharacterRig/Pelvis/BoneTorso/Torso/BoneUpperLeftArm/UpperLeftArm/BoneLowerLeftArm").rotation_degrees = -arm_bend
 	else:
 		get_node("CharacterRig/Pelvis/BoneTorso/Torso/BoneUpperRightArm").rotation_degrees = -55 + 57 * atan2(vec.y,vec.x)
-		get_node("CharacterRig/Pelvis/BoneTorso/Torso/BoneUpperLeftArm").rotation_degrees = offset + 57 * atan2(vec.y,vec.x)
+		get_node("CharacterRig/Pelvis/BoneTorso/Torso/BoneUpperLeftArm").rotation_degrees = arm_bend + offset + 57 * atan2(vec.y,vec.x)
+		get_node("CharacterRig/Pelvis/BoneTorso/Torso/BoneUpperLeftArm/UpperLeftArm/BoneLowerLeftArm").rotation_degrees = -arm_bend
 
 # lose an item when you get hit.
 func onHit(bonus):
