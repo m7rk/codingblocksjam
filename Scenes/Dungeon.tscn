@@ -1,4 +1,4 @@
-[gd_scene load_steps=120 format=2]
+[gd_scene load_steps=123 format=2]
 
 [ext_resource path="res://Sprites/arrow.png" type="Texture" id=1]
 [ext_resource path="res://Tile Maps/dungeon_tileset.tres" type="TileSet" id=2]
@@ -101,6 +101,9 @@
 [ext_resource path="res://Sounds/griffon/confident.mp3" type="AudioStream" id=99]
 [ext_resource path="res://Sounds/griffon/nock_arrow.mp3" type="AudioStream" id=100]
 [ext_resource path="res://Sounds/griffon/adult_hurt2.mp3" type="AudioStream" id=101]
+[ext_resource path="res://Sprites/drop.png" type="Texture" id=102]
+[ext_resource path="res://Sprites/gauge.png" type="Texture" id=103]
+[ext_resource path="res://Sprites/fill.png" type="Texture" id=104]
 
 [sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 10000, 10 )
@@ -287,7 +290,6 @@ extents = Vector2( 13, 11.25 )
 
 [sub_resource type="Animation" id=15]
 resource_name = "Idle"
-length = 0.5
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Torso/BoneWing1:rotation_degrees")
@@ -296,10 +298,10 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.2, 0.5 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.2, 0.5, 0.6, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ 0.0, -50.0, 0.0 ]
+"values": [ 0.0, -50.0, 0.0, -50.0, 0.0 ]
 }
 tracks/1/type = "value"
 tracks/1/path = NodePath("Torso/BoneWing2:rotation_degrees")
@@ -308,10 +310,70 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.2, 0.5 ),
-"transitions": PoolRealArray( 1, 1, 1 ),
+"times": PoolRealArray( 0, 0.2, 0.5, 0.6, 0.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
 "update": 0,
-"values": [ 0.0, -30.0, 0.0 ]
+"values": [ 0.0, -30.0, 0.0, -30.0, 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("Torso/BackLeg2Bone:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 20.0, 0.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("Torso/BackLeg1Bone:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 20.0, 0.0 ]
+}
+tracks/4/type = "value"
+tracks/4/path = NodePath("Torso/FrontLeg2Bone:rotation_degrees")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -20.0, 0.0 ]
+}
+tracks/5/type = "value"
+tracks/5/path = NodePath("Torso/FrontLeg1Bone:rotation_degrees")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = {
+"times": PoolRealArray( 0, 0.6 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -20.0, 0.0 ]
+}
+tracks/6/type = "value"
+tracks/6/path = NodePath("Torso/TailBone:rotation_degrees")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/keys = {
+"times": PoolRealArray( 0, 0.5 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 10.0 ]
 }
 
 [sub_resource type="RectangleShape2D" id=9]
@@ -331,6 +393,7 @@ extents = Vector2( 22.5, 28.5 )
 
 [sub_resource type="Animation" id=21]
 resource_name = "Hurt"
+length = 0.2
 loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("CharacterRig/Torso/Neck:rotation_degrees")
@@ -339,10 +402,46 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
 "update": 0,
-"values": [ -36.0 ]
+"values": [ -45.0, 0.0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("CharacterRig/Torso/Neck/HeadBone/Head/LowerBeakBone:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 10.0, 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("CharacterRig/Torso/Neck/HeadBone/Head/UpperBeakBone:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -15.0, 0.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("CharacterRig/Torso/Neck/HeadBone/Head:rotation_degrees")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0, 0.2 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ -39.2, 0.0 ]
 }
 
 [sub_resource type="Animation" id=14]
@@ -596,7 +695,6 @@ texture = ExtResource( 47 )
 
 [node name="Neck" type="Sprite" parent="Player/CharacterRig/Pelvis/BoneTorso/Torso/BoneNeck"]
 position = Vector2( 34, -78.5555 )
-rotation = 1.57603
 texture = ExtResource( 10 )
 
 [node name="Head" type="Sprite" parent="Player/CharacterRig/Pelvis/BoneTorso/Torso/BoneNeck/Neck"]
@@ -652,6 +750,12 @@ anims/Walk = SubResource( 12 )
 [node name="UAnimator" type="AnimationPlayer" parent="Player/CharacterRig"]
 anims/Draw = SubResource( 10 )
 
+[node name="DropShadow" type="Sprite" parent="Player/CharacterRig"]
+modulate = Color( 1, 1, 1, 0.196078 )
+position = Vector2( -53.3333, 273.333 )
+z_index = -20
+texture = ExtResource( 102 )
+
 [node name="GetFood" type="AudioStreamPlayer2D" parent="Player"]
 stream = ExtResource( 66 )
 volume_db = 16.0
@@ -703,6 +807,7 @@ shape = SubResource( 16 )
 
 [node name="Peter" type="KinematicBody2D" parent="."]
 position = Vector2( 5903, -69 )
+scale = Vector2( 0.8, 0.8 )
 z_index = 50
 collision_layer = 16
 collision_mask = 38
@@ -720,9 +825,15 @@ __meta__ = {
 "_edit_lock_": true
 }
 
+[node name="DropShadow" type="Sprite" parent="Peter/CharacterRig/Torso"]
+modulate = Color( 1, 1, 1, 0.196078 )
+position = Vector2( 0, 767.857 )
+scale = Vector2( 3, 2 )
+z_index = -20
+texture = ExtResource( 102 )
+
 [node name="BoneWing2" type="Node2D" parent="Peter/CharacterRig/Torso"]
 position = Vector2( 140, -40 )
-rotation = -0.174533
 z_index = -1
 
 [node name="Wing2" type="Sprite" parent="Peter/CharacterRig/Torso/BoneWing2"]
@@ -731,70 +842,107 @@ texture = ExtResource( 79 )
 
 [node name="BoneWing1" type="Node2D" parent="Peter/CharacterRig/Torso"]
 position = Vector2( 120, -20 )
-rotation = -0.290888
 z_index = 2
 
 [node name="Wing1" type="Sprite" parent="Peter/CharacterRig/Torso/BoneWing1"]
 position = Vector2( -140, 40 )
 texture = ExtResource( 73 )
 
-[node name="Neck" type="Sprite" parent="Peter/CharacterRig/Torso"]
+[node name="Neck" type="Node2D" parent="Peter/CharacterRig/Torso"]
+position = Vector2( 321.43, 35.7144 )
+
+[node name="Neck" type="Sprite" parent="Peter/CharacterRig/Torso/Neck"]
+position = Vector2( -321.43, -35.7145 )
+scale = Vector2( 1, 1 )
 texture = ExtResource( 70 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Head" type="Sprite" parent="Peter/CharacterRig/Torso/Neck"]
+[node name="Head" type="Sprite" parent="Peter/CharacterRig/Torso/Neck/Neck"]
 texture = ExtResource( 71 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="LowerBeak" type="Sprite" parent="Peter/CharacterRig/Torso/Neck/Head"]
+[node name="LowerBeak" type="Sprite" parent="Peter/CharacterRig/Torso/Neck/Neck/Head"]
 texture = ExtResource( 68 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="UpperBeak" type="Sprite" parent="Peter/CharacterRig/Torso/Neck/Head"]
+[node name="UpperBeak" type="Sprite" parent="Peter/CharacterRig/Torso/Neck/Neck/Head"]
 texture = ExtResource( 69 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="BackLeg1" type="Sprite" parent="Peter/CharacterRig/Torso"]
-rotation = -2.15199
+[node name="BackLeg2Bone" type="Node2D" parent="Peter/CharacterRig/Torso"]
+position = Vector2( -232.141, 178.572 )
+rotation = 0.274233
+
+[node name="BackLeg2" type="Sprite" parent="Peter/CharacterRig/Torso/BackLeg2Bone"]
+position = Vector2( 232.141, -178.572 )
+scale = Vector2( 1, 1 )
+z_index = 1
 texture = ExtResource( 72 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="BackLeg2" type="Sprite" parent="Peter/CharacterRig/Torso"]
+[node name="BackLeg1Bone" type="Node2D" parent="Peter/CharacterRig/Torso"]
+position = Vector2( -196.422, 196.429 )
+rotation = 0.274233
+
+[node name="BackLeg1" type="Sprite" parent="Peter/CharacterRig/Torso/BackLeg1Bone"]
+position = Vector2( 196.414, -196.429 )
+scale = Vector2( 1, 1 )
+z_index = -1
+texture = ExtResource( 76 )
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="FrontLeg2Bone" type="Node2D" parent="Peter/CharacterRig/Torso"]
+position = Vector2( 214.289, 196.429 )
+rotation = -0.274233
+
+[node name="FrontLeg2" type="Sprite" parent="Peter/CharacterRig/Torso/FrontLeg2Bone"]
+position = Vector2( -214.289, -196.429 )
+scale = Vector2( 1, 1 )
+z_index = 1
 texture = ExtResource( 74 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="FrontLeg1" type="Sprite" parent="Peter/CharacterRig/Torso"]
+[node name="FrontLeg1Bone" type="Node2D" parent="Peter/CharacterRig/Torso"]
+position = Vector2( 303.578, 250 )
+rotation = -0.274233
+
+[node name="FrontLeg1" type="Sprite" parent="Peter/CharacterRig/Torso/FrontLeg1Bone"]
+position = Vector2( -303.586, -250 )
+scale = Vector2( 1, 1 )
+z_index = -1
 texture = ExtResource( 78 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Tail1" type="Sprite" parent="Peter/CharacterRig/Torso"]
+[node name="TailBone" type="Node2D" parent="Peter/CharacterRig/Torso"]
+position = Vector2( -232.141, 0 )
+rotation = 0.029933
+
+[node name="Tail1" type="Sprite" parent="Peter/CharacterRig/Torso/TailBone"]
+position = Vector2( 232.141, 0 )
+scale = Vector2( 1, 1 )
 texture = ExtResource( 77 )
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="Tail2" type="Sprite" parent="Peter/CharacterRig/Torso/Tail1"]
+[node name="Tail2" type="Sprite" parent="Peter/CharacterRig/Torso/TailBone/Tail1"]
 texture = ExtResource( 75 )
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="FrontLeg2" type="Sprite" parent="Peter/CharacterRig/Torso"]
-texture = ExtResource( 76 )
 __meta__ = {
 "_edit_lock_": true
 }
@@ -1110,7 +1258,7 @@ __meta__ = {
 [node name="GriffonBoss" type="KinematicBody2D" parent="Dungeon1"]
 position = Vector2( 5205, 275 )
 rotation = 3.14159
-scale = Vector2( 1, -1 )
+scale = Vector2( 0.8, -0.8 )
 z_index = 10
 collision_layer = 0
 collision_mask = 2
@@ -1129,7 +1277,7 @@ texture = ExtResource( 61 )
 
 [node name="FrontLeg1Bone" type="Node2D" parent="Dungeon1/GriffonBoss/CharacterRig/Torso"]
 position = Vector2( 63.334, 53.3332 )
-rotation = -0.767945
+rotation = -0.733909
 
 [node name="FrontLeg1" type="Sprite" parent="Dungeon1/GriffonBoss/CharacterRig/Torso/FrontLeg1Bone"]
 position = Vector2( 26.668, 83.3328 )
@@ -1137,7 +1285,7 @@ texture = ExtResource( 52 )
 
 [node name="FrontLeg2Bone" type="Node2D" parent="Dungeon1/GriffonBoss/CharacterRig/Torso"]
 position = Vector2( 120, 43.3331 )
-rotation = -0.663225
+rotation = -0.595154
 
 [node name="FrontLeg2" type="Sprite" parent="Dungeon1/GriffonBoss/CharacterRig/Torso/FrontLeg2Bone"]
 position = Vector2( 23.334, 66.6669 )
@@ -1146,7 +1294,7 @@ texture = ExtResource( 63 )
 
 [node name="BackLeg1Bone" type="Node2D" parent="Dungeon1/GriffonBoss/CharacterRig/Torso"]
 position = Vector2( -160, 0.000366211 )
-rotation = 0.418879
+rotation = 0.384843
 
 [node name="BackLeg1" type="Sprite" parent="Dungeon1/GriffonBoss/CharacterRig/Torso/BackLeg1Bone"]
 position = Vector2( 3.33789, 80 )
@@ -1154,7 +1302,7 @@ texture = ExtResource( 57 )
 
 [node name="BackLeg2Bone" type="Node2D" parent="Dungeon1/GriffonBoss/CharacterRig/Torso"]
 position = Vector2( -113.332, 43.3336 )
-rotation = 0.314159
+rotation = 0.246088
 
 [node name="BackLeg2" type="Sprite" parent="Dungeon1/GriffonBoss/CharacterRig/Torso/BackLeg2Bone"]
 position = Vector2( 26.668, 59.9994 )
@@ -1163,7 +1311,7 @@ texture = ExtResource( 55 )
 
 [node name="BoneWing2" type="Node2D" parent="Dungeon1/GriffonBoss/CharacterRig/Torso"]
 position = Vector2( 53.334, -76.6667 )
-rotation = 0.174533
+rotation = 0.68507
 
 [node name="Wing2" type="Sprite" parent="Dungeon1/GriffonBoss/CharacterRig/Torso/BoneWing2"]
 position = Vector2( -113.334, -146.666 )
@@ -1172,6 +1320,7 @@ texture = ExtResource( 62 )
 
 [node name="BoneWing1" type="Node2D" parent="Dungeon1/GriffonBoss/CharacterRig/Torso"]
 position = Vector2( 53.334, -76.6667 )
+rotation = 0.510537
 
 [node name="Wing1" type="Sprite" parent="Dungeon1/GriffonBoss/CharacterRig/Torso/BoneWing1"]
 position = Vector2( -226.668, -163.333 )
@@ -1180,7 +1329,7 @@ texture = ExtResource( 56 )
 
 [node name="Neck" type="Sprite" parent="Dungeon1/GriffonBoss/CharacterRig/Torso"]
 position = Vector2( 176.666, -20.0005 )
-rotation = -0.628319
+rotation = -0.588203
 z_index = 2
 texture = ExtResource( 53 )
 __meta__ = {
@@ -1192,10 +1341,12 @@ position = Vector2( 52.9004, -72.8115 )
 
 [node name="Head" type="Sprite" parent="Dungeon1/GriffonBoss/CharacterRig/Torso/Neck/HeadBone"]
 position = Vector2( 17.0977, -33.8555 )
+rotation = -0.51239
 texture = ExtResource( 60 )
 
 [node name="LowerBeakBone" type="Node2D" parent="Dungeon1/GriffonBoss/CharacterRig/Torso/Neck/HeadBone/Head"]
 position = Vector2( 31.1914, 52.457 )
+rotation = 0.130712
 
 [node name="LowerBeak" type="Sprite" parent="Dungeon1/GriffonBoss/CharacterRig/Torso/Neck/HeadBone/Head/LowerBeakBone"]
 position = Vector2( 37.8096, 13.542 )
@@ -1203,6 +1354,7 @@ texture = ExtResource( 59 )
 
 [node name="UpperBeakBone" type="Node2D" parent="Dungeon1/GriffonBoss/CharacterRig/Torso/Neck/HeadBone/Head"]
 position = Vector2( 35.1094, 47.0645 )
+rotation = -0.196068
 
 [node name="UpperBeak" type="Sprite" parent="Dungeon1/GriffonBoss/CharacterRig/Torso/Neck/HeadBone/Head/UpperBeakBone"]
 position = Vector2( 38.8896, 17.9365 )
@@ -1210,7 +1362,7 @@ texture = ExtResource( 58 )
 
 [node name="TailBone" type="Node2D" parent="Dungeon1/GriffonBoss/CharacterRig/Torso"]
 position = Vector2( -213.332, -33.3328 )
-rotation = 0.0581776
+rotation = 0.0487232
 
 [node name="Tail1" type="Sprite" parent="Dungeon1/GriffonBoss/CharacterRig/Torso/TailBone"]
 position = Vector2( -126.668, 59.3328 )
@@ -1219,6 +1371,13 @@ texture = ExtResource( 54 )
 [node name="Tail2" type="Sprite" parent="Dungeon1/GriffonBoss/CharacterRig/Torso/TailBone/Tail1"]
 position = Vector2( -168, 94 )
 texture = ExtResource( 64 )
+
+[node name="DropShadow" type="Sprite" parent="Dungeon1/GriffonBoss/CharacterRig"]
+modulate = Color( 1, 1, 1, 0.196078 )
+position = Vector2( -12.499, 325 )
+scale = Vector2( 1.7, 1.7 )
+z_index = -20
+texture = ExtResource( 102 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Dungeon1/GriffonBoss"]
 position = Vector2( -7, 2.00003 )
@@ -2718,32 +2877,51 @@ offset = Vector2( 0, 250 )
 current = true
 script = ExtResource( 14 )
 
-[node name="Mood Label" type="Label" parent="Camera"]
-margin_left = 264.0
-margin_top = 7.0
-margin_right = 442.0
-margin_bottom = 38.0
-custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
-custom_fonts/font = ExtResource( 92 )
-text = "PETER'S MOOD"
-align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
+[node name="Confidence" type="TextureProgress" parent="Camera"]
+margin_left = -250.0
+margin_top = 35.0
+margin_right = 250.0
+margin_bottom = 135.0
+rect_scale = Vector2( 1, 0.5 )
+value = 50.0
+texture_under = ExtResource( 103 )
+texture_progress = ExtResource( 104 )
+tint_progress = Color( 0, 0, 1, 1 )
 
-[node name="Mood" type="Label" parent="Camera"]
-margin_left = 270.0
-margin_top = 40.0
-margin_right = 400.0
-margin_bottom = 71.0
+[node name="ConfidenceLabel" type="Label" parent="Camera"]
+margin_left = -375.0
+margin_top = 7.0
+margin_right = -29.0
+margin_bottom = 38.0
 rect_scale = Vector2( 1.3, 1.3 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 custom_fonts/font = ExtResource( 92 )
-text = "STARVING"
+text = "CONFIDENCE"
 align = 1
-__meta__ = {
-"_edit_use_anchors_": false
-}
+
+[node name="Anger" type="TextureProgress" parent="Camera"]
+margin_left = 50.0
+margin_top = 35.0
+margin_right = 550.0
+margin_bottom = 135.0
+rect_scale = Vector2( 1, 0.5 )
+value = 50.0
+texture_under = ExtResource( 103 )
+texture_progress = ExtResource( 104 )
+tint_progress = Color( 0, 0, 1, 1 )
+
+[node name="AngerLabel" type="Label" parent="Camera"]
+margin_left = 53.0
+margin_top = 7.0
+margin_right = 202.0
+margin_bottom = 38.0
+rect_scale = Vector2( 1.3, 1.3 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 92 )
+text = "ANGER"
+align = 1
 
 [node name="Backpack" type="Sprite" parent="Camera"]
 position = Vector2( -400, 50 )
@@ -2753,6 +2931,7 @@ texture = ExtResource( 50 )
 script = ExtResource( 51 )
 
 [node name="FrontSprite" type="Sprite" parent="Camera"]
+visible = false
 position = Vector2( 0, 250 )
 z_index = 1000
 texture = ExtResource( 23 )

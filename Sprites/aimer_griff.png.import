@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tutorial-1.png-3a90f3e060fda442b724a5f208b0b9e3.stex"
+path="res://.import/aimer_griff.png-7372b8946304efad632db8c340496841.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/tutorial-1.png"
-dest_files=[ "res://.import/tutorial-1.png-3a90f3e060fda442b724a5f208b0b9e3.stex" ]
+source_file="res://Sprites/aimer_griff.png"
+dest_files=[ "res://.import/aimer_griff.png-7372b8946304efad632db8c340496841.stex" ]
 
 [params]
 

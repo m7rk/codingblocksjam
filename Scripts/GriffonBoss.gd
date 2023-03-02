@@ -72,6 +72,7 @@ func onHit(bonus):
 	print("hit!")
 	HP -= 1
 	get_node("Hurt").play()
+	get_node("Animation").play("Hurt")
 	if(HP == 0):
 		get_node("../../Music").fadeOut()
 		get_node("CollisionShape2D").queue_free()

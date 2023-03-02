@@ -30,10 +30,8 @@ func backpack(delta):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	global_position.x = lerp(global_position.x, targ, 3 * delta)
-	get_node("Mood Label").visible = get_node("../Peter").active
-	get_node("Mood").visible = get_node("../Peter").active
-	get_node("Mood").text = get_node("../Peter").state
-	get_node("Mood").modulate = get_node("../Peter").colorLookup()
+	# get_node("Mood").visible = get_node("../Peter").active
+	# get_node("Mood").modulate = get_node("../Peter").colorLookup()
 	backpack(delta)
 	if(endgame):
 		if(get_node("../Player").global_position.x - 450 > global_position.x):
