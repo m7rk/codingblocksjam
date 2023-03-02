@@ -29,5 +29,7 @@ func _on_Fire_body_entered(body):
 
 
 func _on_Fire_area_entered(area):
-	area.get_parent().onHit(true)
+	queue_free()
+
+func onHit(value):
 	queue_free()

@@ -203,6 +203,7 @@ func rigAim(vec):
 
 # lose an item when you get hit.
 func onHit(bonus):
+	print("on hit!")
 	if(get_node("../Camera/Backpack").get_child_count() > 0):
 		var v = get_node("../Camera/Backpack").get_child(rand_range(0,get_node("../Camera/Backpack").get_child_count()))
 		v.get_parent().remove_child(v)
@@ -219,3 +220,7 @@ func onHit(bonus):
 func _on_UpperHitbox_body_entered(body):
 	onHit(false)
 	body.onHit(false)
+	
+# hit with projectile.
+func _on_UpperHitbox_area_entered(body):
+	onHit(false)

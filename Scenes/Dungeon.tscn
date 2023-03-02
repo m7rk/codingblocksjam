@@ -528,11 +528,9 @@ texture = ExtResource( 22 )
 [node name="BoneLowerRightLeg" type="Node2D" parent="Player/CharacterRig/Pelvis/BoneUpperRightLeg/UpperRightLeg"]
 position = Vector2( -22.4331, 60.915 )
 rotation = 0.0301265
-scale = Vector2( 1, 1 )
 
 [node name="LowerRightLeg" type="Sprite" parent="Player/CharacterRig/Pelvis/BoneUpperRightLeg/UpperRightLeg/BoneLowerRightLeg"]
 position = Vector2( 3.82178, 66.8903 )
-scale = Vector2( 1, 1 )
 z_index = -1
 texture = ExtResource( 15 )
 
@@ -606,14 +604,15 @@ __meta__ = {
 }
 
 [node name="UpperHitbox" type="Area2D" parent="Player"]
-collision_layer = 0
-collision_mask = 36
+collision_layer = 2048
+collision_mask = 64
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player/UpperHitbox"]
 position = Vector2( 3.5, -74 )
 shape = SubResource( 16 )
 
 [node name="Peter" type="KinematicBody2D" parent="."]
+visible = false
 position = Vector2( 5895, 137 )
 z_index = 50
 collision_layer = 16
@@ -817,42 +816,55 @@ texture = ExtResource( 48 )
 
 [node name="SkeletonHead" parent="Dungeon1" instance=ExtResource( 3 )]
 position = Vector2( 2582, 423 )
+collision_mask = 2119
 
 [node name="SkeletonHead2" parent="Dungeon1" instance=ExtResource( 3 )]
 position = Vector2( 2750, 159 )
+collision_mask = 2119
 
 [node name="SkeletonHead3" parent="Dungeon1" instance=ExtResource( 3 )]
 position = Vector2( 2940, 420 )
+collision_mask = 2119
 
 [node name="SkeletonHead4" parent="Dungeon1" instance=ExtResource( 3 )]
 position = Vector2( 3132, 143 )
+collision_mask = 2119
 
 [node name="SkeletonHead5" parent="Dungeon1" instance=ExtResource( 3 )]
 position = Vector2( 3147, 439 )
+collision_mask = 2119
 
 [node name="SkeletonHead6" parent="Dungeon1" instance=ExtResource( 3 )]
 position = Vector2( 3435, 301 )
+collision_mask = 2119
 
 [node name="SkeletonHead7" parent="Dungeon1" instance=ExtResource( 3 )]
 position = Vector2( 7802, 139 )
+collision_mask = 2119
 
 [node name="SkeletonHead8" parent="Dungeon1" instance=ExtResource( 3 )]
 position = Vector2( 7810, 284 )
+collision_mask = 2119
 
 [node name="SkeletonHead9" parent="Dungeon1" instance=ExtResource( 3 )]
 position = Vector2( 7823, 435 )
+collision_mask = 2119
 
 [node name="SkeletonHead10" parent="Dungeon1" instance=ExtResource( 3 )]
 position = Vector2( 9106, 175 )
+collision_mask = 2119
 
 [node name="SkeletonHead12" parent="Dungeon1" instance=ExtResource( 3 )]
 position = Vector2( 9062, 134 )
+collision_mask = 2119
 
 [node name="SkeletonHead11" parent="Dungeon1" instance=ExtResource( 3 )]
 position = Vector2( 9149, 224 )
+collision_mask = 2119
 
 [node name="SkeletonHead13" parent="Dungeon1" instance=ExtResource( 3 )]
 position = Vector2( 8891, 461 )
+collision_mask = 2119
 
 [node name="Target" type="Sprite" parent="Dungeon1"]
 position = Vector2( 1312, 455 )
@@ -1215,66 +1227,87 @@ stream = ExtResource( 67 )
 
 [node name="Slime" parent="Dungeon2" instance=ExtResource( 86 )]
 position = Vector2( 1351, 134 )
+collision_mask = 2119
 
 [node name="Slime2" parent="Dungeon2" instance=ExtResource( 86 )]
 position = Vector2( 1353, 442 )
+collision_mask = 2119
 
 [node name="Slime3" parent="Dungeon2" instance=ExtResource( 86 )]
 position = Vector2( 1856, 147 )
+collision_mask = 2119
 
 [node name="Slime4" parent="Dungeon2" instance=ExtResource( 86 )]
 position = Vector2( 1858, 455 )
+collision_mask = 2119
 
 [node name="Slime5" parent="Dungeon2" instance=ExtResource( 86 )]
 position = Vector2( 1947, 181 )
+collision_mask = 2119
 
 [node name="Slime6" parent="Dungeon2" instance=ExtResource( 86 )]
 position = Vector2( 1952, 426 )
+collision_mask = 2119
 
 [node name="Slime7" parent="Dungeon2" instance=ExtResource( 86 )]
 position = Vector2( 4498, 378 )
+collision_mask = 2119
 
 [node name="Slime8" parent="Dungeon2" instance=ExtResource( 86 )]
 position = Vector2( 4492, 218 )
+collision_mask = 2119
 
 [node name="Slime9" parent="Dungeon2" instance=ExtResource( 86 )]
 position = Vector2( 4494, 292 )
+collision_mask = 2119
 
 [node name="Slime10" parent="Dungeon2" instance=ExtResource( 86 )]
 position = Vector2( 4862, 138 )
+collision_mask = 2119
 
 [node name="Slime11" parent="Dungeon2" instance=ExtResource( 86 )]
 position = Vector2( 4914, 185 )
+collision_mask = 2119
 
 [node name="SkeletonHead" parent="Dungeon2" instance=ExtResource( 3 )]
 position = Vector2( 2040, 355 )
+collision_mask = 2119
 
 [node name="SkeletonHead2" parent="Dungeon2" instance=ExtResource( 3 )]
 position = Vector2( 2034, 266 )
+collision_mask = 2119
 
 [node name="SkeletonHead3" parent="Dungeon2" instance=ExtResource( 3 )]
 position = Vector2( 2932, 229 )
+collision_mask = 2119
 
 [node name="SkeletonHead4" parent="Dungeon2" instance=ExtResource( 3 )]
 position = Vector2( 2926, 140 )
+collision_mask = 2119
 
 [node name="SkeletonHead5" parent="Dungeon2" instance=ExtResource( 3 )]
 position = Vector2( 3535, 466 )
+collision_mask = 2119
 
 [node name="SkeletonHead6" parent="Dungeon2" instance=ExtResource( 3 )]
 position = Vector2( 3529, 377 )
+collision_mask = 2119
 
 [node name="SkeletonHead7" parent="Dungeon2" instance=ExtResource( 3 )]
 position = Vector2( 3940, 276 )
+collision_mask = 2119
 
 [node name="SkeletonHead8" parent="Dungeon2" instance=ExtResource( 3 )]
 position = Vector2( 3934, 187 )
+collision_mask = 2119
 
 [node name="SkeletonHead9" parent="Dungeon2" instance=ExtResource( 3 )]
 position = Vector2( 4333, 336 )
+collision_mask = 2119
 
 [node name="SkeletonHead10" parent="Dungeon2" instance=ExtResource( 3 )]
 position = Vector2( 4327, 247 )
+collision_mask = 2119
 
 [node name="RopeTrap" type="Sprite" parent="Dungeon2"]
 position = Vector2( 2493, 50 )
@@ -1643,42 +1676,55 @@ __meta__ = {
 
 [node name="Slime9" parent="Dungeon3" instance=ExtResource( 86 )]
 position = Vector2( 4570, 292 )
+collision_mask = 2127
 
 [node name="Slime10" parent="Dungeon3" instance=ExtResource( 86 )]
 position = Vector2( 4938, 138 )
+collision_mask = 2127
 
 [node name="Slime11" parent="Dungeon3" instance=ExtResource( 86 )]
 position = Vector2( 4990, 185 )
+collision_mask = 2127
 
 [node name="SkeletonHead" parent="Dungeon3" instance=ExtResource( 3 )]
 position = Vector2( 2116, 355 )
+collision_mask = 2119
 
 [node name="SkeletonHead2" parent="Dungeon3" instance=ExtResource( 3 )]
 position = Vector2( 2110, 266 )
+collision_mask = 2119
 
 [node name="SkeletonHead3" parent="Dungeon3" instance=ExtResource( 3 )]
 position = Vector2( 3008, 229 )
+collision_mask = 2119
 
 [node name="SkeletonHead4" parent="Dungeon3" instance=ExtResource( 3 )]
 position = Vector2( 3002, 140 )
+collision_mask = 2119
 
 [node name="SkeletonHead5" parent="Dungeon3" instance=ExtResource( 3 )]
 position = Vector2( 3611, 466 )
+collision_mask = 2119
 
 [node name="SkeletonHead6" parent="Dungeon3" instance=ExtResource( 3 )]
 position = Vector2( 3605, 377 )
+collision_mask = 2119
 
 [node name="SkeletonHead7" parent="Dungeon3" instance=ExtResource( 3 )]
 position = Vector2( 4016, 276 )
+collision_mask = 2119
 
 [node name="SkeletonHead8" parent="Dungeon3" instance=ExtResource( 3 )]
 position = Vector2( 4010, 187 )
+collision_mask = 2119
 
 [node name="SkeletonHead9" parent="Dungeon3" instance=ExtResource( 3 )]
 position = Vector2( 4409, 336 )
+collision_mask = 2119
 
 [node name="SkeletonHead10" parent="Dungeon3" instance=ExtResource( 3 )]
 position = Vector2( 4403, 247 )
+collision_mask = 2119
 
 [node name="Slime12" parent="Dungeon3" instance=ExtResource( 86 )]
 position = Vector2( 4267, 290 )
@@ -1691,33 +1737,43 @@ position = Vector2( 4687, 183 )
 
 [node name="SkeletonHead11" parent="Dungeon3" instance=ExtResource( 3 )]
 position = Vector2( 1813, 353 )
+collision_mask = 2119
 
 [node name="SkeletonHead12" parent="Dungeon3" instance=ExtResource( 3 )]
 position = Vector2( 1807, 264 )
+collision_mask = 2119
 
 [node name="SkeletonHead13" parent="Dungeon3" instance=ExtResource( 3 )]
 position = Vector2( 2705, 227 )
+collision_mask = 2119
 
 [node name="SkeletonHead14" parent="Dungeon3" instance=ExtResource( 3 )]
 position = Vector2( 2699, 138 )
+collision_mask = 2119
 
 [node name="SkeletonHead15" parent="Dungeon3" instance=ExtResource( 3 )]
 position = Vector2( 3308, 464 )
+collision_mask = 2119
 
 [node name="SkeletonHead16" parent="Dungeon3" instance=ExtResource( 3 )]
 position = Vector2( 3302, 375 )
+collision_mask = 2119
 
 [node name="SkeletonHead17" parent="Dungeon3" instance=ExtResource( 3 )]
 position = Vector2( 3713, 274 )
+collision_mask = 2119
 
 [node name="SkeletonHead18" parent="Dungeon3" instance=ExtResource( 3 )]
 position = Vector2( 3707, 185 )
+collision_mask = 2119
 
 [node name="SkeletonHead19" parent="Dungeon3" instance=ExtResource( 3 )]
 position = Vector2( 4106, 334 )
+collision_mask = 2119
 
 [node name="SkeletonHead20" parent="Dungeon3" instance=ExtResource( 3 )]
 position = Vector2( 4100, 245 )
+collision_mask = 2119
 
 [node name="Slime15" parent="Dungeon3" instance=ExtResource( 86 )]
 position = Vector2( 4026, 284 )
@@ -1730,33 +1786,43 @@ position = Vector2( 4446, 177 )
 
 [node name="SkeletonHead21" parent="Dungeon3" instance=ExtResource( 3 )]
 position = Vector2( 1572, 347 )
+collision_mask = 2119
 
 [node name="SkeletonHead22" parent="Dungeon3" instance=ExtResource( 3 )]
 position = Vector2( 1566, 258 )
+collision_mask = 2119
 
 [node name="SkeletonHead23" parent="Dungeon3" instance=ExtResource( 3 )]
 position = Vector2( 2464, 221 )
+collision_mask = 2119
 
 [node name="SkeletonHead24" parent="Dungeon3" instance=ExtResource( 3 )]
 position = Vector2( 2458, 132 )
+collision_mask = 2119
 
 [node name="SkeletonHead25" parent="Dungeon3" instance=ExtResource( 3 )]
 position = Vector2( 3067, 458 )
+collision_mask = 2119
 
 [node name="SkeletonHead26" parent="Dungeon3" instance=ExtResource( 3 )]
 position = Vector2( 3061, 369 )
+collision_mask = 2119
 
 [node name="SkeletonHead27" parent="Dungeon3" instance=ExtResource( 3 )]
 position = Vector2( 3472, 268 )
+collision_mask = 2119
 
 [node name="SkeletonHead28" parent="Dungeon3" instance=ExtResource( 3 )]
 position = Vector2( 3466, 179 )
+collision_mask = 2119
 
 [node name="SkeletonHead29" parent="Dungeon3" instance=ExtResource( 3 )]
 position = Vector2( 3865, 328 )
+collision_mask = 2119
 
 [node name="SkeletonHead30" parent="Dungeon3" instance=ExtResource( 3 )]
 position = Vector2( 3859, 239 )
+collision_mask = 2119
 
 [node name="Treasure1" type="Area2D" parent="Dungeon3"]
 position = Vector2( 1930, 438 )
@@ -2345,57 +2411,75 @@ __meta__ = {
 
 [node name="SkeletonHead" parent="Dungeon5" instance=ExtResource( 3 )]
 position = Vector2( 2582, 423 )
+collision_mask = 2119
 
 [node name="SkeletonHead2" parent="Dungeon5" instance=ExtResource( 3 )]
 position = Vector2( 2750, 159 )
+collision_mask = 2119
 
 [node name="SkeletonHead3" parent="Dungeon5" instance=ExtResource( 3 )]
 position = Vector2( 2940, 420 )
+collision_mask = 2119
 
 [node name="SkeletonHead4" parent="Dungeon5" instance=ExtResource( 3 )]
 position = Vector2( 3132, 143 )
+collision_mask = 2119
 
 [node name="SkeletonHead5" parent="Dungeon5" instance=ExtResource( 3 )]
 position = Vector2( 3147, 439 )
+collision_mask = 2119
 
 [node name="SkeletonHead6" parent="Dungeon5" instance=ExtResource( 3 )]
 position = Vector2( 3435, 301 )
+collision_mask = 2119
 
 [node name="SkeletonHead14" parent="Dungeon5" instance=ExtResource( 3 )]
 position = Vector2( 2653, 423 )
+collision_mask = 2119
 
 [node name="SkeletonHead15" parent="Dungeon5" instance=ExtResource( 3 )]
 position = Vector2( 2821, 159 )
+collision_mask = 2119
 
 [node name="SkeletonHead16" parent="Dungeon5" instance=ExtResource( 3 )]
 position = Vector2( 3011, 420 )
+collision_mask = 2119
 
 [node name="SkeletonHead17" parent="Dungeon5" instance=ExtResource( 3 )]
 position = Vector2( 3203, 143 )
+collision_mask = 2119
 
 [node name="SkeletonHead18" parent="Dungeon5" instance=ExtResource( 3 )]
 position = Vector2( 3218, 439 )
+collision_mask = 2119
 
 [node name="SkeletonHead19" parent="Dungeon5" instance=ExtResource( 3 )]
 position = Vector2( 3506, 301 )
+collision_mask = 2119
 
 [node name="SkeletonHead27" parent="Dungeon5" instance=ExtResource( 3 )]
 position = Vector2( 2736, 421 )
+collision_mask = 2119
 
 [node name="SkeletonHead28" parent="Dungeon5" instance=ExtResource( 3 )]
 position = Vector2( 2904, 157 )
+collision_mask = 2119
 
 [node name="SkeletonHead29" parent="Dungeon5" instance=ExtResource( 3 )]
 position = Vector2( 3094, 418 )
+collision_mask = 2119
 
 [node name="SkeletonHead30" parent="Dungeon5" instance=ExtResource( 3 )]
 position = Vector2( 3286, 141 )
+collision_mask = 2119
 
 [node name="SkeletonHead31" parent="Dungeon5" instance=ExtResource( 3 )]
 position = Vector2( 3301, 437 )
+collision_mask = 2119
 
 [node name="SkeletonHead32" parent="Dungeon5" instance=ExtResource( 3 )]
 position = Vector2( 3589, 299 )
+collision_mask = 2119
 
 [node name="Target" type="Sprite" parent="Dungeon5"]
 position = Vector2( 1309, 439 )
@@ -2443,7 +2527,6 @@ z_index = 900
 texture = ExtResource( 8 )
 
 [node name="Camera" type="Camera2D" parent="."]
-visible = false
 offset = Vector2( 0, 250 )
 current = true
 script = ExtResource( 14 )

@@ -51,6 +51,14 @@ right={
  ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="Player"
+2d_physics/layer_3="Enemy"
+2d_physics/layer_5="Peter"
+2d_physics/layer_7="Projectile"
+2d_physics/layer_12="PlayerUpperBody"
+
 [physics]
 
 common/enable_pause_aware_picking=true
