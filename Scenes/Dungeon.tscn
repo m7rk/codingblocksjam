@@ -806,6 +806,7 @@ position = Vector2( 3.5, -74 )
 shape = SubResource( 16 )
 
 [node name="Peter" type="KinematicBody2D" parent="."]
+visible = false
 position = Vector2( 5903, -69 )
 scale = Vector2( 0.8, 0.8 )
 z_index = 50
@@ -853,7 +854,6 @@ position = Vector2( 321.43, 35.7144 )
 
 [node name="Neck" type="Sprite" parent="Peter/CharacterRig/Torso/Neck"]
 position = Vector2( -321.43, -35.7145 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 70 )
 __meta__ = {
 "_edit_lock_": true
@@ -883,7 +883,6 @@ rotation = 0.274233
 
 [node name="BackLeg2" type="Sprite" parent="Peter/CharacterRig/Torso/BackLeg2Bone"]
 position = Vector2( 232.141, -178.572 )
-scale = Vector2( 1, 1 )
 z_index = 1
 texture = ExtResource( 72 )
 __meta__ = {
@@ -896,7 +895,6 @@ rotation = 0.274233
 
 [node name="BackLeg1" type="Sprite" parent="Peter/CharacterRig/Torso/BackLeg1Bone"]
 position = Vector2( 196.414, -196.429 )
-scale = Vector2( 1, 1 )
 z_index = -1
 texture = ExtResource( 76 )
 __meta__ = {
@@ -909,7 +907,6 @@ rotation = -0.274233
 
 [node name="FrontLeg2" type="Sprite" parent="Peter/CharacterRig/Torso/FrontLeg2Bone"]
 position = Vector2( -214.289, -196.429 )
-scale = Vector2( 1, 1 )
 z_index = 1
 texture = ExtResource( 74 )
 __meta__ = {
@@ -922,7 +919,6 @@ rotation = -0.274233
 
 [node name="FrontLeg1" type="Sprite" parent="Peter/CharacterRig/Torso/FrontLeg1Bone"]
 position = Vector2( -303.586, -250 )
-scale = Vector2( 1, 1 )
 z_index = -1
 texture = ExtResource( 78 )
 __meta__ = {
@@ -935,7 +931,6 @@ rotation = 0.029933
 
 [node name="Tail1" type="Sprite" parent="Peter/CharacterRig/Torso/TailBone"]
 position = Vector2( 232.141, 0 )
-scale = Vector2( 1, 1 )
 texture = ExtResource( 77 )
 __meta__ = {
 "_edit_lock_": true
@@ -2900,6 +2895,17 @@ custom_fonts/font = ExtResource( 92 )
 text = "CONFIDENCE"
 align = 1
 
+[node name="FloorLabel" type="Label" parent="Camera"]
+margin_left = 267.0
+margin_right = 612.0
+margin_bottom = 31.0
+rect_scale = Vector2( 0.8, 0.8 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+custom_fonts/font = ExtResource( 92 )
+text = "FLOOR 4"
+align = 1
+
 [node name="Anger" type="TextureProgress" parent="Camera"]
 margin_left = 50.0
 margin_top = 35.0
@@ -2931,7 +2937,6 @@ texture = ExtResource( 50 )
 script = ExtResource( 51 )
 
 [node name="FrontSprite" type="Sprite" parent="Camera"]
-visible = false
 position = Vector2( 0, 250 )
 z_index = 1000
 texture = ExtResource( 23 )

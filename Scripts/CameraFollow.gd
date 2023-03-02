@@ -4,11 +4,15 @@ var PROGRESS_LINE = 300
 var frozen = false
 var endgame = false
 
+var ANGER_PX_PER = 200
+
+var last_targ = 0
 var targ = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	global_position.x = (450 - PROGRESS_LINE) + get_node("../Player").global_position.x
 	targ = global_position.x
+	last_targ = targ
 	get_node("../LeftBarrier").global_position.x = get_node("../Player").global_position.x - PROGRESS_LINE
 
 func backpack(delta):
@@ -30,7 +34,12 @@ func backpack(delta):
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	global_position.x = lerp(global_position.x, targ, 3 * delta)
-	# get_node("Mood").visible = get_node("../Peter").active
+	get_node("Confidence").visible = get_node("../Peter").active
+	get_node("ConfidenceLabel").visible = get_node("../Peter").active
+	get_node("Confidence").value = get_node("../Peter").confidence
+	get_node("Anger").visible = get_node("../Peter").active
+	get_node("AngerLabel").visible = get_node("../Peter").active
+	get_node("Anger").value = get_node("../Peter").anger
 	# get_node("Mood").modulate = get_node("../Peter").colorLookup()
 	backpack(delta)
 	if(endgame):
@@ -43,6 +52,10 @@ func _process(delta):
 		get_node("../LeftBarrier").global_position.x = get_node("../Player").global_position.x - PROGRESS_LINE
 		get_node("../RightBarrier").global_position.x = get_node("../Player").global_position.x - PROGRESS_LINE + 900
 		targ = (450 - PROGRESS_LINE) + get_node("../Player").global_position.x
+		if(targ-last_targ > ANGER_PX_PER):
+			last_targ += ANGER_PX_PER
+			get_node("../Peter").anger -= 1
+			
 		
 
 		
